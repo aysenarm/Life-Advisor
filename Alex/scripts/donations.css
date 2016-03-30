@@ -1,0 +1,50 @@
+.col-sm-8{
+    padding-right: 35px;
+    padding-left: 35px; 
+}
+
+.col-sm-8 h3{
+    padding-bottom: 2em;
+    text-decoration: underline;
+}
+
+.donation_form_label{
+    width: 13em;
+    float: left;
+
+}
+
+.donation_form_input{
+    float: left;
+}
+
+.donation_form_field{
+    height: 4em;
+    margin-bottom: 2em;
+    float:left;
+    width: 100%;
+}
+
+.donation_form_radio{
+    float: left;
+    width: 100%;
+}
+
+.donation_form_button{
+    padding-top: 2em;  
+    padding-bottom: 2em;  
+    float: left;
+    width: 100%;
+}
+
+.donation_form_star{
+    color: red;
+    font-size: 1.3em;
+}
+
+#donation_form_box{
+    padding: 1em;
+    float: left;
+    width: 100%;
+    
+}
