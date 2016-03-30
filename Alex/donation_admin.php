@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="scripts/donations_admin.css">
 
 
-    <h3>Donate today!</h3>
-
 <?php
 
 if(!isset($_GET['sort'])){
