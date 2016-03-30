@@ -13,9 +13,9 @@
 
     <h2>Contact Us</h2><br/>
         <h4>User personal page</h4>
-            <p><a href="">The personal user page with user questions - Add question - Delete user questions</a></p>
+            <p><a href="contactus_add_form_user.php">The personal user page with user questions - Add question - Delete user questions</a></p>
 
          <h4>Admin page</h4>
-            <p><a href="">Answer/Delete questions</a></p>
+            <p><a href="contactus_admin.php">List of questions - Answer the question - Delete the question</a></p>
 
 <?php require_once '../content_bottom.php'; ?>

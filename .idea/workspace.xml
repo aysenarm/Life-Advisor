@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="979c60e7-e7c1-40d9-98f2-1976644444a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Alex/donation_admin.php" afterPath="$PROJECT_DIR$/Alex/donation_admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Alex/index_temp.php" afterPath="$PROJECT_DIR$/Alex/index_temp.php" />
     </list>
     <ignored path="Life-Advisor.iws" />
@@ -24,35 +24,7 @@
     <favorites_list name="Life-Advisor" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="donation_admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Alex/donation_admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1459351895146" expanded="true" signature="309:357" placeholder="SELECT * FRO... donations" />
-                <marker date="1459351895146" expanded="true" signature="406:495" placeholder="SELECT * FRO... donations" />
-                <marker date="1459351895146" expanded="true" signature="545:635" placeholder="SELECT * FRO... donations" />
-                <marker date="1459351895146" expanded="true" signature="687:779" placeholder="SELECT * FRO... donations" />
-                <marker date="1459351895146" expanded="true" signature="830:921" placeholder="SELECT * FRO... donations" />
-                <marker date="1459351895146" expanded="true" signature="962:1010" placeholder="SELECT * FRO... donations" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_temp.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Alex/index_temp.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5851979">
-              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -69,6 +41,15 @@
         <option value="$PROJECT_DIR$/Alex/donation_add.php" />
         <option value="$PROJECT_DIR$/Alex/donation_thanks.php" />
         <option value="$PROJECT_DIR$/Alex/donation_admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus__admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_delete_admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_delete_user.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_add_user.php" />
+        <option value="$PROJECT_DIR$/Alex/alex_contactus_update_admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_update_admin.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_add_form_user.php" />
+        <option value="$PROJECT_DIR$/Alex/contactus_update_form_admin.php" />
         <option value="$PROJECT_DIR$/Alex/index_temp.php" />
       </list>
     </option>
@@ -202,10 +183,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -420,6 +401,109 @@
             <marker date="1459351895146" expanded="true" signature="687:779" placeholder="SELECT * FRO... donations" />
             <marker date="1459351895146" expanded="true" signature="830:921" placeholder="SELECT * FRO... donations" />
             <marker date="1459351895146" expanded="true" signature="962:1010" placeholder="SELECT * FRO... donations" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lifeadvisor_scripts_inside_PHP/alex_contactus_delete_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43889844">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <marker date="1459058231535" expanded="true" signature="87:140" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lifeadvisor_scripts_inside_PHP/alex_contactus_update_form_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6092943">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1459063242564" expanded="true" signature="184:239" placeholder="SELECT * FRO... contactus" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_add_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5025818">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          <folding>
+            <marker date="1459360354034" expanded="true" signature="354:520" placeholder="INSERT INTO contactus... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_delete_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43889844">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <marker date="1459359947670" expanded="true" signature="87:140" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_delete_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43889844">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <marker date="1459360030434" expanded="true" signature="87:140" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_update_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73666096">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <marker date="1459360850937" expanded="true" signature="277:417" placeholder="UPDATE conta... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/PHP проект/12_lifeadvisor_scripts_inside_PHP/alex_contactus_add_form_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43889844">
+          <caret line="15" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="38" />
+          <folding>
+            <marker date="1459063157371" expanded="true" signature="233:305" placeholder="SELECT * FRO... contactus" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.848537">
+          <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
+          <folding>
+            <marker date="1459359465442" expanded="true" signature="301:349" placeholder="SELECT * FRO... contactus" />
+            <marker date="1459359465442" expanded="true" signature="398:471" placeholder="SELECT * FRO... contactus" />
+            <marker date="1459359465442" expanded="true" signature="522:591" placeholder="SELECT * FRO... contactus" />
+            <marker date="1459359465442" expanded="true" signature="632:680" placeholder="SELECT * FRO... contactus" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_add_form_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70223755">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1459361284836" expanded="true" signature="273:345" placeholder="SELECT * FRO... contactus" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alex/contactus_update_form_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8244406">
+          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+          <folding>
+            <marker date="1459361284843" expanded="true" signature="229:284" placeholder="SELECT * FRO... contactus" />
           </folding>
         </state>
       </provider>
