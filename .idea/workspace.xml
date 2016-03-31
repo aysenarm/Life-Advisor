@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="979c60e7-e7c1-40d9-98f2-1976644444a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Alex/index_temp.php" afterPath="$PROJECT_DIR$/Alex/index_temp.php" />
     </list>
     <ignored path="Life-Advisor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -183,7 +182,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
