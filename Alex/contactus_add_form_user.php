@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once '../content_top.php'; ?>
 
     <title>Contact Us</title>
@@ -6,7 +7,7 @@
 
     <link rel="stylesheet" href="scripts/contactus.css">
 
-<?php  $user_id = 3 ?>
+<?php  $user_id = $_SESSION['userId'] ?>
 
 <?php
 //---------- Query (shows only user questions) ---------->
