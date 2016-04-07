@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 07 2016 г., 04:59
+-- Время создания: Мар 29 2016 г., 01:46
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -142,63 +142,6 @@ INSERT INTO `page` (`ID_page`, `ID menu`, `Name`, `Title`, `ID_user`, `Status`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `questionnaire_answers`
---
-
-CREATE TABLE `questionnaire_answers` (
-  `userID` int(50) NOT NULL,
-  `answer1` text,
-  `answer2` text,
-  `answer3` text,
-  `answer4` text,
-  `answer5` text,
-  `answer6` text,
-  `answer7` text,
-  `answer8` text,
-  `answer9` text,
-  `answer10` text,
-  `aDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `questionnaire_answers`
---
-
-INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `answer7`, `answer8`, `answer9`, `answer10`, `aDate`) VALUES
-(1, 'user1_answer1', 'user1_answer2', 'user1_answer3', 'user1_answer4', 'user1_answer5', 'user1_answer6', 'user1_answer7', 'user1_answer8', 'user1_answer9', 'user1_answer10', '2015-12-01'),
-(2, 'user2_answer1', 'user2_answer2', 'user2_answer3', 'user2_answer4', 'user2_answer5', 'user2_answer6', 'user2_answer7', 'user2_answer8', 'user2_answer9', 'user2_answer10', '2015-12-15'),
-(7, 'user7_answer1', 'user7_answer2', 'user7_answer3', 'user7_answer4', 'user7_answer5', 'user7_answer6', 'user7_answer7', 'user7_answer8', 'user7_answer9', 'user7_answer10', '2015-12-19');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `questionnaire_questions`
---
-
-CREATE TABLE `questionnaire_questions` (
-  `questionID` int(50) NOT NULL,
-  `question` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `questionnaire_questions`
---
-
-INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
-(1, 'Question 1 Text'),
-(2, 'Question 2 Text'),
-(3, 'Question 3 Text'),
-(4, 'Question 4 Text'),
-(5, 'Question 5 Text'),
-(6, 'Question 6 Text'),
-(7, 'Question 7 Text'),
-(8, 'Question 8 Text'),
-(9, 'Question 9 Text'),
-(10, 'Question 10 Text');
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `rights`
 --
 
@@ -272,18 +215,6 @@ ALTER TABLE `page`
   ADD KEY `ID menu` (`ID menu`);
 
 --
--- Индексы таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  ADD PRIMARY KEY (`userID`);
-
---
--- Индексы таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  ADD PRIMARY KEY (`questionID`);
-
---
 -- Индексы таблицы `rights`
 --
 ALTER TABLE `rights`
@@ -319,16 +250,6 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `page`
   MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT для таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  MODIFY `userID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT для таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `rights`
 --
