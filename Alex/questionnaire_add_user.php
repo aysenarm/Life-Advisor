@@ -28,11 +28,45 @@ else {
     $statement1 = $db->prepare($query1);
     $statement1->bindValue(':user_id1', $user_id);
     $statement1->execute();
-    $row1 = $statement1->fetchAll();
+    $row1 = $statement1->fetch();
     $statement1->closeCursor();
 
 
     if ($row1){
+
+
+        $query2 = 'UPDATE questionnaire_answers
+                    SET aDate=:answer_date,
+                        answer1=:answer_1,
+                        answer2=:answer_2,
+                        answer3=:answer_3,
+                        answer4=:answer_4,
+                        answer5=:answer_5,
+                        answer6=:answer_6,
+                        answer7=:answer_7,
+                        answer8=:answer_8,
+                        answer9=:answer_9,
+                        answer10=:answer_10
+                    WHERE userID=:user_id';
+
+        $statement2 = $db->prepare($query2);
+        $statement2->bindValue(':user_id', $user_id);
+        $statement2->bindValue(':answer_date', $answer_date);
+        $statement2->bindValue(':answer_1', $answer_1);
+        $statement2->bindValue(':answer_2', $answer_2);
+        $statement2->bindValue(':answer_3', $answer_3);
+        $statement2->bindValue(':answer_4', $answer_4);
+        $statement2->bindValue(':answer_5', $answer_5);
+        $statement2->bindValue(':answer_6', $answer_6);
+        $statement2->bindValue(':answer_7', $answer_7);
+        $statement2->bindValue(':answer_8', $answer_8);
+        $statement2->bindValue(':answer_9', $answer_9);
+        $statement2->bindValue(':answer_10', $answer_10);
+
+        $statement2->execute();
+        $statement2->closeCursor();
+
+
         include('questionnaire_already_answered.php');
     }
 

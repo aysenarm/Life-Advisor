@@ -61,9 +61,7 @@ $statement->closeCursor();
             }
         ?>
 
-<!--------------------------------------------------------->
-
-
+<!-------------------- Submit Button -------------------->
 
             <div class="q_a_button">
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>"/>
@@ -71,6 +69,8 @@ $statement->closeCursor();
 
                 <input type="submit" value="Send" />
             </div>
+
+<!--------------------------------------------------------->
 
     </div>
 

@@ -1,8 +1,10 @@
-<html>
-    <head>
-        <title>Thanks!</title>
-    </head>
-    <body>
-        <p>You have already answered for the questions!</p>
-    </body>
-</html>
+<?php require_once '../content_top.php'; ?>
+
+<title>Questionnaire</title>
+
+
+<link rel="stylesheet" href="scripts/questionnaire.css">
+
+<p>Thank you for new answers!</p>
+
+<?php require_once '../content_bottom.php'; ?>
