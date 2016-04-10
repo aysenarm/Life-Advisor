@@ -59,7 +59,7 @@ $statement->closeCursor();
             <label>Answer: </label>
         </div>
         <div class="contactus_form_input">
-            <textarea cols="40" rows="5" name="answer"></textarea>
+            <textarea cols="40" rows="5" name="answer" title="Please fill this field" required><?php echo $row['answer'] ?></textarea>
         </div>
     </div>
 

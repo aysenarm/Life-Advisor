@@ -36,7 +36,7 @@ $statement->closeCursor();
                 <label>Question: <span class="contactus_form_star">*</span></label>
             </div>
             <div class="contactus_form_input">
-                <textarea cols="40" rows="5" name="question"></textarea>
+                <textarea cols="40" rows="5" name="question" title="Please fill this field" required></textarea>
             </div>
         </div>
 

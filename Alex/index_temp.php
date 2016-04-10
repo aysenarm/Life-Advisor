@@ -39,7 +39,9 @@
         <br/>
 
         <h4>Admin page</h4>
+            <p><a href="questionnaire_admin.php">List of answers - Delete answers</a></p>
 
+<br/><br/>
 
 
 <!-----------------Session----------------->
