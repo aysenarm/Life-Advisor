@@ -95,7 +95,7 @@ class CommentDB{
 // function to SHOW USERNAME of an author of a comment
     public function ShowUsername($id){
         $db = Dbclass::getDB();
-        $query = "SELECT user.Nickname FROM user, comments
+        $query = "SELECT user.Username FROM user, comments
                WHERE comments.ID_user = user.ID_user
                AND comments.ID_user = :id";
         $stm = $db->prepare($query);

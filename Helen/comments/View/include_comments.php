@@ -39,11 +39,13 @@ $comments = $pdb->listPageComments($page_id);
 
 foreach ($comments as $comment) : ?>
     <!-- SHOW comments in a good way -->
-        <p><?php
+        <div style="border: double; margin: 10px;"><?php
             $a = $pdb->ShowUsername($comment['ID_user']);
            // var_dump($a);
-            echo $a[0]['Nickname'];
-            ?></p>
+            echo $a[0]['Username'];
+            ?>
         <p><?php echo $comment['Text']; ?></p>
+        </div>
+
 
 <?php endforeach; ?>

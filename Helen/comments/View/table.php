@@ -1,6 +1,6 @@
 <table class="table table-striped table-bordered table-hover">
                 <tr>
-                    <th>Name of the commented page</th>
+                    <th>Name of the page</th>
                     <th>User</th>
                     <th>State</th>
                     <th>Text</th>

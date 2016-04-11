@@ -33,6 +33,10 @@
 
 <!-- the body section -->
 <body style="margin-left: 10px; margin-right: 10px;">
+
+<?php
+require_once '../../../content_top.php'; ?>
+
 <div id="page">
 
     <div id="main">
@@ -59,5 +63,7 @@
 
 
 </div><!-- end page -->
+
+<?php require_once '../../../content_bottom.php'; ?>
 </body>
 </html>

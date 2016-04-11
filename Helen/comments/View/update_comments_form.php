@@ -1,5 +1,4 @@
 <?php
-
 require_once '../Model/dbclass.php';
 require_once('../Model/interactiondb.php');
 $com_id = $_POST['com_id'];
@@ -20,17 +19,19 @@ $comment = $a->listOneComment($com_id);
 
     <!-- the body section -->
     <body style="margin-left: 10px;">
+    <?php
+    require_once '../../../content_top.php'; ?>
     <h1>Update Comment</h1>
         <form action="../Controller/update_comment.php" method="post" class="form-horizontal"
               style="width: 50%;">
             <div class="form-group" style="margin-left: 10px;">
-                <input type="hidden" name="id" value="<?php echo $com_id; ?>"/>
+                <input type="hidden" name="id" value="<?php echo $com_id; ?>" disabled/>
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
                 <label class="col-sm-2 control-label">ID PAGE:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="id_page" value="<?php echo $comment['ID_page']; ?>" />
+                    <input type="text" name="id_page" value="<?php echo $comment['ID_page']; ?>" disabled />
                 </div>
                 <br />
             </div>
@@ -38,7 +39,7 @@ $comment = $a->listOneComment($com_id);
             <div class="form-group" style="margin-left: 10px;">
                 <label class="col-sm-2 control-label">ID USER:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="id_user" value="<?php echo $comment['ID_user']; ?>"/>
+                    <input type="text" name="id_user" value="<?php echo $comment['ID_user']; ?>" disabled/>
                 </div>
                 <br />
             </div>
@@ -46,7 +47,7 @@ $comment = $a->listOneComment($com_id);
             <div class="form-group" style="margin-left: 10px;">
                 <label class="col-sm-2 control-label">TEXT:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="text" value="<?php echo$comment['Text']; ?>"/>
+                    <input type="text" name="text" value="<?php echo$comment['Text']; ?>" disabled/>
                 </div>
                 <br />
             </div>
@@ -75,6 +76,7 @@ $comment = $a->listOneComment($com_id);
 <br />
         <p><a href="admin_comments.php" class="btn btn-primary">View Comments List</a></p>
 
+    <?php require_once '../../../content_bottom.php'; ?>
     </body>
 </html>
 

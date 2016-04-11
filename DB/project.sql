@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 11 2016 г., 09:03
+-- Время создания: Апр 11 2016 г., 09:31
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -40,11 +40,11 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VALUES
 (10, 2, 1, 'xdfgh', 'published'),
-(13, 2, 1, 'dfdfdfdfdfdf', 'not published'),
 (14, 2, 1, 'SUPER COMMENT', 'published'),
-(22, 2, 1, 'aaaa', 'not published'),
+(22, 2, 1, 'aaaaarg', 'published'),
 (31, 2, 1, 'hahahaha', 'not published'),
-(32, 2, 1, 'xdbfgjnh', 'published');
+(32, 2, 1, 'xdbfgjnh', 'published'),
+(34, 2, 1, 'Helen test', 'not published');
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,7 @@ INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
 --
 
 CREATE TABLE `user` (
-  `ID user` int(11) NOT NULL,
+  `ID_user` int(11) NOT NULL,
   `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Rights` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -235,7 +235,7 @@ CREATE TABLE `user` (
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`ID user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `E-mail`, `Newsletter`, `Phone`, `ID image`) VALUES
+INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `E-mail`, `Newsletter`, `Phone`, `ID image`) VALUES
 (1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2);
 
@@ -291,7 +291,7 @@ ALTER TABLE `rights`
 -- Индексы таблицы `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID user`);
+  ADD PRIMARY KEY (`ID_user`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -301,7 +301,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT для таблицы `contactus`
 --
@@ -336,7 +336,7 @@ ALTER TABLE `rights`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
