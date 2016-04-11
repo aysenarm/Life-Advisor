@@ -2,6 +2,7 @@
 require('../../../database.php');
 require('../../Model/gallery.php');
 require('../../Model/gallery_db.php');
+
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -26,7 +27,7 @@ else if ($action == 'delete_gallery') {
     header("Location: .?");
 }
 else if ($action == 'show_add_form') {
-    echo $action;
+    //echo $action;
     $galleries = galleryDB::getGalleries();
     include('gallery_add.php');
 }
@@ -41,7 +42,7 @@ else if ($action == 'add_gallery') {
         galleryDB::addGallery($gallery);
 
         // Display the gallery List page for the current gallery
-        header("Location: .?");
+          header("Location: .?");
     }
 }
 else if ($action == 'show_edit_form') {

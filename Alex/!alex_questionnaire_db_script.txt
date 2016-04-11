@@ -1,0 +1,52 @@
+CREATE TABLE IF NOT EXISTS `questionnaire_questions` (
+  `questionID` int(50) NOT NULL AUTO_INCREMENT,
+  `question` text NOT NULL,
+
+  PRIMARY KEY (`questionID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `questionnaire_answers` (
+  `userID` int(50) NOT NULL AUTO_INCREMENT,
+  `answer1` text,
+  `answer2` text,
+  `answer3` text,
+  `answer4` text,
+  `answer5` text,
+  `answer6` text,
+  `answer7` text,
+  `answer8` text,
+  `answer9` text,
+  `answer10` text,
+  `aDate` date NOT NULL, 
+
+  PRIMARY KEY (`userID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
+
+(1, 'Question 1 Text'),
+(2, 'Question 2 Text'),
+(3, 'Question 3 Text'),
+(4, 'Question 4 Text'),
+(5, 'Question 5 Text'),
+(6, 'Question 6 Text'),
+(7, 'Question 7 Text'),
+(8, 'Question 8 Text'),
+(9, 'Question 9 Text'),
+(10, 'Question 10 Text');
+
+
+
+
+
+
+INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`,`answer4`, `answer5`, `answer6`,`answer7`, `answer8`, `answer9`, `answer10`, `aDate`) VALUES
+
+(1, 'user1_answer1', 'user1_answer2', 'user1_answer3', 'user1_answer4', 'user1_answer5', 'user1_answer6', 'user1_answer7', 'user1_answer8', 'user1_answer9', 'user1_answer10', '2015.12.01'),
+(2, 'user2_answer1', 'user2_answer2', 'user2_answer3', 'user2_answer4', 'user2_answer5', 'user2_answer6', 'user2_answer7', 'user2_answer8', 'user2_answer9', 'user2_answer10', '2015.12.15'),
+(7, 'user7_answer1', 'user7_answer2', 'user7_answer3', 'user7_answer4', 'user7_answer5', 'user7_answer6', 'user7_answer7', 'user7_answer8', 'user7_answer9', 'user7_answer10', '2015.12.19');

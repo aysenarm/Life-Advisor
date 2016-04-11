@@ -118,5 +118,6 @@ else if ($action == 'show_detail_form') {
     $image = imageDB::getImage($image_id);
 
     include('image_detail.php');
+
 }
 ?>
