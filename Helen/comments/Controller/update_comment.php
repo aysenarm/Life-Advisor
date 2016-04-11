@@ -11,7 +11,7 @@ $state = $_POST['state'];
 // Validate inputs
 if (empty($id) || empty($id_page) || empty($id_user) || empty($text) || empty($state)) {
     $error = "Invalid page data. Check all fields and try again.";
-    include('error.php');
+    echo $error;
 } else {
     // If valid, update the page in the database
     require_once('../Model/interactiondb.php');

@@ -25,35 +25,35 @@ $comment = $a->listOneComment($com_id);
         <form action="../Controller/update_comment.php" method="post" class="form-horizontal"
               style="width: 50%;">
             <div class="form-group" style="margin-left: 10px;">
-                <input type="hidden" name="id" value="<?php echo $com_id; ?>" disabled/>
+                <input type="hidden" name="id" value="<?php echo $com_id; ?>" />
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">ID PAGE:</label>
+                <label class="control-label" style="color: black;">ID PAGE:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="id_page" value="<?php echo $comment['ID_page']; ?>" disabled />
+                    <input type="text" name="id_page" value="<?php echo $comment['ID_page']; ?>" readonly/>
                 </div>
                 <br />
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">ID USER:</label>
+                <label class=" control-label" >ID USER:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="id_user" value="<?php echo $comment['ID_user']; ?>" disabled/>
+                    <input type="text" name="id_user" value="<?php echo $comment['ID_user']; ?>" readonly/>
                 </div>
                 <br />
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">TEXT:</label>
+                <label class=" control-label">TEXT:</label>
                 <div class="col-sm-10">
-                    <input type="text" name="text" value="<?php echo$comment['Text']; ?>" disabled/>
+                    <input type="text" name="text" value="<?php echo$comment['Text']; ?>" readonly/>
                 </div>
                 <br />
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">State:</label>
+                <label class="control-label">State:</label>
                 <div class="col-sm-10">
                     <select class="form-control" name="state">
                         <?php $selStat = $comment['state'];?>
