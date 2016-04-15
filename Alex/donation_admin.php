@@ -70,11 +70,11 @@ function decrypt($encrypted, $k) {
     <div id="donation_search_conditions">
         <p><b>Sort by regularity of donation:</b></p>
         <ul>
-            <li><p> <a href="donation_admin.php?sort=all">All donations</a></p></li>
-            <li><p> <a href="donation_admin.php?sort=one_time">One-time donation</a></p></li>
-            <li><p> <a href="donation_admin.php?sort=every_day">Every day donation</a></p></li>
-            <li><p> <a href="donation_admin.php?sort=every_month">Every month donation</a></p></li>
-            <li><p> <a href="donation_admin.php?sort=every_year">Every year donation</a></p></li>
+            <li><p> <a href="alex_donation_admin.php?sort=all">All donations</a></p></li>
+            <li><p> <a href="alex_donation_admin.php?sort=one_time">One-time donation</a></p></li>
+            <li><p> <a href="alex_donation_admin.php?sort=every_day">Every day donation</a></p></li>
+            <li><p> <a href="alex_donation_admin.php?sort=every_month">Every month donation</a></p></li>
+            <li><p> <a href="alex_donation_admin.php?sort=every_year">Every year donation</a></p></li>
         </ul>
     </div>
 

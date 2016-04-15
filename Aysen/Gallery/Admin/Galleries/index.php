@@ -1,77 +1,78 @@
 <?php
 require('../../../database.php');
-require('../../Model/topic.php');
-require('../../Model/topic_db.php');
+require('../../Model/gallery.php');
+require('../../Model/gallery_db.php');
+
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'list_topics';
+    $action = 'list_galleries';
 }
-if ($action == 'list_topics') {
-    // Get topic and topic data
-    $topics = topicDB::getTopics();
+if ($action == 'list_galleries') {
+    // Get gallery and gallery data
+    $galleries = galleryDB::getGalleries();
 
-    // Display the topic list
-    include('topic_list.php');
+    // Display the gallery list
+    include('gallery_list.php');
 }
-else if ($action == 'delete_topic') {
+else if ($action == 'delete_gallery') {
     // Get the IDs
-    $topic_id = $_POST['topic_id'];
-    // Delete the topic
-    topicDB::deleteTopic($topic_id);
+    $gallery_id = $_POST['gallery_id'];
+    // Delete the gallery
+    galleryDB::deleteGallery($gallery_id);
 
-    // Display the topic List page for the current topic
+    // Display the gallery List page for the current gallery
     header("Location: .?");
 }
 else if ($action == 'show_add_form') {
-    echo $action;
-    $topics = topicDB::getTopics();
-    include('topic_add.php');
+    //echo $action;
+    $galleries = galleryDB::getGalleries();
+    include('gallery_add.php');
 }
-else if ($action == 'add_topic') {
+else if ($action == 'add_gallery') {
     $name = $_POST['name'];
     // Validate the inputs
     if ( empty($name)) {
-        $error = "Invalid topic data. Check all fields and try again.";
+        $error = "Invalid gallery data. Check all fields and try again.";
         include('../../../errors/error.php');
     } else {
-        $topic = new Topic($_POST['name']);
-        topicDB::addTopic($topic);
+        $gallery = new Gallery($_POST['name']);
+        galleryDB::addGallery($gallery);
 
-        // Display the topic List page for the current topic
-        header("Location: .?");
+        // Display the gallery List page for the current gallery
+          header("Location: .?");
     }
 }
 else if ($action == 'show_edit_form') {
-    $topics = topicDB::getTopics();
-    $topic_id = $_POST['topic_id'];
-    $topic = topicDB::getTopic($topic_id);
-    include('topic_edit.php');
+    $galleries = galleryDB::getGalleries();
+    $gallery_id = $_POST['gallery_id'];
+    $gallery = galleryDB::getGallery($gallery_id);
+    include('gallery_edit.php');
 }
-else if ($action == 'edit_topic') {
+else if ($action == 'edit_gallery') {
     $name = $_POST['name'];
-    $edited_topic_id = $_POST['edited_topic_id'];
+    $edited_gallery_id = $_POST['edited_gallery_id'];
     // Validate the inputs
     if ( empty($name)) {
-        $error = "Invalid topic data. Check all fields and try again.";
+        $error = "Invalid gallery data. Check all fields and try again.";
         include('../../../errors/error.php');
     } else {
-        $topic = new topic($name);
-        $topic->setID($edited_topic_id);
-        topicDB::editTopic($topic);
-        // Display the topic List page for the current topic
+        $gallery = new gallery($name);
+        $gallery->setID($edited_gallery_id);
+        galleryDB::editGallery($gallery);
+        // Display the gallery List page for the current gallery
         header("Location: .?");
     }
 }
 else if ($action == 'show_detail_form') {
     echo $action;
-    $topics = topicDB::getTopics();
+    $galleries = galleryDB::getGalleries();
 
-    $topic_id = $_POST['topic_id'];
-    $topic = topicDB::getTopic($topic_id);
+    $gallery_id = $_POST['gallery_id'];
+    $gallery = galleryDB::getGallery($gallery_id);
 
-    include('topic_detail.php');
+    include('gallery_detail.php');
 }
 ?>
