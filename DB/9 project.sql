@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 16 2016 г., 00:49
+-- Время создания: Мар 29 2016 г., 01:46
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -19,32 +19,6 @@ SET time_zone = "+00:00";
 --
 -- База данных: `project`
 --
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `comments`
---
-
-CREATE TABLE `comments` (
-  `ID_comment` int(11) NOT NULL,
-  `ID_page` int(11) NOT NULL,
-  `ID_user` int(11) NOT NULL,
-  `Text` varchar(5000) NOT NULL,
-  `state` set('published','not published') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `comments`
---
-
-INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VALUES
-(10, 2, 1, 'xdfgh', 'published'),
-(14, 2, 1, 'SUPER COMMENT', 'published'),
-(22, 2, 1, 'aaaaarg', 'published'),
-(31, 2, 1, 'hahahaha', 'published'),
-(34, 2, 1, 'Helen test', 'published'),
-(35, 2, 1, 'Helen test in school', 'published');
 
 -- --------------------------------------------------------
 
@@ -114,14 +88,27 @@ INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `images`
+-- Структура таблицы `menu`
 --
 
-CREATE TABLE `images` (
-  `ID_image` int(11) NOT NULL,
-  `alt_text` varchar(100) NOT NULL,
-  `link` varchar(500) NOT NULL
+CREATE TABLE `menu` (
+  `ID menu` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Description` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `menu`
+--
+
+INSERT INTO `menu` (`ID menu`, `Name`, `Description`) VALUES
+(4, 'Recipes', 'You add content related to Recipes here'),
+(5, 'House', 'You add content related to House here'),
+(6, 'Health', 'You add content related to Health here'),
+(7, 'Finances', 'You add content related to Finances here'),
+(8, 'People', 'You add content related to People here'),
+(9, 'Time management', 'You add content related to Time management here'),
+(10, 'Our partners', 'You add content related to Our partners here');
 
 -- --------------------------------------------------------
 
@@ -131,80 +118,26 @@ CREATE TABLE `images` (
 
 CREATE TABLE `page` (
   `ID_page` int(11) NOT NULL,
+  `ID menu` int(11) NOT NULL,
+  `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `ID_user` int(11) NOT NULL,
   `Status` set('posted','not posted') COLLATE utf8_unicode_ci NOT NULL,
-  `Content` varchar(15000) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Rank` int(11) NOT NULL,
-  `Tags` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `Menu` set('Recipes','Finances','Time management','Health','House','People') COLLATE utf8_unicode_ci NOT NULL,
-  `ID_image` int(11) NOT NULL
+  `Content` varchar(15000) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `page`
 --
 
-INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
-(1, 'Students', 2, 'posted', 'hjk', 0, 'student', 'People', 0),
-(2, 'Test', 1, 'not posted', 'jkhfg', 2, 'test', 'Finances', 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `questionnaire_answers`
---
-
-CREATE TABLE `questionnaire_answers` (
-  `userID` int(50) NOT NULL,
-  `answer1` text,
-  `answer2` text,
-  `answer3` text,
-  `answer4` text,
-  `answer5` text,
-  `answer6` text,
-  `answer7` text,
-  `answer8` text,
-  `answer9` text,
-  `answer10` text,
-  `aDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `questionnaire_answers`
---
-
-INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `answer7`, `answer8`, `answer9`, `answer10`, `aDate`) VALUES
-(1, 'user1_answer1', 'user1_answer2', 'user1_answer3', 'user1_answer4', 'user1_answer5', 'user1_answer6', 'user1_answer7', 'user1_answer8', 'user1_answer9', 'user1_answer10', '2015-12-01'),
-(2, 'user2_answer1', 'user2_answer2', 'user2_answer3', 'user2_answer4', 'user2_answer5', 'user2_answer6', 'user2_answer7', 'user2_answer8', 'user2_answer9', 'user2_answer10', '2015-12-15'),
-(7, 'user7_answer1', 'user7_answer2', 'user7_answer3', 'user7_answer4', 'user7_answer5', 'user7_answer6', 'user7_answer7', 'user7_answer8', 'user7_answer9', 'user7_answer10', '2015-12-19');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `questionnaire_questions`
---
-
-CREATE TABLE `questionnaire_questions` (
-  `questionID` int(50) NOT NULL,
-  `question` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `questionnaire_questions`
---
-
-INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
-(1, 'Question 1 Text'),
-(2, 'Question 2 Text'),
-(3, 'Question 3 Text'),
-(4, 'Question 4 Text'),
-(5, 'Question 5 Text'),
-(6, 'Question 6 Text'),
-(7, 'Question 7 Text'),
-(8, 'Question 8 Text'),
-(9, 'Question 9 Text'),
-(10, 'Question 10 Text');
+INSERT INTO `page` (`ID_page`, `ID menu`, `Name`, `Title`, `ID_user`, `Status`, `Content`) VALUES
+(1, 4, 'Recipe 1', 'Recipe 1', 1, 'posted', '<h1> posted </h1>'),
+(2, 5, 'house 1', 'house 1', 1, 'posted', '<h1> HOUSE </h1>'),
+(3, 6, 'Health 1', 'Health 1', 1, 'posted', '<h1> HEALTH </h1>'),
+(4, 7, 'Finances 1', 'Finances 1', 1, 'posted', '<h1> Finances </h1>'),
+(5, 8, 'People 1', 'People 1', 1, 'posted', '<h1> People </h1>'),
+(6, 9, 'Time management 1', 'Time management 1', 1, 'posted', '<h1> Time management </h1>'),
+(7, 10, 'Our partners 1', 'Our partners 1', 1, 'posted', '<h1> Our partners 1 </h1>');
 
 -- --------------------------------------------------------
 
@@ -232,37 +165,28 @@ INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
 --
 
 CREATE TABLE `user` (
-  `ID_user` int(11) NOT NULL,
+  `ID user` int(11) NOT NULL,
   `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Rights` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Nickname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `E-mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Newsletter` set('signed','not signed') COLLATE utf8_unicode_ci NOT NULL,
   `Phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `ID_image` int(11) NOT NULL
+  `ID image` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `E-mail`, `Newsletter`, `Phone`, `ID_image`) VALUES
-(1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
-(2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2);
+INSERT INTO `user` (`ID user`, `Name`, `Surname`, `Rights`, `Password`, `Nickname`, `E-mail`, `Newsletter`, `Phone`, `ID image`) VALUES
+(1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479367479', 1);
 
 --
 -- Индексы сохранённых таблиц
 --
-
---
--- Индексы таблицы `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`ID_comment`),
-  ADD KEY `ID_page` (`ID_page`),
-  ADD KEY `ID_page_2` (`ID_page`);
 
 --
 -- Индексы таблицы `contactus`
@@ -277,28 +201,18 @@ ALTER TABLE `donations`
   ADD PRIMARY KEY (`donationID`);
 
 --
--- Индексы таблицы `images`
+-- Индексы таблицы `menu`
 --
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`ID_image`);
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`ID menu`),
+  ADD UNIQUE KEY `ID menu` (`ID menu`);
 
 --
 -- Индексы таблицы `page`
 --
 ALTER TABLE `page`
-  ADD PRIMARY KEY (`ID_page`);
-
---
--- Индексы таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  ADD PRIMARY KEY (`userID`);
-
---
--- Индексы таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  ADD PRIMARY KEY (`questionID`);
+  ADD PRIMARY KEY (`ID_page`),
+  ADD KEY `ID menu` (`ID menu`);
 
 --
 -- Индексы таблицы `rights`
@@ -310,17 +224,12 @@ ALTER TABLE `rights`
 -- Индексы таблицы `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_user`);
+  ADD PRIMARY KEY (`ID user`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
---
--- AUTO_INCREMENT для таблицы `comments`
---
-ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT для таблицы `contactus`
 --
@@ -332,25 +241,15 @@ ALTER TABLE `contactus`
 ALTER TABLE `donations`
   MODIFY `donationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT для таблицы `images`
+-- AUTO_INCREMENT для таблицы `menu`
 --
-ALTER TABLE `images`
-  MODIFY `ID_image` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `menu`
+  MODIFY `ID menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  MODIFY `userID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT для таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `rights`
 --
@@ -360,7 +259,7 @@ ALTER TABLE `rights`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

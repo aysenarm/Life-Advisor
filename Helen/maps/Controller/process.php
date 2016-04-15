@@ -10,10 +10,11 @@ $output = "json";
 
 $rez_lat = 43.726535;
 $rez_long = -79.605780;
+$radius = 2000;
 
 
 //$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.726535,-79.605780&radius=500&rankby=distance&name=shoppers&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
-$url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=2000&name=".$name."&key=".$apiKey;
+$url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=".$radius."&name=".$name."&key=".$apiKey;
 $resp_json = file_get_contents($url);
 $resp = json_decode($resp_json, true);
 //var_dump($resp);
