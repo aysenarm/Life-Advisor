@@ -6,8 +6,16 @@ function geocode($address){
     // url encode the address
     $address = urlencode($address);
 
+
+    $apiKey = "AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
+    $main = "https://maps.googleapis.com/maps/api/";
+    $geocode = "geocode/"; // перевод адреса в широту и долготу
+    $output = "json";
+    $region = "&region=ca";
     // google map geocode api url
-    $url = "http://maps.google.com/maps/api/geocode/json?address={$address}";
+    $url = $main . $geocode . $output . "?address=". $address. $region . "&key=".$apiKey;
+
+   // $url = "http://maps.google.com/maps/api/geocode/json?address={$address}";
 
     // get the json response
     $resp_json = file_get_contents($url);

@@ -264,7 +264,7 @@
 <div class="container">
     <div class="row content ">
         <div class="col-sm-4 sidenav text-center">
-            <img class="logo" src="/Life-Advisor/images/logo.png">
+            <img class="logo" src="images/logo.png">
             <p><a href="#">home</a></p>
             <p><a href="#">recipes</a></p>
             <p><a href="#">house</a></p>

@@ -13,8 +13,8 @@ input[type=submit]{
 }
 
 #gmap_canvas{
-    width:80%;
-    height:30em;
+    width:60%;
+    height:400px;
 }
 
 #map-label,
