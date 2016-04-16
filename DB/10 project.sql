@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 16-Abr-2016 às 03:36
--- Versão do servidor: 10.1.9-MariaDB
--- PHP Version: 7.0.1
+-- Хост: 127.0.0.1
+-- Время создания: Апр 16 2016 г., 00:49
+-- Версия сервера: 10.1.9-MariaDB
+-- Версия PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project`
+-- База данных: `project`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comments`
+-- Структура таблицы `comments`
 --
 
 CREATE TABLE `comments` (
@@ -35,7 +35,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `comments`
+-- Дамп данных таблицы `comments`
 --
 
 INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contactus`
+-- Структура таблицы `contactus`
 --
 
 CREATE TABLE `contactus` (
@@ -63,7 +63,7 @@ CREATE TABLE `contactus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `contactus`
+-- Дамп данных таблицы `contactus`
 --
 
 INSERT INTO `contactus` (`questionID`, `userID`, `question`, `category`, `questionDate`, `answer`, `answerDate`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `contactus` (`questionID`, `userID`, `question`, `category`, `questi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `donations`
+-- Структура таблицы `donations`
 --
 
 CREATE TABLE `donations` (
@@ -96,7 +96,7 @@ CREATE TABLE `donations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `donations`
+-- Дамп данных таблицы `donations`
 --
 
 INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`, `expiryDate`, `cvs`, `email`, `phoneNumber`, `regularity`, `status`, `firstTransaction`) VALUES
@@ -114,7 +114,7 @@ INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `images`
+-- Структура таблицы `images`
 --
 
 CREATE TABLE `images` (
@@ -126,7 +126,7 @@ CREATE TABLE `images` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `page`
+-- Структура таблицы `page`
 --
 
 CREATE TABLE `page` (
@@ -142,7 +142,7 @@ CREATE TABLE `page` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `page`
+-- Дамп данных таблицы `page`
 --
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
@@ -152,7 +152,7 @@ INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `questionnaire_answers`
+-- Структура таблицы `questionnaire_answers`
 --
 
 CREATE TABLE `questionnaire_answers` (
@@ -171,7 +171,7 @@ CREATE TABLE `questionnaire_answers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `questionnaire_answers`
+-- Дамп данных таблицы `questionnaire_answers`
 --
 
 INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `answer7`, `answer8`, `answer9`, `answer10`, `aDate`) VALUES
@@ -182,7 +182,7 @@ INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `questionnaire_questions`
+-- Структура таблицы `questionnaire_questions`
 --
 
 CREATE TABLE `questionnaire_questions` (
@@ -191,7 +191,7 @@ CREATE TABLE `questionnaire_questions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `questionnaire_questions`
+-- Дамп данных таблицы `questionnaire_questions`
 --
 
 INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
@@ -209,7 +209,7 @@ INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `rights`
+-- Структура таблицы `rights`
 --
 
 CREATE TABLE `rights` (
@@ -218,7 +218,7 @@ CREATE TABLE `rights` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `rights`
+-- Дамп данных таблицы `rights`
 --
 
 INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
@@ -228,7 +228,7 @@ INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Структура таблицы `user`
 --
 
 CREATE TABLE `user` (
@@ -238,28 +238,26 @@ CREATE TABLE `user` (
   `Rights` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `E-mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Newsletter` set('signed','not signed') COLLATE utf8_unicode_ci NOT NULL,
   `Phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `ID_image` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `user`
+-- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `Email`, `Newsletter`, `Phone`, `ID_image`) VALUES
+INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `E-mail`, `Newsletter`, `Phone`, `ID_image`) VALUES
 (1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
-(2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2),
-(3, '', '', '', '$2y$10$AnVmd5tMsQZKE0r2IKfGXOaB9QQXV6r.PdOWJb0ks3z', 'antonio', 'amanuelfreire@gmail.com', '', '', 0),
-(4, '', '', '', '123456', 'to', 'eail@mail.ca', '', '', 0);
+(2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2);
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `comments`
+-- Индексы таблицы `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`ID_comment`),
@@ -267,102 +265,102 @@ ALTER TABLE `comments`
   ADD KEY `ID_page_2` (`ID_page`);
 
 --
--- Indexes for table `contactus`
+-- Индексы таблицы `contactus`
 --
 ALTER TABLE `contactus`
   ADD PRIMARY KEY (`questionID`);
 
 --
--- Indexes for table `donations`
+-- Индексы таблицы `donations`
 --
 ALTER TABLE `donations`
   ADD PRIMARY KEY (`donationID`);
 
 --
--- Indexes for table `images`
+-- Индексы таблицы `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`ID_image`);
 
 --
--- Indexes for table `page`
+-- Индексы таблицы `page`
 --
 ALTER TABLE `page`
   ADD PRIMARY KEY (`ID_page`);
 
 --
--- Indexes for table `questionnaire_answers`
+-- Индексы таблицы `questionnaire_answers`
 --
 ALTER TABLE `questionnaire_answers`
   ADD PRIMARY KEY (`userID`);
 
 --
--- Indexes for table `questionnaire_questions`
+-- Индексы таблицы `questionnaire_questions`
 --
 ALTER TABLE `questionnaire_questions`
   ADD PRIMARY KEY (`questionID`);
 
 --
--- Indexes for table `rights`
+-- Индексы таблицы `rights`
 --
 ALTER TABLE `rights`
   ADD PRIMARY KEY (`ID rigths`);
 
 --
--- Indexes for table `user`
+-- Индексы таблицы `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
   MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
--- AUTO_INCREMENT for table `contactus`
+-- AUTO_INCREMENT для таблицы `contactus`
 --
 ALTER TABLE `contactus`
   MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `donations`
+-- AUTO_INCREMENT для таблицы `donations`
 --
 ALTER TABLE `donations`
   MODIFY `donationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT для таблицы `images`
 --
 ALTER TABLE `images`
   MODIFY `ID_image` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `page`
+-- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
   MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `questionnaire_answers`
+-- AUTO_INCREMENT для таблицы `questionnaire_answers`
 --
 ALTER TABLE `questionnaire_answers`
   MODIFY `userID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `questionnaire_questions`
+-- AUTO_INCREMENT для таблицы `questionnaire_questions`
 --
 ALTER TABLE `questionnaire_questions`
   MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `rights`
+-- AUTO_INCREMENT для таблицы `rights`
 --
 ALTER TABLE `rights`
   MODIFY `ID rigths` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
