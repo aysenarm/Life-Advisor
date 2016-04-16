@@ -13,7 +13,7 @@ $rez_long = -79.605780;
 $radius = 2000;
 
 
-//$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.726535,-79.605780&radius=500&rankby=distance&name=shoppers&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
+//$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.726535,-79.605780&radius=2000&name=shoppers&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
 $url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=".$radius."&name=".$name."&key=".$apiKey;
 $resp_json = file_get_contents($url);
 $resp = json_decode($resp_json, true);
@@ -113,6 +113,13 @@ $resp = json_decode($resp_json, true);
     $a = count($resp['results']);
     for ($i = 0; $i< $a; $i++) {
         echo "<li>" . $resp['results'][$i]['vicinity'] . "</li>";
+        echo "
+            <form action='../controller/directions.php' method='post'>
+                <input type='hidden' name='latitude' value='".$resp['results'][$i]['geometry']['location']['lat']."' />
+                <input type='hidden' name='longtitude' value='".$resp['results'][$i]['geometry']['location']['lng']."' />
+                <input type='submit' value='Directions' />
+            </form>
+            ";
     }
         ?>
 </ol>

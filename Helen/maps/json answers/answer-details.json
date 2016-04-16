@@ -1,0 +1,235 @@
+{
+  "html_attributions" : [],
+  "result" : {
+    "address_components" : [
+      {
+        "long_name" : "3530",
+        "short_name" : "3530",
+        "types" : [ "street_number" ]
+      },
+      {
+        "long_name" : "Derry Road East",
+        "short_name" : "Derry Rd E",
+        "types" : [ "route" ]
+      },
+      {
+        "long_name" : "Mississauga",
+        "short_name" : "Mississauga",
+        "types" : [ "locality", "political" ]
+      },
+      {
+        "long_name" : "Ontario",
+        "short_name" : "ON",
+        "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+        "long_name" : "Canada",
+        "short_name" : "CA",
+        "types" : [ "country", "political" ]
+      },
+      {
+        "long_name" : "L4T 4E3",
+        "short_name" : "L4T 4E3",
+        "types" : [ "postal_code" ]
+      }
+    ],
+    "adr_address" : "\u003cspan class=\"street-address\"\u003e3530 Derry Rd E\u003c/span\u003e, \u003cspan class=\"locality\"\u003eMississauga\u003c/span\u003e, \u003cspan class=\"region\"\u003eON\u003c/span\u003e \u003cspan class=\"postal-code\"\u003eL4T 4E3\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eCanada\u003c/span\u003e",
+    "formatted_address" : "3530 Derry Rd E, Mississauga, ON L4T 4E3, Canada",
+    "formatted_phone_number" : "(905) 673-5833",
+    "geometry" : {
+      "access_points" : [
+        {
+          "location" : {
+            "lat" : 43.7143135,
+            "lng" : -79.630781
+          },
+          "travel_modes" : [ "DRIVING", "BICYCLING", "WALKING", "TRANSIT" ]
+        }
+      ],
+      "location" : {
+        "lat" : 43.7140758,
+        "lng" : -79.62997299999999
+      }
+    },
+    "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+    "id" : "cec40db6d0850a5b34fb2a03411ce7426baa15d6",
+    "international_phone_number" : "+1 905-673-5833",
+    "name" : "Shoppers Simply Pharmacy",
+    "opening_hours" : {
+      "open_now" : false,
+      "periods" : [
+        {
+          "close" : {
+            "day" : 0,
+            "time" : "1500"
+          },
+          "open" : {
+            "day" : 0,
+            "time" : "1100"
+          }
+        },
+        {
+          "close" : {
+            "day" : 1,
+            "time" : "2100"
+          },
+          "open" : {
+            "day" : 1,
+            "time" : "0900"
+          }
+        },
+        {
+          "close" : {
+            "day" : 2,
+            "time" : "2100"
+          },
+          "open" : {
+            "day" : 2,
+            "time" : "0900"
+          }
+        },
+        {
+          "close" : {
+            "day" : 3,
+            "time" : "2100"
+          },
+          "open" : {
+            "day" : 3,
+            "time" : "0900"
+          }
+        },
+        {
+          "close" : {
+            "day" : 4,
+            "time" : "2100"
+          },
+          "open" : {
+            "day" : 4,
+            "time" : "0900"
+          }
+        },
+        {
+          "close" : {
+            "day" : 5,
+            "time" : "2100"
+          },
+          "open" : {
+            "day" : 5,
+            "time" : "0900"
+          }
+        },
+        {
+          "close" : {
+            "day" : 6,
+            "time" : "1600"
+          },
+          "open" : {
+            "day" : 6,
+            "time" : "0900"
+          }
+        }
+      ],
+      "weekday_text" : [
+        "Monday: 9:00 AM – 9:00 PM",
+        "Tuesday: 9:00 AM – 9:00 PM",
+        "Wednesday: 9:00 AM – 9:00 PM",
+        "Thursday: 9:00 AM – 9:00 PM",
+        "Friday: 9:00 AM – 9:00 PM",
+        "Saturday: 9:00 AM – 4:00 PM",
+        "Sunday: 11:00 AM – 3:00 PM"
+      ]
+    },
+    "photos" : [
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAgkkHFyjbWMSK37zxqvoIMFmvaAgVjemauJprnJ8GODf4wOz3gdIVOBUMgZ-fvEGV2OKsnjsuLWalYP2cXzlLxjxDe-jGw67FfYHf-IxVJ8xiIK0m0u4LMaR6P6N08SHsEhAZw2PBwtQm4XSsLwNov2yTGhQkgDr5wmX2iQFDOIGLlfQksGg-ww",
+        "width" : 1000
+      },
+      {
+        "height" : 1192,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAbmBDsRq6Me88PQdCkh9qCrqid7j0GdljPipQCh2ysAG2nDBZ9nUQwg6DcCMyuNNKO4ctJQl5nHMTdMqpUxOdItZjGJQK9pdsRKHxUYVNynwxm1NT9A13amAgiSaMR1-OEhBDCdcOi5106dDvQZ8Xa_uGGhRmB-7DFUOBH5m_xuZOGjnDYDeuYg",
+        "width" : 2120
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAABVSKsI2Nftmg3QsH-_PQNxU9M-3krH2Y3PcfZhy7396SiGHSPsSp8_KuTcuvSpJzb45ysaHFs73ZePWBLEakjPUUuW5yPpSf0stqm_QrGL0SR8Qug8ckTL-jgSZXLf00EhBGnkHhpQtMK15dqSRcDk9LGhTO_myBhMau4tl0EtrkMSkuXgo9BQ",
+        "width" : 1000
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAOIzm4OZ_Xx53WG2hemA8JxajI1u41f5jAN6Uz60sqDtm8BKreqDR5f3azRn-rkxsvwwTg3vXJfTrFs0meRNmggAnvpFUFIQtn8jPNFEdtlvUVO3wZPeVajqLa8dVacg4EhClL5j5XvYw3IcCLWqOH0NnGhQf2vg_xzO0ds5FBkTrdGPD7kotRg",
+        "width" : 1000
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAxqfKkRGO-Kiz0OjSEx4GIV4MA4cg4-A4RqLNsTCAmEA7ToCRvZN4eXWu5IuqUIAh6WFEb0SgqtcwNbdJAdV-bc-JTJU0fuptC9WYoBSF3lK27g9Vb483bUOg2ChBNKWZEhCs_QkzolUxFEISRSpTO9RPGhQ0lFQ0OHrJ06QIO79Ut_6Y9sf1Qw",
+        "width" : 1000
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAUMUDDK7Myje-Ha4jJl2YfgzwvqscJDphDprR2i4PerCD-3VhvbRvPxwIdT42tt_INxe-U1pxY6cwG5dDta5LhUlqzOsJyk8na3MUF1EtWJaeJ4Q6zSW184IcYV-PbDYqEhBJG7GL3SEDC6j5M6ut-mDqGhTLkzrXYJxrG2ny_v8eCdPVuy3R3A",
+        "width" : 1000
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAXN-UQhfuGLa3SpuLUn-Y3EBjcygKZFe5j_1EcvzomRIBFdJgkCKgAks6d1DTR8QQWopQaEbGqS0J4rKSsMZ64xrpCAfI32WihcS_33JMQu_Qj5aMxhidsXgiFkwmxqRJEhDCI2fUh8FVUn4IRgYJ7kbtGhRNesUkfYxJvmnq1FzkPt1YAiHb4w",
+        "width" : 1000
+      },
+      {
+        "height" : 1000,
+        "html_attributions" : [
+          "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+        ],
+        "photo_reference" : "CmRdAAAAg6LgHEgwBRC1lzTWtTzIgyety9MhYdnKbRi77yZINpqDosjmDktfRFdtawenEBLpet7Ej99wDMkY-jLtV7Std2-dGvLyobW_utX9uKwpK9U5lpGfD5DCYfCt4Op7q1_1EhBJDr-piCZMmL9HdDysxphIGhT-wkjh0lP2Brh0vOGjrtFxg7RFTg",
+        "width" : 1000
+      }
+    ],
+    "place_id" : "ChIJM8C5huk7K4gRemm8Ia9hlhU",
+    "reference" : "CnRrAAAA_FBULw9WGUkAqa83-nspG-bGz16t1tnVJIPdByqVRlKOM6s8xM5FM0R5IdH3t7O0cPZA3EbAk1vm0ohMvKiV9B5S7abM39eNrK1Ou3v9VePG0Ni5IkwK-hU4MIUDOsBgZJhqmAkOEJhjc8Kq3m80ohIQSH8cOVBnmx0JoH5SGrLgaBoU7I36e_-RfZlbF57rB5G5PnD7mzg",
+    "reviews" : [
+      {
+        "aspects" : [
+          {
+            "rating" : 3,
+            "type" : "overall"
+          }
+        ],
+        "author_name" : "Jagmeet Singh",
+        "author_url" : "https://plus.google.com/105884441409922057708",
+        "language" : "en",
+        "rating" : 5,
+        "text" : "",
+        "time" : 1458950033
+      }
+    ],
+    "scope" : "GOOGLE",
+    "types" : [ "pharmacy", "health", "store", "point_of_interest", "establishment" ],
+    "url" : "https://maps.google.com/?cid=1555538126116252026",
+    "user_ratings_total" : 1,
+    "utc_offset" : -240,
+    "vicinity" : "3530 Derry Road East, Mississauga",
+    "website" : "http://www1.shoppersdrugmart.ca/en/store-locator/store-3072.aspx?utm_source=google&utm_medium=local&utm_campaign=google-local"
+  },
+  "status" : "OK"
+}

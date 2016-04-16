@@ -1,0 +1,66 @@
+{
+  "html_attributions" : [],
+  "results" : [
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.7140758,
+          "lng" : -79.62997299999999
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+      "id" : "cec40db6d0850a5b34fb2a03411ce7426baa15d6",
+      "name" : "Shoppers Simply Pharmacy",
+      "opening_hours" : {
+        "open_now" : false,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1000,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/111694671969149225202/photos\"\u003eShoppers Simply Pharmacy\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRdAAAA93QYw_pt4mvHuqMd-FQchwbCoAwitOt3mmBYS4MGy7gJxshttSaxJq0MldycUtyF7txmxkFUCyNA0rO1TFnHpUOviIGDTkQlT6_RSnQ_Myq748g401P_waZxT9CvsQBYEhDnqUUKJFmGias72G75TIYBGhSgJZuASXrN1u1jcdJEYv_dSbOGfA",
+          "width" : 1000
+        }
+      ],
+      "place_id" : "ChIJM8C5huk7K4gRemm8Ia9hlhU",
+      "reference" : "CnRrAAAA3eKklOny6Z7r_S3-_hr8CMoo7hbdr-rRI4N3iOFsMEde0BA8iYAnP1t12voOSQ-xz8Mov_o5olBq3InF8cyp-sd31EIvgCGk0LqyEoSbIw8H4ZGDF1tNq_QEcpOnCjElnWg8gvTmq3YAVLDQNV-tMxIQfSsfdSXam5Jd4RGb257G0BoUefIl76iMmD6447hY6Ih_9JJItOU",
+      "scope" : "GOOGLE",
+      "types" : [ "pharmacy", "health", "store", "point_of_interest", "establishment" ],
+      "vicinity" : "3530 Derry Road East, Mississauga"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.74100170000001,
+          "lng" : -79.58361049999999
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+      "id" : "15be552065ed9ba133f5abdb7dbb4c9aff4dab69",
+      "name" : "Shoppers Drug Mart",
+      "opening_hours" : {
+        "open_now" : false,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1000,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/115579592260440104421/photos\"\u003eShoppers Drug Mart\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRdAAAARiKSRQP3QKx2ri4hYJza29QnzYIErjkvGGh0EVgQrxsP1x7-XqxVfVYavuf0S03hxdMgnZN5zroaD5EwhhfvVFOnUS-0ro_aL309E3MSsTr1PIljDpEwoGPhcAc-jVt7EhBpV1zWyuzE3ZWkfdhlR0V7GhREstpXFA5a0_Wgk6s9z8gJ76LFAA",
+          "width" : 1000
+        }
+      ],
+      "place_id" : "ChIJg26bAvM6K4gRO27widwp25o",
+      "reference" : "CnRmAAAAEY2sDoimmsWXXg3dJh6corvz6F0zrrSpsWn8zVUJD_ah4NChZCeD1V9PBZxiDYabkp0enYj-CFCHb35Na0FcPmcKYPRxQdWGstqqqCbMdVZ0QPUoHKLGx9Wvh684trrNXFj5kueh724m8e20jaKQ8xIQyp3rXkpJ46ya_CdW_cKCyBoUJ6wUG7mfrpteus54dXH9oGxVRcs",
+      "scope" : "GOOGLE",
+      "types" : [ "pharmacy", "health", "store", "point_of_interest", "establishment" ],
+      "vicinity" : "1530 Albion Road, Etobicoke"
+    }
+  ],
+  "status" : "OK"
+}
