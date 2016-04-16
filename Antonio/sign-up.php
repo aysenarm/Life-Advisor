@@ -31,18 +31,20 @@ if(isset($_POST['btn-signup']))
     {
         try
         {
-            $stmt = $DB_con->prepare("SELECT user_name,user_email FROM users WHERE user_name=:uname OR user_email=:umail");
+            $stmt = $DB_con->prepare("SELECT Username,Email FROM user WHERE Username=:uname OR Email=:umail");
             $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $row=$stmt->fetch(PDO::FETCH_ASSOC);
 
-            if($row['user_name']==$uname) {
+            if($row['Username']==$uname) {
                 $error[] = "sorry username already taken !";
             }
-            else if($row['user_email']==$umail) {
+            else if($row['E-mail']==$umail) {
                 $error[] = "sorry email id already taken !";
             }
             else
-            {
+            {$fname = "";
+                $lname = "";
+
                 if($user->register($fname,$lname,$uname,$umail,$upass))
                 {
                     $user->redirect('sign-up.php?joined');
