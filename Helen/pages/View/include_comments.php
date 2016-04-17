@@ -1,5 +1,14 @@
-<!-- ADD COMMENTS PART -->
+<?php
+if ($_POST) {
+    $page_id = $_POST['page_id'];
+}
+else {
+    $page_id = $_COOKIE['page_id'];
+}
 
+?>
+
+<!-- ADD COMMENTS PART -->
 <!-- IF user is not logged in show message that only registered users can comment,
 offer to log in or register -->
 <form name="comment" action="../Controller/add_comment.php" method="post">
@@ -15,7 +24,7 @@ offer to log in or register -->
 
     <p>
         <!-- ID_page get from the shown page (MAYBE FROM $_GET) -->
-        <input type="hidden" name="page_id" value="2"/>
+        <input type="hidden" name="page_id" value="<?php echo $page_id;?>"/>
         <!-- it should be hidden so we don't need to specify it by hands on the page-->
       <input type="submit" value="Add comment"/>
     </p>
@@ -29,7 +38,6 @@ offer to log in or register -->
 
 <?php
 // ID_page get from the shown page (MAYBE FROM $_GET)
-$page_id = 2;
 
 require_once('../Model/interactiondb.php');
 

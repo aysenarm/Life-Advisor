@@ -1,5 +1,5 @@
 <?php
-require_once '../Model/dbclass.php';
+//require_once '../Model/dbclass.php';
 require_once('../Model/interactiondb.php');
 $com_id = $_POST['com_id'];
 $db = Dbclass::getDB();
@@ -14,7 +14,7 @@ $comment = $a->listOneComment($com_id);
     <!-- the head section -->
     <head>
         <title>Comments on Life Advisor</title>
-        <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
+        <link rel='stylesheet' href='../../comments/bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
     </head>
 
     <!-- the body section -->

@@ -9,7 +9,7 @@
 <!-- the head section -->
 <head>
     <title>Comments on Life Advisor</title>
-    <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='../../comments/bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
 
     <script>
         function showComments(str) {
