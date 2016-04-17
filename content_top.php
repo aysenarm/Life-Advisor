@@ -266,12 +266,42 @@
         <div class="col-sm-4 sidenav text-center">
             <img class="logo" src="images/logo.png">
             <p><a href="index.php">home</a></p>
-            <p><a href="#">recipes</a></p>
-            <p><a href="#">house</a></p>
-            <p><a href="#">health</a></p>
-            <p><a href="#">finances</a></p>
-            <p><a href="#">people</a></p>
-            <p><a href="#">time managment</a></p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="Recipes"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>recipes</a></button>
+                </form>
+            </p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="House"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>house</a></button>
+                </form>
+            </p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="Health"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>health</a></button>
+                </form>
+            </p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="Finances"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>finances</a></button>
+                </form>
+            </p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="People"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>people</a></button>
+                </form>
+            </p>
+            <p>
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                    <input type="hidden" name="menu" value="Time managment"/>
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>time management</a></button>
+                </form>
+            </p>
             <p><a href="#">chat</a></p>
             <p><a href="#">our partners</a></p>
             <p><a href="#">contact us</a></p>
