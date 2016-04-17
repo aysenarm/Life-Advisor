@@ -73,6 +73,7 @@ $page = $a->listOnePage($page_id);
 
             <div class="form-group" style="margin-left: 10px;">
                 <label class="col-sm-2 control-label">Content:</label>
+                <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
                 <div class="col-sm-10">
                     <input type="input" class="col-sm-2 form-control" name="content" value="<?php echo $page['Content']; ?>" />
                 </div>
