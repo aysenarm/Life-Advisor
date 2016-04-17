@@ -56,7 +56,7 @@ class PageDB{
     public function updatePages($id , $title, $idUser, $status, $content, $rank, $tags, $menu, $idImage){
         $db = Dbclass::getDB();
         $query = "UPDATE page
-                    SET Name = :nam,
+                    SET
                     Title = :tit,
                     ID_user = :usr,
                     Status = :stat,
@@ -83,7 +83,7 @@ class PageDB{
     }
 
 
-    //function to LIST ONE page
+//function to LIST ONE page
 
     public function listOnePage($id){
         $db = Dbclass::getDB();
@@ -97,7 +97,8 @@ class PageDB{
     }
 
 
-    // function to SHOW IMAGE attaches to the post
+// function to SHOW IMAGE attached to the post
+
     public function ShowImage($id){
         $db = Dbclass::getDB();
         $query = "SELECT images.link FROM images, page
@@ -112,8 +113,20 @@ class PageDB{
     }
 
 
-}
+//function to LIST pages depending on menu
+    public function listMenuPages($menu){
+        $db = Dbclass::getDB();
+        $query = "SELECT * FROM page
+              WHERE Menu = :menu
+              ORDER BY ID_page";
+        $stm = $db->prepare($query);
+        $stm->bindValue(':menu', $menu, PDO::PARAM_STR);
+        $stm->execute();
+        $res = $stm->fetchAll();
+        return $res;
+    }
 
+}
 
 
 

@@ -27,7 +27,7 @@ $page = $a->listOnePage($page_id);
 require_once '../../../content_top.php';
 ?>
     <form>
-        <input type="submit" class="btn btn-info" value="Back" formaction="admin_pages.php"/>
+        <input type="submit" class="btn btn-info" value="Back" formaction="<?php echo $_SERVER['HTTP_REFERER']?>"/>
     </form>
 <h1><?php echo $page['Title']?></h1>
 <div>
