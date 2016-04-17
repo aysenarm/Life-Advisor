@@ -243,18 +243,18 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form navbar-right" role="search" action="search.php" method="post">
                 <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="Search..">
+                    <input type="text" name="q" class="form-control" placeholder="Search.." >
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
+                        <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                <li><a href="Antonio/index.php"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
             </ul>
         </div>
@@ -265,7 +265,7 @@
     <div class="row content ">
         <div class="col-sm-4 sidenav text-center">
             <img class="logo" src="images/logo.png">
-            <p><a href="#">home</a></p>
+            <p><a href="index.php">home</a></p>
             <p><a href="#">recipes</a></p>
             <p><a href="#">house</a></p>
             <p><a href="#">health</a></p>
