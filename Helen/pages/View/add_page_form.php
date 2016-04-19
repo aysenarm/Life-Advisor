@@ -50,7 +50,7 @@
                     <br />
                 </div>
             </form>
-            <p><a href="index.php" class="btn btn-primary">View Page List</a></p>
+            <p><a href="admin_pages.php" class="btn btn-primary">View Page List</a></p>
         </div>
 
     </div>
