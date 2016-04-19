@@ -37,10 +37,16 @@ class USER
             $stmt = $this->db->prepare("SELECT * FROM user WHERE Username=:uname OR Email=:umail LIMIT 1");
             $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+
+            var_dump($userRow);
+            var_dump($stmt->rowCount());
+
             if($stmt->rowCount() > 0)
             {
                 if(password_verify($upass, $userRow['Password']))
                 {
+                    echo "hello";
+
                     $_SESSION['user_session'] = $userRow['ID_user'];
                     return true;
                 }

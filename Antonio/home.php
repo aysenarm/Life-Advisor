@@ -1,5 +1,5 @@
 <?php
-include_once 'dbconfig.php';
+require_once 'dbconfig.php';
 if(!$user->is_loggedin())
 {
     $user->redirect('index.php');
