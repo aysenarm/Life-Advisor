@@ -16,6 +16,28 @@ class commentDB {
         }
         return $comments;
     }
+    public static function getCommentsByTopic($comment_id) {
+        $db = Database::getDB();
+        $query = "SELECT forum_comments.commentName,
+                  forum_comments.commentID,
+                  forum_comments.datePublished,
+                  forum_comments.userID,
+                  forum_comments.topicID
+                  FROM forum_comments JOIN forum_topics
+                  ON (forum_comments.topicID = forum_topics.topicID)
+                  WHERE forum_comments.topicID ='$comment_id'";
+        $result = $db->query($query);
+        $comments = array();
+        foreach ($result as $row) {
+            $comment = new Comment($row['commentName']);
+            $comment->setID($row['commentID']);
+            $comment->setDatePublished($row['datePublished']);
+            $comment->setUserID($row['userID']);
+            $comment->setTopicID($row['topicID']);
+            $comments[] = $comment;
+        }
+        return $comments;
+    }
     public static function getComment($comment_id) {
         $db = Database::getDB();
         $query = "SELECT * FROM forum_comments WHERE commentID = '$comment_id'";

@@ -9,7 +9,7 @@
             <p><b>Title:</b> <?php echo $category->getName() ?></p>
             <p><b>UserID:</b> <?php echo $category->getUserID() ?></p>
              <p><b>Publishing Date:</b> <?php echo $category->getDatePublished() ?></p>
-<p><a href="index.php?action=list_categories">View Category List</a></p>
+<p><a href="?action=list_categories" class="btn btn-info" role="button">View Category List</a></p>
     </div>
 </div>
 <?php include '../../../view/footer.php'; ?>

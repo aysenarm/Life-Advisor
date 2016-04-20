@@ -1,7 +1,9 @@
 <?php
-class topicDB {
+class topicDB
+{
     //four static method
-    public static function getTopics() {
+    public static function getTopics()
+    {
         $db = Database::getDB();
         $query = 'SELECT * FROM forum_topics';
         $result = $db->query($query);
@@ -16,7 +18,34 @@ class topicDB {
         }
         return $topics;
     }
-    public static function getTopic($topic_id) {
+
+    public static function getTopicsByCategory($category_id)
+    {
+        $db = Database::getDB();
+        $query = "SELECT forum_topics.topicID,
+                  forum_topics.topicName,
+                  forum_topics.userID,
+                  forum_topics.categoryID,
+                  forum_topics.datePublished
+                  FROM forum_topics
+                  INNER JOIN forum_categories ON
+                  (forum_topics.categoryID = forum_categories.categoryID)
+                  WHERE forum_topics.categoryID = '$category_id'";
+        $result = $db->query($query);
+        $topics = array();
+        foreach ($result as $row) {
+            $topic = new Topic($row['topicName']);
+            $topic->setID($row['topicID']);
+            $topic->setUserID($row['userID']);
+            $topic->setCategoryID($row['categoryID']);
+            $topic->setDatePublished($row['datePublished']);
+            $topics[] = $topic;
+        }
+        return $topics;
+    }
+
+    public static function getTopic($topic_id)
+    {
         $db = Database::getDB();
         $query = "SELECT * FROM forum_topics WHERE topicID = '$topic_id'";
         $result = $db->query($query);
@@ -31,14 +60,16 @@ class topicDB {
         return $topic;
     }
 
-    public static function deleteTopic($topic_id) {
+    public static function deleteTopic($topic_id)
+    {
         $db = Database::getDB();
         $query = "DELETE FROM forum_topics WHERE topicID = '$topic_id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
-    public static function addTopic($topic) {
+    public static function addTopic($topic)
+    {
         $db = Database::getDB();
         $name = $topic->getName();
         $userID = $topic->getUserID();
@@ -50,7 +81,9 @@ class topicDB {
         //echo $row_count;
         return $row_count;
     }
-    public static function editTopic($topic) {
+
+    public static function editTopic($topic)
+    {
         $db = Database::getDB();
 
         $topic_id = $topic->getID();
@@ -68,6 +101,15 @@ class topicDB {
             WHERE topicID = '$topic_id'";
         $row_count = $db->exec($query);
         return $row_count;
+    }
+
+    public static function countComments($topicID)
+    {
+        $db = Database::getDB();
+        $query = "SELECT COUNT(*) as c FROM forum_comments WHERE topicID='" . $topicID . "'";
+        $result = $db->query($query);
+        $row = $result->fetch();
+        return $row['c'];
     }
 }
 ?>

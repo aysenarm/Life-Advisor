@@ -5,9 +5,12 @@
     <div id="content">
         <h1><?php echo $image->getName(); ?></h1>
 
-            <p><b>ID:</b> <?php echo $image->getID(); ?></p>
-            <p><b>Title:</b> <?php echo $image->getName() ?></p>
-<p><a href="index.php?action=list_images">View Image List</a></p>
+            
+        <img src="photo_gallery/<?php echo $gallery->getID();?>/<?php echo $image->getName();?>" alt="<?php echo $image->getAlt();?>">
+        <br/>
+        <br/>
+        <br/>
+<p><a href="index.php?action=list_images&gallery_id=<?php echo $gallery->getID();?>" class="btn btn-info" role="button">View Image List</a></p>
     </div>
 </div>
 <?php include '../../../view/footer.php'; ?>

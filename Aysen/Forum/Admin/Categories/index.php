@@ -23,7 +23,7 @@ else if ($action == 'delete_category') {
     categoryDB::deleteCategory($category_id);
 
     // Display the category List page for the current category
-    header("Location: .?");
+    header("Location: .?action=list_categories");
 }
 else if ($action == 'show_add_form') {
    // echo $action;
@@ -44,7 +44,7 @@ else if ($action == 'add_category') {
         categoryDB::addCategory($category);
 
         // Display the category List page for the current category
-        header("Location: .?");
+        header("Location: .?action=list_categories");
     }
 }
 else if ($action == 'show_edit_form') {
@@ -68,7 +68,7 @@ else if ($action == 'edit_category') {
         $category->setDatePublished($today);
         categoryDB::editCategory($category);
         // Display the category List page for the current category
-        header("Location: .?");
+        header("Location: .?action=list_categories");
     }
 }
 else if ($action == 'show_detail_form') {

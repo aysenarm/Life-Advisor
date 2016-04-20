@@ -1,18 +1,21 @@
 <?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Add a New Comment</h1>
-    <form action="index.php" method="post" id="add_comment_form">
+    <div class="form-group">
+
+    <form action="?action=list_comments&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID;?>" method="post" id="add_comment_form">
         <input type="hidden" name="action" value="add_comment" />
 
         <label>Name:</label>
-        <input type="input" name="name" />
+        <input type="input" name="name" class="form-control" />
         <br />
 
         <label>&nbsp;</label>
-        <input type="submit" value="Add Comment" />
+        <input type="submit" value="Add Comment" class="btn btn-default" />
         <br />
     </form>
-    <p><a href="index.php?action=list_comments">View Comment List</a></p>
+        </div>
+    <p><a href="?action=list_comments&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID;?>" class="btn btn-info" role="button">View Comment List</a></p>
 
 </div>
 <?php include '../../../view/footer.php'; ?>

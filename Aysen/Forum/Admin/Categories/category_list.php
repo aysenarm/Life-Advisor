@@ -1,8 +1,10 @@
 <?php include '../../../view/header.php'; ?>
+
 <div id="main">
 
     <h1>Category List</h1>
-        <table>
+    <div class="table-responsive">
+        <table class="table table-hover">
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -13,32 +15,43 @@
                 <th>Details</th>
             </tr>
             <?php foreach ($categories as $category) : ?>
-            <tr>
+            <tr onclick='showTopics(<?php echo $category->getID(); ?>)'>
                 <td><?php echo $category->getID(); ?></td>
                 <td><?php echo $category->getName(); ?></td>
                 <td><?php echo $category->getUserID(); ?></td>
                 <td><?php echo $category->getDatePublished(); ?></td>
-                <td><form action="." method="post" id="delete_category_form">
+                <td><form action=".?action=list_categories" method="post" id="delete_category_form">
                     <input type="hidden" name="action" value="delete_category" />
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Delete" />
+                    <input type="submit" value="Delete" class="btn btn-default" />
                 </form></td>
-                <td><form action="." method="post" id="edit_category_form">
+                <td><form action=".?action=list_categories" method="post" id="edit_category_form">
                     <input type="hidden" name="action" value="show_edit_form" />
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Edit" />
+                    <input type="submit" value="Edit" class="btn btn-default" />
                 </form></td>
-                <td><form action="." method="post" id="detail_category_form">
+                <td><form action=".?action=list_categories" method="post" id="detail_category_form">
                     <input type="hidden" name="action" value="show_detail_form">
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Details" />
+                    <input type="submit" value="Details"class="btn btn-default" />
                 </form></td>
             </tr>
             <?php endforeach; ?>
         </table>
+        </div>
         
-        <p><a href="?action=show_add_form">Add Category</a></p>
+        <p><a href="?action=show_add_form" class="btn btn-info" role="button">Add Category</a></p>
     </div>
-
+    <script>
+        function showTopics(rowId) {
+            window.location.assign("<?php
+                $url  = "http://";
+                $url .= $_SERVER['SERVER_NAME'];
+                $url .= htmlspecialchars($_SERVER['REQUEST_URI']);
+                $themeurl = dirname(dirname($url)) . "/Topics";
+                echo $themeurl;?>" + "?action=list_topics&category_id="+rowId);
+        }
+    </script>
 </div>
+
 <?php include '../../../view/footer.php'; ?>

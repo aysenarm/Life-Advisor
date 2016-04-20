@@ -2,6 +2,10 @@
 class Image {
     private $id;
     private $name;
+    private $galleryID;
+    private $userID;
+    private $datePublished;
+    private $alt;
 
     public function __construct($name) {
         $this->name = $name;
@@ -20,6 +24,70 @@ class Image {
 
     public function setName($value) {
         $this->name = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGalleryID()
+    {
+        return $this->galleryID;
+    }
+
+    /**
+     * @param mixed $galleryID
+     */
+    public function setGalleryID($galleryID)
+    {
+        $this->galleryID = $galleryID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserID()
+    {
+        return $this->userID;
+    }
+
+    /**
+     * @param mixed $userID
+     */
+    public function setUserID($userID)
+    {
+        $this->userID = $userID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDatePublished()
+    {
+        return $this->datePublished;
+    }
+
+    /**
+     * @param mixed $datePublished
+     */
+    public function setDatePublished($datePublished)
+    {
+        $this->datePublished = $datePublished;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * @param mixed $alt
+     */
+    public function setAlt($alt)
+    {
+        $this->alt = $alt;
     }
 }
 ?>

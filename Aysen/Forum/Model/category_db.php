@@ -59,5 +59,14 @@ class categoryDB {
         $row_count = $db->exec($query);
         return $row_count;
     }
+    public static function countTopics($categoryID) {
+        $db = Database::getDB();
+        $query = "SELECT COUNT(*) as c FROM forum_topics WHERE categoryID='".$categoryID."'";
+        $result = $db->query($query);
+        $row = $result->fetch();
+        return $row['c'];
+
+
+    }
 }
 ?>
