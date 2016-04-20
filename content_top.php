@@ -1,3 +1,8 @@
+<?php
+define('ROOTPATH', dirname(__FILE__));
+$logo = ROOTPATH."/images/logo.png";
+$logo2 = ROOTPATH.'/images/logo2.png';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,49 +269,54 @@
 <div class="container">
     <div class="row content ">
         <div class="col-sm-4 sidenav text-center">
-            <img class="logo" src="images/logo.png">
+            <?php
+                $url  = "http://";
+                $url .= $_SERVER['SERVER_NAME'];
+                //$url .= htmlspecialchars($_SERVER['REQUEST_URI']);
+                $imageUrl = $url."/Life-Advisor/images";?>
+            <img class="logo"  style="color:blue;" src="<?php echo $imageUrl.'/logo.png';?>">       
             <p><a href="index.php">home</a></p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Recipes"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>recipes</a></button>
                 </form>
             </p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="House"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>house</a></button>
                 </form>
             </p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Health"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>health</a></button>
                 </form>
             </p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Finances"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>finances</a></button>
                 </form>
             </p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="People"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>people</a></button>
                 </form>
             </p>
             <p>
-                <form action="http://localhost/PHP%20class/PROJECT/Life-Advisor/Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Time managment"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>time management</a></button>
                 </form>
             </p>
-            <p><a href="#">chat</a></p>
+            <p><a href="#">forum</a></p>
             <p><a href="#">our partners</a></p>
             <p><a href="#">contact us</a></p>
             <p><a href="#">donate</a></p>
-            <img class="logo2" src="images/logo2.png">
+            <img class="logo2" src="<?php echo $logo2;?>">
 
             <div class="form-group">
                 <p class="control-label" for="email">subscribe our <span class="colortext">newsletter</span></p>
