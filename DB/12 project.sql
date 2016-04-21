@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 21 2016 г., 23:32
+-- Время создания: Апр 17 2016 г., 03:16
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -155,8 +155,8 @@ CREATE TABLE `page` (
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
 (1, 'Students', 2, 'posted', '<h3> hjk</h3>', 0, 'student', 'People', 0),
-(2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 1, 'test', 'Recipes', 1),
-(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>', 1, 'test', 'Finances', 1);
+(2, 'Test', 1, 'not posted', '<h1>jkhfg</h1>', 2, 'test', 'Finances', 2),
+(3, 'Test page', 2, 'posted', '<h1>WOWOWOWOWOOWOW </h1>', 0, 'test', 'Recipes', 1);
 
 -- --------------------------------------------------------
 
@@ -245,7 +245,7 @@ CREATE TABLE `user` (
   `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Rights` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Newsletter` set('signed','not signed') COLLATE utf8_unicode_ci NOT NULL,
@@ -260,7 +260,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `Email`, `Newsletter`, `Phone`, `ID_image`) VALUES
 (1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2),
-(15, '', '', '', '$2y$10$4F2OJ6pKczhQlT1sOGoA2.EbkEtbCpV9GSpZ3xESt4.G4Xk7Vwcq.', 'helen', 'helen.boitsova@gmail.com', '', '', 0);
+(3, '', '', '', '$2y$10$AnVmd5tMsQZKE0r2IKfGXOaB9QQXV6r.PdOWJb0ks3z', 'antonio', 'amanuelfreire@gmail.com', '', '', 0),
+(4, '', '', '', '123456', 'to', 'eail@mail.ca', '', '', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -370,7 +371,7 @@ ALTER TABLE `rights`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

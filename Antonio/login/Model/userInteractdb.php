@@ -1,20 +1,20 @@
 <?php
-class USER
-{
-    private $db;
 
-    function __construct($DB_con)
-    {
-        $this->db = $DB_con;
+require_once '../Model/dbclass.php';
+session_start();
+class UserDB{
+    public function __construct() {
+
     }
 
+    // REGISTER a new user
     public function register($uname,$umail,$upass)
     {
         try
         {
             $new_password = password_hash($upass, PASSWORD_DEFAULT);
-
-            $stmt = $this->db->prepare("INSERT INTO user(Username,Email,Password)
+            $db = Dbclass::getDB();
+            $stmt = $db->prepare("INSERT INTO user(Username,Email,Password)
                                                        VALUES(:uname, :umail, :upass)");
 
             $stmt->bindparam(":uname", $uname);
@@ -30,16 +30,44 @@ class USER
         }
     }
 
+
+
+    // CHECK user existence
+    public function check($uname,$umail)
+    {
+        try
+        {
+            $db = Dbclass::getDB();
+            $stmt = $db->prepare("SELECT Username,Email FROM user WHERE
+                                  Username=:uname OR
+                                  Email=:umail
+                                  ");
+            $stmt->bindparam(":uname", $uname);
+            $stmt->bindparam(":umail", $umail);
+            $stmt->execute();
+            $row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $row;
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+    }
+
+
+    // LOGIN user
     public function login($uname,$umail,$upass)
     {
         try
         {
-            $stmt = $this->db->prepare("SELECT * FROM user WHERE Username=:uname OR Email=:umail LIMIT 1");
+            $db = Dbclass::getDB();
+            $stmt = $db->prepare("SELECT * FROM user WHERE Username=:uname OR Email=:umail LIMIT 1");
             $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
-            var_dump($userRow);
-            var_dump($stmt->rowCount());
+            //var_dump($userRow);
+            //var_dump($stmt->rowCount());
 
             if($stmt->rowCount() > 0)
             {
@@ -60,6 +88,7 @@ class USER
         }
     }
 
+    // CHECK if user is already logged in
     public function is_loggedin()
     {
         if(isset($_SESSION['user_session']))
@@ -68,16 +97,14 @@ class USER
         }
     }
 
+    // redirection to passing page
     public function redirect($url)
     {
         header("Location: $url");
     }
 
-    public function logout()
-    {
-        session_destroy();
-        unset($_SESSION['user_session']);
-        return true;
-    }
+
 }
-?>
+
+$user = new UserDB();
+var_dump($user->check("helen1","helen.boitsova@gmail.com"));
