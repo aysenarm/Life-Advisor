@@ -57,5 +57,6 @@ if($user->is_loggedin()!="")
         catch(PDOException $e)
         {
             echo $e->getMessage();
+            include('database_error.php');
         }
     }

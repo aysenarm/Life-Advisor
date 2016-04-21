@@ -27,6 +27,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
+            include('database_error.php');
         }
     }
 
@@ -52,6 +53,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
+            include('database_error.php');
         }
     }
 
@@ -85,6 +87,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
+            include('database_error.php');
         }
     }
 
@@ -104,7 +107,13 @@ class UserDB{
     }
 
 
-}
+    //LOGOUT
+    public function logout()
+    {
+        session_destroy();
+        unset($_SESSION['user_session']);
+        return true;
+    }
 
-$user = new UserDB();
-var_dump($user->check("helen1","helen.boitsova@gmail.com"));
+
+}
