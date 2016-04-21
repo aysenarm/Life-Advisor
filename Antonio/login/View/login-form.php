@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php
+require_once '../Model/userInteractdb.php';
+$user = new UserDB();
+if($user->is_loggedin()!="")
+{
+$user->redirect('../View/home.php');
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -13,6 +20,7 @@
                 <form method="post" action="../Controller/login.php">
                     <h2>Sign in.</h2><hr />
                     <?php
+
                     if(isset($_GET["e"])) {
                         if ($_GET['e'] == 1) {
                             ?>
@@ -20,6 +28,7 @@
                                 <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; Wrong Details!
                             </div>
                             <?php
+                            unset($_GET);
                         }
                     }
                     ?>

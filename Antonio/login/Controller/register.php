@@ -4,13 +4,14 @@ $user = new UserDB();
 
 if($user->is_loggedin()!="")
 {
-    $user->redirect('home.php');
+    $user->redirect('../View/home.php');
 }
 
 
     $uname = trim($_POST['txt_uname']);
     $umail = trim($_POST['txt_umail']);
     $upass = trim($_POST['txt_upass']);
+    $rights = $_POST['r'];
 
     if($uname=="") {
         $error[] = "provide username !";
@@ -48,7 +49,7 @@ if($user->is_loggedin()!="")
             }
             else
             {
-                if($user->register($uname,$umail,$upass))
+                if($user->register($uname,$umail,$upass,$rights))
                 {
                     $user->redirect('../View/register-form.php?joined');
                 }

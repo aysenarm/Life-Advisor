@@ -8,18 +8,19 @@ class UserDB{
     }
 
     // REGISTER a new user
-    public function register($uname,$umail,$upass)
+    public function register($uname,$umail,$upass,$rights)
     {
         try
         {
             $new_password = password_hash($upass, PASSWORD_DEFAULT);
             $db = Dbclass::getDB();
-            $stmt = $db->prepare("INSERT INTO user(Username,Email,Password)
-                                                       VALUES(:uname, :umail, :upass)");
+            $stmt = $db->prepare("INSERT INTO user(Username,Email,Password,Rights)
+                                                       VALUES(:uname, :umail, :upass,:rights)");
 
             $stmt->bindparam(":uname", $uname);
             $stmt->bindparam(":umail", $umail);
             $stmt->bindparam(":upass", $new_password);
+            $stmt->bindparam(":rights", $rights);
             $stmt->execute();
 
             return $stmt;
@@ -30,7 +31,6 @@ class UserDB{
             include('database_error.php');
         }
     }
-
 
 
     // CHECK user existence
@@ -115,5 +115,27 @@ class UserDB{
         return true;
     }
 
+
+    // select ONE user by it's ID
+    public function userInfo($id)
+    {
+        try
+        {
+            $db = Dbclass::getDB();
+            $stmt = $db->prepare("SELECT * FROM user WHERE
+                                  ID_user = :id
+                                  ");
+            $stmt->bindparam(":id", $id);
+            $stmt->execute();
+            $row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $row;
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+            include('database_error.php');
+        }
+    }
 
 }

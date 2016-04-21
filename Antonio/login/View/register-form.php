@@ -82,6 +82,7 @@
             <div class="form-group">
                 <input type="password" class="form-control" name="txt_upass" placeholder="Enter Password" />
             </div>
+            <input type="hidden" name="r" value="2">
             <div class="clearfix"></div><hr />
             <div class="form-group">
                 <button type="submit" class="btn btn-block btn-primary" name="btn-signup">
@@ -89,6 +90,7 @@
                 </button>
             </div>
             <br />
+            <label>Already have an account? <a href="login-form.php">Sign In</a></label>
         </form>
     </div>
 </div>
