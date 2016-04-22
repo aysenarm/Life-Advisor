@@ -4,7 +4,7 @@ $user = new UserDB();
 
 if($user->is_loggedin()!="")
 {
-    $user->redirect('home.php');
+    $user->redirect("http://localhost/Life-Advisor/");
 }
     $uname = $_POST['txt_uname_email'];
     $umail = $_POST['txt_uname_email'];
@@ -12,7 +12,7 @@ if($user->is_loggedin()!="")
 
     if($user->login($uname,$umail,$upass))
     {
-        $user->redirect('../View/home.php');
+        $user->redirect($_SERVER['HTTP_REFERER']);
     }
     else
     {

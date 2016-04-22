@@ -1,6 +1,6 @@
 <?php
 
-require_once 'dbclass.php';
+require_once 'maindbclass.php';
 session_start();
 class UserDB{
     public function __construct() {
@@ -13,7 +13,7 @@ class UserDB{
         try
         {
             $new_password = password_hash($upass, PASSWORD_DEFAULT);
-            $db = Dbclass::getDB();
+            $db = mainDbclass::getDB();
             $stmt = $db->prepare("INSERT INTO user(Username,Email,Password,Rights)
                                                        VALUES(:uname, :umail, :upass,:rights)");
 
@@ -28,7 +28,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
-            include('database_error.php');
+            include('maindatabase_error.php');
         }
     }
 
@@ -38,7 +38,7 @@ class UserDB{
     {
         try
         {
-            $db = Dbclass::getDB();
+            $db = mainDbclass::getDB();
             $stmt = $db->prepare("SELECT Username,Email FROM user WHERE
                                   Username=:uname OR
                                   Email=:umail
@@ -53,7 +53,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
-            include('database_error.php');
+            include('maindatabase_error.php');
         }
     }
 
@@ -63,7 +63,7 @@ class UserDB{
     {
         try
         {
-            $db = Dbclass::getDB();
+            $db = mainDbclass::getDB();
             $stmt = $db->prepare("SELECT * FROM user WHERE Username=:uname OR Email=:umail LIMIT 1");
             $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -87,7 +87,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
-            include('database_error.php');
+            include('maindatabase_error.php');
         }
     }
 
@@ -121,7 +121,7 @@ class UserDB{
     {
         try
         {
-            $db = Dbclass::getDB();
+            $db = mainDbclass::getDB();
             $stmt = $db->prepare("SELECT * FROM user WHERE
                                   ID_user = :id
                                   ");
@@ -134,7 +134,7 @@ class UserDB{
         catch(PDOException $e)
         {
             echo $e->getMessage();
-            include('database_error.php');
+            include('maindatabase_error.php');
         }
     }
 

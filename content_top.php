@@ -1,4 +1,5 @@
 <?php
+require_once 'Model/userInteractdb.php';
 define('ROOTPATH', dirname(__FILE__));
 $logo = ROOTPATH."/images/logo.png";
 $logo2 = ROOTPATH.'/images/logo2.png';
@@ -259,8 +260,28 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="Antonio/index.php"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
+                <?php
+
+                $user = new UserDB();
+                if($user->is_loggedin()!="")
+                {
+                    $name = $user->userInfo($_SESSION['user_session']);
+                    echo "<li><span style='color:white;'>Hello, <a style='color:white;'>".$name['Username']."</a></span></li>";
+                    ?>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
+                    <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+                    <?php
+                } else {
+                    ?>
+                    <li><a href="http://localhost/Life-Advisor/Antonio/login/View/login-form.php"><span class="glyphicon glyphicon-log-in"></span>
+                            Sign In</a></li>
+                    <li><a href="Antonio/login/View/register-form.php"><span class="glyphicon glyphicon-plus"></span>
+                            Register</a></li>
+
+                    <?php
+
+                }
+                ?>
             </ul>
         </div>
 
@@ -274,7 +295,7 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 $url .= $_SERVER['SERVER_NAME'];
                 //$url .= htmlspecialchars($_SERVER['REQUEST_URI']);
                 $imageUrl = $url."/Life-Advisor/images";?>
-            <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/PHP%20class/PROJECT/Life-Advisor/images/logo.png';?>">
+            <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo.png';?>">
             <p><a href="index.php">home</a></p>
             <p>
                 <form action="Helen/pages/View/show_menu_pages.php" method="post">
@@ -316,7 +337,7 @@ $logo2 = ROOTPATH.'/images/logo2.png';
             <p><a href="#">our partners</a></p>
             <p><a href="#">contact us</a></p>
             <p><a href="#">donate</a></p>
-            <img class="logo2" src="<?php echo $logo2;?>">
+            <img class="logo2" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo2.png';?>">
 
             <div class="form-group">
                 <p class="control-label" for="email">subscribe our <span class="colortext">newsletter</span></p>

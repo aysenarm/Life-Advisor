@@ -1,5 +1,5 @@
 <?php
-//require_once '../Model/dbclass.php';
+//require_once '../Model/maindbclass.php';
 require_once('../Model/interactiondb.php');
 $com_id = $_POST['com_id'];
 $db = Dbclass::getDB();

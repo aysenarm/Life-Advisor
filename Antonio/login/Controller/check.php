@@ -8,8 +8,9 @@ $rez = $user->userInfo($_SESSION['user_session']);
     //echo $rez['Rights'];
     $_SESSION['role'] = $rez['Rights'];
    // echo $_SESSION['role'];
-    echo $_SERVER['DOCUMENT_ROOT'];
+
 }
 else {
-$user->redirect("../View/login-form.php");
+$user->redirect($_SERVER['HTTP_REFERER']);
+
 }

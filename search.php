@@ -2,7 +2,7 @@
 
 
 <?php
-require_once 'Antonio/dbclass.php';
+require_once 'Antonio/maindbclass.php';
 $db = Dbclass::getDB();
 // Users search terms is saved in $_POST['q']
 $q = $_POST['q'];
