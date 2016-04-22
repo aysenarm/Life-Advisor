@@ -53,7 +53,7 @@ class PageDB{
 
 // function to UPDATE a page
 
-    public function updatePages($id , $title, $idUser, $status, $content, $rank, $tags, $menu, $idImage){
+    public function updatePages($id , $title, $idUser, $status, $content, $tags, $menu, $idImage){
         $db = Dbclass::getDB();
         $query = "UPDATE page
                     SET
@@ -61,7 +61,6 @@ class PageDB{
                     ID_user = :usr,
                     Status = :stat,
                     Content = :cont,
-                    Rank = :rank,
                     Tags = :tags,
                     Menu = :menu,
                     ID_image = :im
@@ -73,10 +72,37 @@ class PageDB{
         $stm->bindValue(':usr', $idUser, PDO::PARAM_INT);
         $stm->bindValue(':stat', $status, PDO::PARAM_STR);
         $stm->bindValue(':cont', $content, PDO::PARAM_STR);
-        $stm->bindValue(':rank', $rank, PDO::PARAM_INT);
         $stm->bindValue(':tags', $tags, PDO::PARAM_STR);
         $stm->bindValue(':menu', $menu, PDO::PARAM_STR);
         $stm->bindValue(':im', $idImage, PDO::PARAM_INT);
+
+        $count = $stm->execute();
+        return "Updated rows: " . $count;
+    }
+
+
+// function to UPDATE a page WITHOUT image
+
+    public function updatePagesNoImage($id , $title, $idUser, $status, $content, $tags, $menu){
+        $db = Dbclass::getDB();
+        $query = "UPDATE page
+                    SET
+                    Title = :tit,
+                    ID_user = :usr,
+                    Status = :stat,
+                    Content = :cont,
+                    Tags = :tags,
+                    Menu = :menu
+                      WHERE ID_page = :id
+                 ";
+        $stm = $db->prepare($query);
+        $stm->bindParam(':id', $id);
+        $stm->bindValue(':tit', $title, PDO::PARAM_STR);
+        $stm->bindValue(':usr', $idUser, PDO::PARAM_INT);
+        $stm->bindValue(':stat', $status, PDO::PARAM_STR);
+        $stm->bindValue(':cont', $content, PDO::PARAM_STR);
+        $stm->bindValue(':tags', $tags, PDO::PARAM_STR);
+        $stm->bindValue(':menu', $menu, PDO::PARAM_STR);
 
         $count = $stm->execute();
         return "Updated rows: " . $count;
@@ -95,23 +121,6 @@ class PageDB{
         //var_dump($stm->fetch());
         return $stm->fetch();
     }
-
-
-// function to SHOW IMAGE attached to the post
-
-    public function ShowImage($id){
-        $db = Dbclass::getDB();
-        $query = "SELECT images.link FROM images, page
-               WHERE page.ID_image = images.ID_image
-               AND page.ID_image = :id";
-        $stm = $db->prepare($query);
-        $stm->bindValue(':id', $id, PDO::PARAM_INT);
-        $stm->execute();
-        $res = $stm->fetchAll();
-        //var_dump($res);
-        return $res;
-    }
-
 
 //function to LIST pages depending on menu
     public function listMenuPages($menu){

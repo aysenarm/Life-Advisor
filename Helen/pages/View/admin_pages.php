@@ -33,13 +33,12 @@ $pages = $pdb->listPages();
 <div id="page">
 
     <div id="header">
-        <h1>Page Manager</h1>
+        <h2>Posts Manager</h2>
     </div>
 
     <div id="main">
 
         <div id="content">
-            <h2>Pages list</h2>
             <table class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>ID</th>
@@ -49,7 +48,6 @@ $pages = $pdb->listPages();
                     <th>Rank</th>
                     <th>Tags</th>
                     <th>Menu</th>
-                    <th>ID_image</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
@@ -64,7 +62,6 @@ $pages = $pdb->listPages();
                         <td><?php echo $page['Rank']; ?></td>
                         <td><?php echo $page['Tags']; ?></td>
                         <td><?php echo $page['Menu']; ?></td>
-                        <td><?php echo $page['ID_image']; ?></td>
                         <td>
                             <form action="../Controller/delete_page.php" method="post" id="delete_page_form">
 

@@ -1,6 +1,8 @@
 <?php
 require_once('../Model/interactiondb.php');
 
+
+
 if ($_POST){
     $page_id = $_POST['page_id'];
 
@@ -36,11 +38,10 @@ require_once '../../../content_top.php';
 <h1><?php echo $page['Title']?></h1>
 <div>
     <?php
-    $image = $a->ShowImage($page['ID_image']);
-    //var_dump($image);
+    $image = $page['ID_image'];
     if (!empty($image)){
     ?>
-    <img src="<?php echo $image[0]['link'];?>">
+    <img src="http://localhost/Life-Advisor/Helen/pages/img/<?php echo $image;?>">
     <?php
     }
     ?>

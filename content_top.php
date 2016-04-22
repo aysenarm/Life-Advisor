@@ -260,9 +260,7 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <?php
-
-                $user = new UserDB();
+                <?php $user = new UserDB();
                 if($user->is_loggedin()!="")
                 {
                     $name = $user->userInfo($_SESSION['user_session']);

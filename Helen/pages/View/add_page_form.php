@@ -65,7 +65,6 @@
                     <br />
 
 
-                   <!--<input type="hidden" name="image" value="0" /> -->
                     <input type="file" name="image"><br>
 
                     <label>&nbsp;</label>

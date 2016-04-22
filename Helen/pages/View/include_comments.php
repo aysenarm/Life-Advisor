@@ -14,7 +14,7 @@ offer to log in or register -->
 <form name="comment" action="../Controller/add_comment.php" method="post">
     <p>
         <!-- IF user is logged in - send INTO POST ID_user as below-->
-        <input type="hidden" name="name" value="1"/>
+        <input type="hidden" name="name" value="<?php if(isset($_SESSION['user_session'])){echo $_SESSION['user_session'];}else echo "1";?>"/>
 
     <div class="form-group">
         <label for="comment">Comment:</label>
@@ -23,7 +23,7 @@ offer to log in or register -->
     </p>
 
     <p>
-        <!-- ID_page get from the shown page (MAYBE FROM $_GET) -->
+        <!-- ID_page get from the shown page  -->
         <input type="hidden" name="page_id" value="<?php echo $page_id;?>"/>
         <!-- it should be hidden so we don't need to specify it by hands on the page-->
       <input type="submit" value="Add comment"/>
@@ -37,7 +37,7 @@ offer to log in or register -->
 <!-- LIST COMMENTS PART -->
 
 <?php
-// ID_page get from the shown page (MAYBE FROM $_GET)
+// ID_page get from the shown page
 
 require_once('../Model/interactiondb.php');
 

@@ -1,9 +1,25 @@
 <?php
-require_once '../../../content_top.php';
+
 require_once('../Model/interactiondb.php');
 
 
-$menu = $_POST['menu'];
+if ($_POST){
+    $menu = $_POST['menu'];
+
+    if (isset($_COOKIE['menu'])){
+        setcookie('menu', "" , time()- 3600,"/","localhost",false,true);
+    }
+    //setcookie(name, value, expire, path, domain, secure, httponly);
+    $expire =  new DateTime('+1 month');
+    setcookie('menu',$menu,$expire->getTimestamp(),"/","localhost",false,true);
+}
+else {
+    $menu = $_COOKIE['menu'];
+}
+
+require_once '../../../content_top.php';
+
+//$menu = $_POST['menu'];
 
 $a = new PageDB();
 $page = $a->listMenuPages($menu);
@@ -25,18 +41,21 @@ $page = $a->listMenuPages($menu);
 
     <?php
     foreach ($page as $p) {
-        echo '<div>';
-        echo "Title : " . $p['Title'] . "<br/>";
-        echo "Content : " . $p['Content'] . "<br/>";
-        echo "Rank : " . $p['Rank'] . "<br/>";
-        echo "Tags : " . $p['Tags'] . "<br/>";
-        echo '</div>  <hr>';
-        echo '';
+        ?>
+        <div>
+            <p>Title : <?php echo $p['Title'] ?></p>
+            <p>Content : <?php echo substr($p['Content'], 0, 200) ?> ...</p><br/>
+            <p>Rank : <?php echo $p['Rank'] ?></p>
+            <p>Tags : <?php echo $p['Tags'] ?></p>
+            <form action="see_page.php" method="post">
+                <input type="hidden" name="page_id" value="<?php echo $p['ID_page']; ?>">
+                <button type='submit' class='btn btn-info'>Read more</button>
+            </form>
+        </div>
+        <hr>
 
+        <?php
     }
-
-
-
     require_once '../../../content_bottom.php';   ?>
 
     </body>

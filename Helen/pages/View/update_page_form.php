@@ -16,7 +16,7 @@ $page = $a->listOnePage($page_id);
 
     <!-- the head section -->
     <head>
-        <title>Pages of my website</title>
+        <title>Update blog post</title>
         <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
         <script type='text/javascript' src="../../ckeditor_4.5.8_standard/ckeditor/ckeditor.js"></script>
     </head>
@@ -25,7 +25,7 @@ $page = $a->listOnePage($page_id);
     <body style="margin-left: 10px;">
     <?php require_once '../../../content_top.php'; ?>
     <h1>Update Product</h1>
-        <form action="../Controller/update_page.php" method="post" class="form-horizontal">
+        <form action="../Controller/update_page.php" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="form-group" style="margin-left: 10px;">
                 <input type="hidden" name="id" value="<?php echo $page_id; ?>"/>
             </div>
@@ -52,7 +52,7 @@ $page = $a->listOnePage($page_id);
                     <select class="form-control" name="status">
                         <?php $selStat = $page['Status']?>
                         <?php
-                        $types = ['Posted', 'NOT posted'];
+                        $types = ['posted', 'not posted'];
                         foreach($types as $type) { ?>
                             <option value="<?= $type ?>" <?php @$selStat==$type ? print "selected" : false; ?> > <?= $type ?></option>
                             <?php
@@ -65,20 +65,39 @@ $page = $a->listOnePage($page_id);
             <div class="form-group" style="margin-left: 10px;">
                 <label class="control-label">Content:</label>
                 <textarea class="ckeditor" name="content" rows="50" cols="20" ><?php echo $page['Content']; ?></textarea>
-
-
-               <!-- <div class="col-sm-10">
-                    <input type="input" class="col-sm-2 form-control" name="content" value="<?php echo $page['Content']; ?>" />
-                </div> -->
                 <br />
             </div>
-                <label class="control-label">&nbsp;</label>
-                <input type="submit" class="btn btn-success" value="Update Page" />
-                <br />
+
+            <div class="form-group" style="margin-left: 10px;">
+                <p>Picture attached now: <?php echo $page['ID_image']; ?></p>
+            <label>Upload a new main picture:</label>
+            <input type="file" name="image"><br>
+            </div>
+
+            <label>Tags:</label>
+            <input type="input" class="form-control" name="tags" value="<?php echo $page['Tags']; ?>"/>
+            <br />
+
+            <label>Menu:</label>
+            <select class="form-control" name="menu">
+                <?php $menStat = $page['Menu'];
+                $menus = ['Recipes', 'House','Health','Finances','People','Time management'];
+                foreach($menus as $menu) { ?>
+                    <option value="<?= $menu ?>" <?php @$menStat==$menu ? print "selected" : false; ?> > <?= $menu ?></option>
+                    <?php
+                } ?>
+            </select>
+            <br />
+
+
+
+            <label class="control-label">&nbsp;</label>
+            <input type="submit" class="btn btn-success" value="Update" />
+            <br />
 
         </form>
 <br />
-        <p><a href="admin_pages.php" class="btn btn-primary">View Page List</a></p>
+        <p><a href="admin_pages.php" class="btn btn-primary">View Posts List</a></p>
 
 <?php require_once '../../../content_bottom.php'; ?>
     </body>

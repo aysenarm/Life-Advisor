@@ -8,11 +8,11 @@ $content = $_POST['content'];
 $rank = $_POST['rank'];
 $tags = $_POST['tags'];
 $menu = $_POST['menu'];
-//$image = $_FILES["image"]["name"];
-$image = 0;
+$image = $_FILES["image"]["name"];
+
 
 // Validate inputs
-if ( empty($title) || empty($user) || empty($status) || empty($content)) {
+if ( empty($title) || empty($user) || empty($status) || empty($content) || empty($image)) {
     echo "Invalid page data. Check all fields and try again.";
 } else {
     // Проверяем загружен ли файл
@@ -21,17 +21,12 @@ if ( empty($title) || empty($user) || empty($status) || empty($content)) {
         $path = '../img/';
 
         if (!move_uploaded_file($_FILES["image"]["tmp_name"], $path.$_FILES["image"]["name"])
-        //!@copy($_FILES['image']['tmp_name'], $path . $_FILES['picture']['name'])
         ){
         echo 'Что-то пошло не так';
         echo $_FILES['image']['tmp_name'];
         echo $_FILES['image']['name'];
         }
         else {
-
-        // Если файл загружен успешно, перемещаем его
-        // из временной директории в конечную
-        //move_uploaded_file($_FILES["image"]["tmp_name"], "img/".$_FILES["image"]["name"]);
 
         // If valid, add the product to the database
         require_once('../Model/interactiondb.php');
