@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 22 2016 г., 18:58
+-- Время создания: Апр 22 2016 г., 04:59
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -44,8 +44,7 @@ INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VAL
 (31, 2, 1, 'hahahaha', 'published'),
 (34, 3, 2, 'Helen test', 'published'),
 (44, 2, 1, 'fgh', 'published'),
-(46, 2, 1, 'tester', 'published'),
-(47, 3, 1, 'my comment this night!', 'published');
+(46, 2, 1, 'tester', 'published');
 
 -- --------------------------------------------------------
 
@@ -130,7 +129,7 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`ID_image`, `alt_text`, `link`) VALUES
 (1, 'image 1', 'http://flymama.info/wp-content/uploads/2013/04/general1.jpg'),
-(2, 'test pic 2', 'http://localhost/Life-Advisor/img/test.jpg');
+(2, 'test pic 2', 'http://localhost/PHP%20class/PROJECT/Life-Advisor/img/test.jpg');
 
 -- --------------------------------------------------------
 
@@ -147,7 +146,7 @@ CREATE TABLE `page` (
   `Rank` int(11) DEFAULT NULL,
   `Tags` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Menu` set('Recipes','Finances','Time management','Health','House','People') COLLATE utf8_unicode_ci NOT NULL,
-  `ID_image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+  `ID_image` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -155,14 +154,9 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
-(1, 'Students', 2, 'posted', '<h3> hjk</h3>', 0, 'student', 'People', '0'),
-(2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 5, 'test', 'Finances', '1'),
-(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>', 13, 'test', 'Finances', '2'),
-(9, 'Student', 15, 'not posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'friday', 'Recipes', '0'),
-(4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '1'),
-(7, 'Manitoba list', 15, 'not posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'friday', 'House', '0'),
-(6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'friday', 'Finances', '0'),
-(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'friday', 'Recipes', '0');
+(1, 'Students', 2, 'posted', '<h3> hjk</h3>', 0, 'student', 'People', 0),
+(2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 1, 'test', 'Recipes', 1),
+(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>', 1, 'test', 'Finances', 1);
 
 -- --------------------------------------------------------
 
@@ -337,7 +331,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT для таблицы `contactus`
 --
@@ -357,7 +351,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `questionnaire_answers`
 --

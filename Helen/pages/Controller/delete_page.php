@@ -11,5 +11,5 @@ $pages = $pdb->deletePages($page_id);
 
 
 // display the Product List page
-header('location: ../View/index.php');
+header('location: ../View/admin_pages.php');
 ?>

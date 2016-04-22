@@ -41,16 +41,7 @@ $page = $a->listOnePage($page_id);
             <div class="form-group" style="margin-left: 10px;">
                 <label class="col-sm-2 control-label">ID creator:</label>
                 <div class="col-sm-10">
-                    <select class="form-control" name="user">
-                        <?php $selStat = $page['ID_user']?>
-                        <?php
-                        $types = ['1', '2', '3', '4', '5', '6', '7'];
-                        foreach($types as $type) { ?>
-                            <option value="<?= $type ?>" <?php @$selStat==$type ? print "selected" : false; ?> > <?= $type ?></option>
-                            <?php
-                        } ?>
-
-                    </select>
+                    <input type="input" class="col-sm-2 form-control" name="user" value="<?php echo $page['ID_user']; ?>" readonly/>
                 </div>
                 <br />
             </div>

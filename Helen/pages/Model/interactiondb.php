@@ -21,7 +21,7 @@ class PageDB{
         $query = "INSERT INTO page
                  (Title, ID_user, Status, Content, Rank, Tags, Menu, ID_image)
               VALUES
-                 (:nam, :tit, :usr, :stat, :cont, :rank, :tags, :menu, :im)";
+                 (:tit, :usr, :stat, :cont, :rank, :tags, :menu, :im)";
         $stm = $db->prepare($query);
         $stm->bindValue(':tit', $title, PDO::PARAM_STR);
         $stm->bindValue(':usr', $idUser, PDO::PARAM_INT);
@@ -129,7 +129,6 @@ class PageDB{
 
 
     // function to UPDATE a Rank
-
     public function rank($id){
         $db = Dbclass::getDB();
         $query = "UPDATE page
@@ -143,6 +142,7 @@ class PageDB{
         $count = $stm->execute();
         return "Updated rows: " . $count;
     }
+
 
 
 }
