@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 22 2016 г., 23:41
+-- Время создания: Апр 22 2016 г., 18:58
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -45,9 +45,7 @@ INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VAL
 (34, 3, 2, 'Helen test', 'published'),
 (44, 2, 1, 'fgh', 'published'),
 (46, 2, 1, 'tester', 'published'),
-(47, 3, 1, 'my comment this night!', 'published'),
-(48, 9, 15, 'TEST TEST WOW WOW', 'published'),
-(49, 3, 1, 'shadow test', 'published');
+(47, 3, 1, 'my comment this night!', 'published');
 
 -- --------------------------------------------------------
 
@@ -117,6 +115,26 @@ INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`,
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `images`
+--
+
+CREATE TABLE `images` (
+  `ID_image` int(11) NOT NULL,
+  `alt_text` varchar(100) NOT NULL,
+  `link` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `images`
+--
+
+INSERT INTO `images` (`ID_image`, `alt_text`, `link`) VALUES
+(1, 'image 1', 'http://flymama.info/wp-content/uploads/2013/04/general1.jpg'),
+(2, 'test pic 2', 'http://localhost/Life-Advisor/img/test.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `page`
 --
 
@@ -137,15 +155,14 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
-(1, 'Students', 2, 'posted', '<h3>hjk</h3>\r\n', 0, 'test', 'Recipes', '05786_HD.jpg'),
-(2, 'Woman jokes, how to react! ALERT!', 1, 'posted', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n', 5, 'test', 'Recipes', 'joke.jpg'),
-(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>\r\n', 13, 'test', 'Recipes', 'lunch.jpg'),
-(9, 'Student', 15, 'posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'test', 'House', '06455_HD.jpg'),
-(4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '03822_HD.jpg'),
-(7, 'Manitoba list', 15, 'posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'test', 'Recipes', '00000203.jpg'),
-(6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'test', 'Recipes', '9ZytCHYimJE.jpg'),
-(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'test', 'Finances', '03606_HD.jpg'),
-(10, 'Manitoba list', 15, 'not posted', '<p><s>wsedtyu</s></p>\r\n', 0, 'test', 'Recipes', '03606_HD.jpg');
+(1, 'Students', 2, 'posted', '<h3> hjk</h3>', 0, 'student', 'People', '0'),
+(2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 5, 'test', 'Finances', '1'),
+(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>', 13, 'test', 'Finances', '2'),
+(9, 'Student', 15, 'not posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'friday', 'Recipes', '0'),
+(4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '1'),
+(7, 'Manitoba list', 15, 'not posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'friday', 'House', '0'),
+(6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'friday', 'Finances', '0'),
+(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'friday', 'Recipes', '0');
 
 -- --------------------------------------------------------
 
@@ -247,7 +264,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `Email`, `Newsletter`, `Phone`, `ID_image`) VALUES
-(1, 'Unidentified', 'Unidentified', '2', '', 'Shadow', 'nick@gmail.com', 'not signed', '1111111111', 1),
+(1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2),
 (15, '', '', '1', '$2y$10$4F2OJ6pKczhQlT1sOGoA2.EbkEtbCpV9GSpZ3xESt4.G4Xk7Vwcq.', 'helen', 'helen.boitsova@gmail.com', '', '', 0),
 (16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', 0);
@@ -275,6 +292,12 @@ ALTER TABLE `contactus`
 --
 ALTER TABLE `donations`
   ADD PRIMARY KEY (`donationID`);
+
+--
+-- Индексы таблицы `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`ID_image`);
 
 --
 -- Индексы таблицы `page`
@@ -314,7 +337,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT для таблицы `contactus`
 --
@@ -326,10 +349,15 @@ ALTER TABLE `contactus`
 ALTER TABLE `donations`
   MODIFY `donationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT для таблицы `images`
+--
+ALTER TABLE `images`
+  MODIFY `ID_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `questionnaire_answers`
 --
