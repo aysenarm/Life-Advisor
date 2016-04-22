@@ -118,13 +118,32 @@ class PageDB{
         $db = Dbclass::getDB();
         $query = "SELECT * FROM page
               WHERE Menu = :menu
-              ORDER BY ID_page";
+              ORDER BY Rank DESC ";
         $stm = $db->prepare($query);
         $stm->bindValue(':menu', $menu, PDO::PARAM_STR);
         $stm->execute();
         $res = $stm->fetchAll();
         return $res;
     }
+
+
+
+    // function to UPDATE a Rank
+
+    public function rank($id){
+        $db = Dbclass::getDB();
+        $query = "UPDATE page
+                    SET
+                    Rank = Rank + 1
+                    WHERE ID_page = :id
+                 ";
+        $stm = $db->prepare($query);
+        $stm->bindParam(':id', $id);
+
+        $count = $stm->execute();
+        return "Updated rows: " . $count;
+    }
+
 
 }
 

@@ -4,10 +4,8 @@
 
      <?php
 if(isset($_SESSION['user_session'])) {
-    $rez = $user->userInfo($_SESSION['user_session']);
-    //echo $rez['Rights'];
-    $_SESSION['role'] = $rez['Rights'];
-    echo $_SESSION['role'];
+
+
 
     // if user is logged in and you don't care about his rights to see some pages
     // TYPE YOUR CONTENT HERE and don't include code from
@@ -18,6 +16,10 @@ if(isset($_SESSION['user_session'])) {
     // 2 for just logged in user
     // 1 for ADMIN
     // checking will look like
+    //echo $rez['Rights'];
+    $rez = $user->userInfo($_SESSION['user_session']);
+    $_SESSION['role'] = $rez['Rights'];
+    echo $_SESSION['role'];
     if ($_SESSION['role'] == 2){
         echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";

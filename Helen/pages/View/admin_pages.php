@@ -1,9 +1,20 @@
 <?php
+require_once '../../../content_top.php';
+if(isset($_SESSION['user_session'])) {
+$rez = $user->userInfo($_SESSION['user_session']);
+//echo $rez['Rights'];
+$_SESSION['role'] = $rez['Rights'];
 
-    require_once('../Model/interactiondb.php');
+if ($_SESSION['role'] == 2){
+    echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
+            <a href='" . $_SERVER['HTTP_REFERER'] . "'>Go back</a>";
+}
+else {
 
-    $pdb =  new PageDB();
-    $pages = $pdb->listPages();
+require_once('../Model/interactiondb.php');
+
+$pdb = new PageDB();
+$pages = $pdb->listPages();
 
 
 ?>
@@ -19,7 +30,6 @@
 
 <!-- the body section -->
 <body style="margin-left: 10px; margin-right: 10px;">
-<?php require_once '../../../content_top.php'; ?>
 <div id="page">
 
     <div id="header">
@@ -55,26 +65,32 @@
                         <td><?php echo $page['Tags']; ?></td>
                         <td><?php echo $page['Menu']; ?></td>
                         <td><?php echo $page['ID_image']; ?></td>
-                        <td><form action="../Controller/delete_page.php" method="post" id="delete_page_form">
+                        <td>
+                            <form action="../Controller/delete_page.php" method="post" id="delete_page_form">
 
-                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>" />
-                                <input type="submit" class="btn btn-danger btn-xs" value="Delete" />
+                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
+                                <input type="submit" class="btn btn-danger btn-xs" value="Delete"/>
 
-                            </form></td>
+                            </form>
+                        </td>
 
-                        <td><form action="update_page_form.php" method="post" id="update_page_form">
+                        <td>
+                            <form action="update_page_form.php" method="post" id="update_page_form">
 
-                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>" />
-                                <input type="submit" class="btn btn-info btn-xs" value="Update" />
+                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
+                                <input type="submit" class="btn btn-info btn-xs" value="Update"/>
 
-                            </form></td>
+                            </form>
+                        </td>
 
-                        <td><form action="see_page.php" method="post" id="see_page">
+                        <td>
+                            <form action="see_page.php" method="post" id="see_page">
 
-                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>" />
-                                <input type="submit" class="btn btn-xs" value="See page" />
+                                <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
+                                <input type="submit" class="btn btn-xs" value="See page"/>
 
-                            </form></td>
+                            </form>
+                        </td>
 
                     </tr>
                 <?php endforeach; ?>
@@ -86,6 +102,14 @@
 
 </div><!-- end page -->
 
-<?php require_once '../../../content_bottom.php'; ?>
+<?php
+
+}
+}
+else {
+    echo "<h2>We are sorry, but you have to be logged in to see this page,
+please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+}
+require_once '../../../content_bottom.php'; ?>
 </body>
 </html>

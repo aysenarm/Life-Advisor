@@ -1,4 +1,15 @@
 <?php
+require_once '../../../content_top.php';
+if(isset($_SESSION['user_session'])) {
+$rez = $user->userInfo($_SESSION['user_session']);
+//echo $rez['Rights'];
+$_SESSION['role'] = $rez['Rights'];
+
+if ($_SESSION['role'] == 2){
+    echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
+            <a href='" . $_SERVER['HTTP_REFERER'] . "'>Go back</a>";
+}
+else {
     require_once('../Model/interactiondb.php');
     $pdb =  new CommentDB();
 
@@ -35,7 +46,7 @@
 <body style="margin-left: 10px; margin-right: 10px;">
 
 <?php
-require_once '../../../content_top.php'; ?>
+ ?>
 
 <div id="page">
 
@@ -64,6 +75,14 @@ require_once '../../../content_top.php'; ?>
 
 </div><!-- end page -->
 
-<?php require_once '../../../content_bottom.php'; ?>
+<?php
+
+}
+}
+else {
+    echo "<h2>We are sorry, but you have to be logged in to see this page,
+please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+}
+require_once '../../../content_bottom.php'; ?>
 </body>
 </html>
