@@ -274,7 +274,7 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 $url .= $_SERVER['SERVER_NAME'];
                 //$url .= htmlspecialchars($_SERVER['REQUEST_URI']);
                 $imageUrl = $url."/Life-Advisor/images";?>
-            <img class="logo"  style="color:blue;" src="<?php echo $imageUrl.'/logo.png';?>">       
+            <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/PHP%20class/PROJECT/Life-Advisor/images/logo.png';?>">
             <p><a href="index.php">home</a></p>
             <p>
                 <form action="Helen/pages/View/show_menu_pages.php" method="post">
