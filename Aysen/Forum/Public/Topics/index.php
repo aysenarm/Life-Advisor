@@ -29,7 +29,7 @@ if ($action == 'list_topics') {
 }
 else if ($action == 'show_add_form') {
         $topics = topicDB::getTopics();
-        include('gallery_add.php');
+        include('promotion_add.php');
 
     //echo $action;
 

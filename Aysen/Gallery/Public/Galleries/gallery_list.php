@@ -10,7 +10,7 @@
                     $url .= htmlspecialchars($_SERVER['REQUEST_URI']);
                     $themeurl = dirname($url) . '/Images';
                     echo $themeurl.'?action=list_images&gallery_id='.$gallery->getID();?>">
-                        <img src="../../Admin/Images/photo_gallery/<?php echo $gallery->getImage();?>" alt="Cover of <?php echo $gallery->getName();?>"  class="img-thumbnail" style="height: 236px; width: 304px;">
+                        <img src="../../Admin/Images/photo_gallery/<?php echo $gallery->getImage();?>" alt="Cover of <?php echo $gallery->getName();?>"  class="img-thumbnail" style="height: 236px; width: 304px; display: block;">
                     </a>
                 </li>
             <?php endforeach; ?>
