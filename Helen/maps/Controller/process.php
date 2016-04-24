@@ -1,19 +1,39 @@
 <?php
-
-$name = $_POST['shop'];
-
 $apiKey = "AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
 $main = "https://maps.googleapis.com/maps/api/";
 
 $nearby_search = "place/nearbysearch/"; //поиск ближайших
 $output = "json";
 
-$rez_lat = 43.726535;
-$rez_long = -79.605780;
-$radius = 2000;
+//$rez_lat = 43.726535;
+//$rez_long = -79.605780;
+//$radius = 40000;
+
+$name = $_POST['shop'];
+echo $name."<br/>";
+$type = $_POST['type'];
+echo $type."<br/>";
+$radius = $_POST['radius'];
+
+$rez_lat = $_POST['latitude'];
+echo $rez_lat."<br/>";
+$rez_long = $_POST['longtitude'];
+echo $rez_long."<br/>";
 
 
-//$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.726535,-79.605780&radius=2000&name=shoppers&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
+
+if (isset($name) && isset($type)){
+    $url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=".$radius."&name=".$name."&type=".$type."&key=".$apiKey;
+}
+elseif (!isset($name) && isset($type)){
+    $url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=".$radius."&type=".$type."&key=".$apiKey;
+}
+
+
+
+
+
+//$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.726535,-79.605780&radius=2000&name=shoppers&type=grosery_or_supermarket&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ";
 $url = $main . $nearby_search . $output . "?location=". $rez_lat.",".$rez_long."&radius=".$radius."&name=".$name."&key=".$apiKey;
 $resp_json = file_get_contents($url);
 $resp = json_decode($resp_json, true);

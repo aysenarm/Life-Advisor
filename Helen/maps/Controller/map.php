@@ -25,17 +25,14 @@ function geocode($address){
 
     // response status will be 'OK', if able to geocode given address
     if($resp['status']=='OK'){
-
-        // get the important data
-        $lati = $resp['results'][0]['geometry']['location']['lat'];
-        $longi = $resp['results'][0]['geometry']['location']['lng'];
-        $formatted_address = $resp['results'][0]['formatted_address'];
-
-        // verify if data is complete
-        if($lati && $longi && $formatted_address){
-
-            // put the data in the array
-            $data_arr = array();
+       // var_dump($resp);
+      //  echo count($resp['results']);
+        $data_arr = array();
+        for ($i = 0; $i< count($resp['results']); $i++) {
+            // get the important data
+            $lati = $resp['results'][$i]['geometry']['location']['lat'];
+            $longi = $resp['results'][$i]['geometry']['location']['lng'];
+            $formatted_address = $resp['results'][$i]['formatted_address'];
 
             array_push(
                 $data_arr,
@@ -43,17 +40,11 @@ function geocode($address){
                 $longi,
                 $formatted_address
             );
+        }
 
-            $a = count($resp['results']);
-if ($a > 1){
-    for ($i = 0; $i< $a; $i++){
-        echo $resp['results'][$i]['geometry']['location']['lat'];
-        echo $resp['results'][$i]['geometry']['location']['lng'];
-        echo $resp['results'][$i]['formatted_address'];
-        echo "<br/>";
-    }
-}
 
+
+       // var_dump($data_arr);
 
             return $data_arr;
 
@@ -61,8 +52,5 @@ if ($a > 1){
             return false;
         }
 
-    }else{
-        return false;
-    }
 }
 ?>
