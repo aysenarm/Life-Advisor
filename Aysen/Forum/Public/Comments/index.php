@@ -36,13 +36,13 @@ else if ($action == 'add_comment') {
     if (isset($_GET['topic_id']) && isset($_GET['category_id']) ) {
         $topicID = $_GET['topic_id'];
         $categoryID = $_GET['category_id'];
-        $name = $_POST['name'];
+        $name = $_POST['comment'];
         // Validate the inputs
         if (empty($name)) {
             $error = "Invalid comment data. Check all fields and try again.";
             include('../../../errors/error.php');
         } else {
-            $comment = new Comment($_POST['name']);
+            $comment = new Comment($name);
             $comment->setTopicID($topicID);
             $comment->setUserID("1");
             $today = date("Y-m-d");

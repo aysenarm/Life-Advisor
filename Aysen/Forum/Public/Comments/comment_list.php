@@ -24,9 +24,9 @@
     <div class="form-group">
         <?php
         if(isset($_SESSION['user_session'])) {
-        echo "<form method='post' action='?action=add_comment&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topic->getID();?>'>
+        echo "<form method='post' action='?action=add_comment&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID;?>'>
         <label for='comment'>Comment:</label>
-        <textarea name='name' class='form-control' rows='5' id='name' required></textarea>
+        <textarea name='comment' class='form-control' rows='5' id='name' required></textarea>
        <br/>
         <input type='submit' class='btn btn-default'  value='Add comment' />
     </form>";

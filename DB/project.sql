@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 22 2016 г., 23:41
+-- Время создания: Апр 26 2016 г., 18:13
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -45,9 +45,7 @@ INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VAL
 (34, 3, 2, 'Helen test', 'published'),
 (44, 2, 1, 'fgh', 'published'),
 (46, 2, 1, 'tester', 'published'),
-(47, 3, 1, 'my comment this night!', 'published'),
-(48, 9, 15, 'TEST TEST WOW WOW', 'published'),
-(49, 3, 1, 'shadow test', 'published');
+(47, 3, 1, 'my comment this night!', 'published');
 
 -- --------------------------------------------------------
 
@@ -117,6 +115,217 @@ INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`,
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `forum_categories`
+--
+
+CREATE TABLE `forum_categories` (
+  `categoryID` int(11) NOT NULL,
+  `categoryName` varchar(50) DEFAULT NULL,
+  `userID` int(11) NOT NULL,
+  `datePublished` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `forum_categories`
+--
+
+INSERT INTO `forum_categories` (`categoryID`, `categoryName`, `userID`, `datePublished`) VALUES
+(2, '22222', 0, '0000-00-00'),
+(8, '8888888', 1, '2016-04-12'),
+(15, 'fghjh', 1, '2016-04-12'),
+(18, '33333', 1, '2016-04-12'),
+(20, 'jkjkbkj', 1, '2016-04-05');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `forum_comments`
+--
+
+CREATE TABLE `forum_comments` (
+  `commentID` int(11) NOT NULL,
+  `commentName` varchar(50) DEFAULT NULL,
+  `userID` int(11) NOT NULL,
+  `datePublished` date NOT NULL,
+  `topicID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `forum_comments`
+--
+
+INSERT INTO `forum_comments` (`commentID`, `commentName`, `userID`, `datePublished`, `topicID`) VALUES
+(2, '22222222222', 0, '0000-00-00', 1),
+(3, 'dsgfgs', 0, '0000-00-00', 3),
+(5, '55555', 1, '2016-04-05', 1),
+(7, 'kjbk', 1, '2016-04-05', 1),
+(8, 'bjkkj', 1, '2016-04-05', 1),
+(9, 'kjbhk', 1, '2016-04-05', 1),
+(10, '99999', 1, '2016-04-05', 1),
+(11, 'nlbnl', 1, '2016-04-05', 1),
+(12, 'lljkjl', 1, '2016-04-05', 1),
+(13, 'fvdg', 1, '2016-04-05', 1),
+(15, 'bir daha 62', 1, '2016-04-12', 62),
+(17, '20 56', 1, '2016-04-12', 56),
+(18, 'dsfgthyjkl', 1, '2016-04-12', 56),
+(19, 'efwrgthyjuky', 1, '2016-04-12', 56),
+(20, 'fbgnhjyku', 1, '2016-04-12', 56),
+(21, '18 60', 1, '2016-04-12', 60),
+(22, 'fsggs', 1, '2016-04-12', 65),
+(23, 'sgsg', 1, '2016-04-12', 65),
+(24, 'jnllnl', 1, '2016-04-12', 62),
+(25, 'fdsgsfg', 1, '2016-04-12', 74),
+(26, 'dsgdsgs', 1, '2016-04-12', 74),
+(27, 'sdgsg', 1, '2016-04-12', 74),
+(28, 'tyuÄ±opÄŸÃ¼', 1, '2016-04-12', 69),
+(29, 'fdghjkÄ±lopÄŸ', 1, '2016-04-12', 69),
+(30, 'dsgery', 1, '2016-04-12', 57),
+(31, 'afewfe', 1, '2016-04-12', 53),
+(32, 'dfrwfs', 1, '2016-04-12', 53),
+(33, '33 uncuu', 1, '2016-04-18', 53),
+(34, '34uncuuu', 1, '2016-04-18', 53),
+(35, '35', 1, '2016-04-18', 53),
+(36, '36', 1, '2016-04-18', 53),
+(37, '37 blablabalabalbalab', 1, '2016-04-18', 53),
+(38, 'dfhdghdr', 1, '2016-04-20', 62),
+(39, 'mhbkbkjb', 1, '2016-04-20', 62),
+(40, 'khgvhgvj\r\nkljhjlhn\r\nnbvmvk\r\n', 1, '2016-04-20', 62);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `forum_topics`
+--
+
+CREATE TABLE `forum_topics` (
+  `topicID` int(11) NOT NULL,
+  `topicName` varchar(50) DEFAULT NULL,
+  `categoryID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `datePublished` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `forum_topics`
+--
+
+INSERT INTO `forum_topics` (`topicID`, `topicName`, `categoryID`, `userID`, `datePublished`) VALUES
+(1, '111111', 8, 0, '0000-00-00'),
+(3, 'gftxffxffgmm', 2, 1, '2016-04-05'),
+(45, 'khkuh', 2, 1, '2016-04-11'),
+(47, 'dsfsd', 8, 4, '2016-04-27'),
+(48, 'mcfds', 2, 1, '2016-04-05'),
+(49, '50', 2, 1, '2016-04-11'),
+(50, 'dsfaege', 2, 1, '2016-04-11'),
+(52, '2 ye ekle kafayÄ± yicem', 2, 1, '2016-04-12'),
+(53, '2 ye ekle tekrar', 2, 1, '2016-04-12'),
+(56, '20 ye ekliyorum', 20, 1, '2016-04-12'),
+(57, '18 e edit gari', 18, 1, '2016-04-12'),
+(58, '18 e mnb kjbn', 18, 1, '2016-04-12'),
+(60, 'kkj', 18, 1, '2016-04-12'),
+(61, 'hbkbnmb', 18, 1, '2016-04-12'),
+(62, '15 ekle', 15, 1, '2016-04-12'),
+(63, 'ekliyom', 15, 1, '2016-04-12'),
+(64, 'hjbkhbkh', 18, 1, '2016-04-12'),
+(65, 'kbjbkjkj', 15, 1, '2016-04-12'),
+(66, 'kjbkjn', 15, 1, '2016-04-12'),
+(67, 'kjbnl', 2, 1, '2016-04-12'),
+(68, 'bhjkhb', 18, 1, '2016-04-11'),
+(69, 'kbjkbk', 18, 1, '2016-04-11'),
+(70, 'fghfg', 18, 1, '2016-04-11'),
+(71, 'jfd', 18, 1, '2016-04-11'),
+(72, 'dsjnds', 18, 1, '2016-04-11'),
+(73, 'n bk', 18, 1, '2016-04-11'),
+(74, 'sfsfewfew', 8, 1, '2016-04-12'),
+(75, 'fgrgwrg', 8, 1, '2016-04-12'),
+(76, 'rgytrut', 18, 1, '2016-04-12'),
+(77, 'fghs', 2, 1, '2016-04-12'),
+(78, 'fgseh6r', 2, 1, '2016-04-12'),
+(79, 'ghdghtydj', 2, 1, '2016-04-12');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gallery_galleries`
+--
+
+CREATE TABLE `gallery_galleries` (
+  `galleryID` int(11) NOT NULL,
+  `galleryName` varchar(50) NOT NULL,
+  `datePublished` date NOT NULL,
+  `userID` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `gallery_galleries`
+--
+
+INSERT INTO `gallery_galleries` (`galleryID`, `galleryName`, `datePublished`, `userID`, `image`) VALUES
+(14, 'kmÅŸk', '2016-04-19', 1, '2.jpg'),
+(15, 'mcsdsk', '2016-04-19', 1, '1.jpg'),
+(16, 'cxgfsgsd', '2016-04-20', 1, 'Untitled.png');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `gallery_images`
+--
+
+CREATE TABLE `gallery_images` (
+  `imageID` int(11) NOT NULL,
+  `galleryID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `datePublished` date NOT NULL,
+  `alt` varchar(50) NOT NULL,
+  `fileName` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `gallery_images`
+--
+
+INSERT INTO `gallery_images` (`imageID`, `galleryID`, `userID`, `datePublished`, `alt`, `fileName`) VALUES
+(24, 3, 1, '2016-04-19', 'apple', 'apple.jpg'),
+(25, 3, 1, '2016-04-19', 'banana', 'banana.jpg'),
+(29, 3, 1, '2016-04-19', 'apple', 'apple.jpg'),
+(30, 3, 1, '2016-04-19', 'hbhbkh', 'apple.jpg'),
+(31, 3, 1, '2016-04-19', 'mb hh', 'apple.1461039583.jpg'),
+(35, 3, 1, '2016-04-19', 'rwsdfgwds', 'apple.1461039770.jpg'),
+(37, 3, 1, '2016-04-19', 'dsff', 'apple.1461041090.jpg'),
+(38, 3, 1, '2016-04-19', 'wgsg', 'apple.1461041274.jpg'),
+(39, 3, 1, '2016-04-19', 'mdmd', '1.jpg'),
+(40, 3, 1, '2016-04-19', 'mdmd', '2.jpg'),
+(41, 3, 1, '2016-04-19', 'mdmdm', '1.1461041384.jpg'),
+(42, 3, 1, '2016-04-19', 'mdmdm', '2.1461041384.jpg'),
+(43, 1, 1, '2016-04-19', 'kkskds', '1.jpg'),
+(44, 1, 1, '2016-04-19', 'kkskds', '2.jpg'),
+(45, 14, 1, '2016-04-19', 'kdkdk', '1.jpg'),
+(46, 14, 1, '2016-04-19', 'kdkdk', '2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `images`
+--
+
+CREATE TABLE `images` (
+  `ID_image` int(11) NOT NULL,
+  `alt_text` varchar(100) NOT NULL,
+  `link` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `images`
+--
+
+INSERT INTO `images` (`ID_image`, `alt_text`, `link`) VALUES
+(1, 'image 1', 'http://flymama.info/wp-content/uploads/2013/04/general1.jpg'),
+(2, 'test pic 2', 'http://localhost/Life-Advisor/img/test.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `page`
 --
 
@@ -137,15 +346,39 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
-(1, 'Students', 2, 'posted', '<h3>hjk</h3>\r\n', 0, 'test', 'Recipes', '05786_HD.jpg'),
-(2, 'Woman jokes, how to react! ALERT!', 1, 'posted', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis urna nulla. Mauris ante eros, facilisis at imperdiet a, ullamcorper a nisi. Duis sodales in dolor ut bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus, quam at consequat sodales, orci leo aliquam urna, a mattis justo neque vel nisi. Praesent eget erat tristique nisi facilisis eleifend. Praesent pharetra ante eu urna pellentesque, at auctor lectus sagittis. Morbi augue mauris, facilisis ut lorem a, luctus elementum neque. Aenean elit ipsum, cursus id sem et, facilisis pharetra lacus. Vestibulum condimentum eleifend justo vitae vehicula. Pellentesque non hendrerit turpis.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed scelerisque vitae nisi ut pretium. Sed nisl elit, faucibus eleifend lectus congue, faucibus tempus ipsum. Phasellus vehicula, eros quis vehicula lacinia, nunc eros maximus arcu, sed sagittis eros est ut ex. Phasellus fringilla lorem dolor, a dignissim sapien ullamcorper in. Sed varius scelerisque turpis eu rhoncus. Morbi mollis purus molestie consectetur viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed varius risus. Quisque accumsan justo diam, ut vehicula nisl ornare vitae. Phasellus turpis urna, tempus nec pharetra sed, aliquam nec leo. Etiam luctus ac diam et condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\r\n\r\n<p>Pellentesque bibendum convallis elementum. Morbi ut laoreet eros. Praesent ac ante non nibh sollicitudin gravida. Duis malesuada pulvinar bibendum. Proin sed sollicitudin odio. Cras efficitur, leo sit amet volutpat tempor, purus risus auctor orci, eu convallis nisi ligula ac massa. Suspendisse auctor tellus quam, a suscipit est ullamcorper elementum. Morbi at lectus non leo fermentum ullamcorper non nec eros. Nulla convallis, dolor vitae faucibus malesuada, orci tellus vehicula est, nec auctor ante odio porttitor urna. Ut eros sem, suscipit ac leo quis, sodales scelerisque ante. Mauris porttitor lobortis sem, in malesuada sapien sollicitudin sit amet. Fusce congue ante velit, id egestas purus mollis eu. Curabitur elit ipsum, dapibus quis varius eget, volutpat a sapien. Donec feugiat sem metus, vitae aliquet mi mattis in. Vivamus vulputate maximus velit et vehicula. Curabitur interdum hendrerit diam, et varius lacus ullamcorper in.</p>\r\n\r\n<p>Curabitur pellentesque elementum purus vitae ultricies. Nam et aliquam sapien. Curabitur feugiat lacus dignissim magna aliquam, in viverra risus interdum. Nullam vestibulum imperdiet purus id eleifend. Nam at hendrerit tortor. Maecenas sed purus ut nisl pellentesque fermentum. Integer erat nunc, lobortis vitae vehicula in, blandit sed orci. Maecenas porta diam id ipsum rutrum efficitur. In hac habitasse platea dictumst. Ut in sollicitudin mauris. Quisque sed aliquam sem, eget tincidunt mi.</p>\r\n\r\n<p>Vivamus sit amet massa pulvinar, commodo lacus ac, pellentesque neque. Nunc vitae vulputate purus, vitae mollis nisl. Quisque sollicitudin leo sit amet mi bibendum ullamcorper. Mauris mollis odio quis suscipit mollis. Pellentesque at accumsan dolor, eu lacinia ipsum. Integer a massa sed ipsum vulputate egestas. Sed non nisl eu enim dapibus maximus eu et tellus. Nullam eu posuere lorem. Proin ac interdum metus, sit amet vestibulum leo. Sed dictum vestibulum gravida. Duis sed ornare tellus.</p>\r\n', 5, 'test', 'Recipes', 'joke.jpg'),
-(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>\r\n', 13, 'test', 'Recipes', 'lunch.jpg'),
-(9, 'Student', 15, 'posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'test', 'House', '06455_HD.jpg'),
-(4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '03822_HD.jpg'),
-(7, 'Manitoba list', 15, 'posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'test', 'Recipes', '00000203.jpg'),
-(6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'test', 'Recipes', '9ZytCHYimJE.jpg'),
-(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'test', 'Finances', '03606_HD.jpg'),
-(10, 'Manitoba list', 15, 'not posted', '<p><s>wsedtyu</s></p>\r\n', 0, 'test', 'Recipes', '03606_HD.jpg');
+(1, 'Students', 2, 'posted', '<h3> hjk</h3>', 0, 'student', 'People', '0'),
+(2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 5, 'test', 'Finances', '1'),
+(3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>', 13, 'test', 'Finances', '2'),
+(9, 'Student', 15, 'not posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'friday', 'Recipes', '0'),
+(4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '1'),
+(7, 'Manitoba list', 15, 'not posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'friday', 'House', '0'),
+(6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'friday', 'Finances', '0'),
+(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'friday', 'Recipes', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `promotions`
+--
+
+CREATE TABLE `promotions` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `pKey` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `dateValid` date NOT NULL,
+  `datePublished` date NOT NULL,
+  `userID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `promotions`
+--
+
+INSERT INTO `promotions` (`id`, `title`, `pKey`, `image`, `dateValid`, `datePublished`, `userID`) VALUES
+(1, 'ljkjlkjl', 'jbkj', 'Untitled.1461472485.png', '2016-04-22', '2016-04-24', 1),
+(2, 'gjggh', 'kkkkk', 'bbbb.1461472584.png', '2016-04-21', '2016-04-24', 1),
+(3, 'ppppppppp', 'lllll', 'Untitled.1461473817.png', '2016-04-21', '2016-04-24', 1);
 
 -- --------------------------------------------------------
 
@@ -247,7 +480,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `Email`, `Newsletter`, `Phone`, `ID_image`) VALUES
-(1, 'Unidentified', 'Unidentified', '2', '', 'Shadow', 'nick@gmail.com', 'not signed', '1111111111', 1),
+(1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', 1),
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', 2),
 (15, '', '', '1', '$2y$10$4F2OJ6pKczhQlT1sOGoA2.EbkEtbCpV9GSpZ3xESt4.G4Xk7Vwcq.', 'helen', 'helen.boitsova@gmail.com', '', '', 0),
 (16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', 0);
@@ -277,10 +510,54 @@ ALTER TABLE `donations`
   ADD PRIMARY KEY (`donationID`);
 
 --
+-- Индексы таблицы `forum_categories`
+--
+ALTER TABLE `forum_categories`
+  ADD PRIMARY KEY (`categoryID`);
+
+--
+-- Индексы таблицы `forum_comments`
+--
+ALTER TABLE `forum_comments`
+  ADD PRIMARY KEY (`commentID`),
+  ADD KEY `topicID` (`topicID`);
+
+--
+-- Индексы таблицы `forum_topics`
+--
+ALTER TABLE `forum_topics`
+  ADD PRIMARY KEY (`topicID`),
+  ADD KEY `categoryID` (`categoryID`);
+
+--
+-- Индексы таблицы `gallery_galleries`
+--
+ALTER TABLE `gallery_galleries`
+  ADD PRIMARY KEY (`galleryID`);
+
+--
+-- Индексы таблицы `gallery_images`
+--
+ALTER TABLE `gallery_images`
+  ADD PRIMARY KEY (`imageID`);
+
+--
+-- Индексы таблицы `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`ID_image`);
+
+--
 -- Индексы таблицы `page`
 --
 ALTER TABLE `page`
   ADD PRIMARY KEY (`ID_page`);
+
+--
+-- Индексы таблицы `promotions`
+--
+ALTER TABLE `promotions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `questionnaire_answers`
@@ -314,7 +591,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT для таблицы `contactus`
 --
@@ -326,10 +603,45 @@ ALTER TABLE `contactus`
 ALTER TABLE `donations`
   MODIFY `donationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT для таблицы `forum_categories`
+--
+ALTER TABLE `forum_categories`
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT для таблицы `forum_comments`
+--
+ALTER TABLE `forum_comments`
+  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT для таблицы `forum_topics`
+--
+ALTER TABLE `forum_topics`
+  MODIFY `topicID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+--
+-- AUTO_INCREMENT для таблицы `gallery_galleries`
+--
+ALTER TABLE `gallery_galleries`
+  MODIFY `galleryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT для таблицы `gallery_images`
+--
+ALTER TABLE `gallery_images`
+  MODIFY `imageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+--
+-- AUTO_INCREMENT для таблицы `images`
+--
+ALTER TABLE `images`
+  MODIFY `ID_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT для таблицы `promotions`
+--
+ALTER TABLE `promotions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `questionnaire_answers`
 --
@@ -350,6 +662,22 @@ ALTER TABLE `rights`
 --
 ALTER TABLE `user`
   MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `forum_comments`
+--
+ALTER TABLE `forum_comments`
+  ADD CONSTRAINT `Comment_Topic` FOREIGN KEY (`topicID`) REFERENCES `forum_topics` (`topicID`);
+
+--
+-- Ограничения внешнего ключа таблицы `forum_topics`
+--
+ALTER TABLE `forum_topics`
+  ADD CONSTRAINT `Topic_Category` FOREIGN KEY (`categoryID`) REFERENCES `forum_categories` (`categoryID`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

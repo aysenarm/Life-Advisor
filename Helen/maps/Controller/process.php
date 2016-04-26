@@ -10,15 +10,15 @@ $output = "json";
 //$radius = 40000;
 
 $name = $_POST['shop'];
-echo $name."<br/>";
+//echo $name."<br/>";
 $type = $_POST['type'];
-echo $type."<br/>";
+//echo $type."<br/>";
 $radius = $_POST['radius'];
 
 $rez_lat = $_POST['latitude'];
-echo $rez_lat."<br/>";
+//echo $rez_lat."<br/>";
 $rez_long = $_POST['longtitude'];
-echo $rez_long."<br/>";
+//echo $rez_long."<br/>";
 
 
 
@@ -44,6 +44,7 @@ $resp = json_decode($resp_json, true);
 ?>
 
 <div id="mapholder"></div>
+<div id="demo"></div>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
         var x = document.getElementById("demo");
@@ -56,8 +57,8 @@ $resp = json_decode($resp_json, true);
         }
 
         function showPosition(position) {
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
+            lat = <?php echo $rez_lat;?>;
+            lon = <?php echo $rez_long;?>;
             latlon = new google.maps.LatLng(lat, lon);
             mapholder = document.getElementById('mapholder');
             mapholder.style.height = '400px';
@@ -102,12 +103,6 @@ $resp = json_decode($resp_json, true);
             info.open(map, marker);
 
 
-
-
-
-
-
-
         }
         function showError(error) {
             switch (error.code) {
@@ -126,7 +121,8 @@ $resp = json_decode($resp_json, true);
             }
         }
     </script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb7YrWpzqGF4w_s03TUu_LnbvhjUKecx4&callback=initMap"
+        async defer></script>
 
 <ol>
     <?php

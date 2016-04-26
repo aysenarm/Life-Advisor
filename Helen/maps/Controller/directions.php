@@ -17,13 +17,13 @@ $modeBc = "bicycling";
 $modeTr = "transit";
 
 // https://maps.googleapis.com/maps/api/distancematrix/json?origins=43.729256,-79.6090198&destinations=43.7140758,-79.629973&language=en&mode=walking&key=AIzaSyCaxUvW2WhaaIAEzosJ8nAVF-6gGE2jGhQ
-$url = $main . $distance . $output . "?origins=". $latitudeOr.",".$longtitudeOr."&destinations=".$latitudeDest.",".$logtitudeDest."&language=en&mode=".$modeWl."&key=".$apiKey;
+$url = $main . $distance . $output . "?origins=". $latitudeOr.",".$longtitudeOr."&destinations=".$latitudeDest.",".$logtitudeDest."&language=en&mode=".$modeDr."&key=".$apiKey;
 $resp_json = file_get_contents($url);
 $resp = json_decode($resp_json, true);
 //var_dump($resp);
 echo "From: ".$resp['origin_addresses'][0]."<br/>";
 echo "To: ".$resp['destination_addresses'][0]."<br/>";
-echo "Mode: ".$modeWl."<br/>";
+echo "Mode: ".$modeDr."<br/>";
 echo "Distance: ".$resp['rows'][0]['elements'][0]['distance']['text']."<br/>";
 echo "Duration: ".$resp['rows'][0]['elements'][0]['duration']['text']."<br/>";
 ?>
