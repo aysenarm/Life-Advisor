@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-
-    <link href="style-map.css" rel="stylesheet">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-</head>
-<body>
 <?php
+require_once '../../../content_top.php';
 require "../Controller/map.php"; ?>
 
 
@@ -342,10 +333,4 @@ else {
 
     <?php
     }
-?>
-
-
-
-
-</body>
-</html>
+require_once '../../../content_bottom.php';
