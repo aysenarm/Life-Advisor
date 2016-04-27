@@ -1,5 +1,6 @@
 <?php require_once 'content_top.php'; ?>
 
+
 <title>Home Page</title>
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">

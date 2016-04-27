@@ -3,7 +3,11 @@ require_once 'Model/userInteractdb.php';
 define('ROOTPATH', dirname(__FILE__));
 $logo = ROOTPATH."/images/logo.png";
 $logo2 = ROOTPATH.'/images/logo2.png';
+
+require 'Daria/newsletter/Database.class.php';
+require 'Daria/newsletter/Newsletter.class.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,21 +19,15 @@ $logo2 = ROOTPATH.'/images/logo2.png';
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
 
-    
-    
     <style>
         #myNavbar{
             border:0;
             background-color: #2c2d2c;
         }
-
         .navbar{
             border-radius: 0;
-
             margin-bottom: 5px;
-
         }
         .sidenav{
             background-color: #2c2d2c;
@@ -232,8 +230,6 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 display:none !important;
             }
         }
-
-
     </style>
 </head>
 <body>
@@ -341,18 +337,36 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 <button type="submit" style="background: none; border: none;outline: none;"><a>promotions</a></button>
             </form>
             </p>
-            <p><a href="#">our partners</a></p>
+            <p>
+            <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Daria/financial/finance.php';?>" method="post">
+                <button type="submit" style="background: none; border: none;outline: none;"><a>mortgage calculator</a></button>
+            </form>
+            </p>
             <p><a href="#">contact us</a></p>
             <p><a href="#">donate</a></p>
             <img class="logo2" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo2.png';?>">
 
             <div class="form-group">
                 <p class="control-label" for="email">subscribe our <span class="colortext">newsletter</span></p>
-                    <div class="input-group col-xs-7">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input id="email" name="email" class="form-control" placeholder="Your email..." type="text" required="">
+                <div class="input-group col-xs-12">
+                    <form action="index.php" method="post" id="newsletter" name="newsletter" role="form">
+                        <input id="signup-email" name="signup-email" class="form-control" placeholder="Your email..." type="text" value="">
+                        <input type="submit" value="Subscribe Now!" class="btn btn-large" id="sub-btn" name="signup-button"/>
+                    </form>
+                    <div id="response">
+                        <?php
+                        if (!empty($_POST)) {
+                            $email = $_POST['signup-email'];
+                            $response = [];
+                            $response = json_decode(Newsletter::register($email), true);
+
+                            if($response['status']=='success'){
+                                include_once 'Daria/newsletter/gmail.php';
+                            }
+                            echo $response['message'];}
+                        ?>
                     </div>
-                    <input type="submit" value="Subscribe Now!" class="btn btn-large" id="sub-btn"/>
+                </div>
             </div>
 
             <div class="media">
@@ -360,7 +374,7 @@ $logo2 = ROOTPATH.'/images/logo2.png';
                 <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                     <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="/Life-Advisor/Daria/twitter/twitts.php" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
