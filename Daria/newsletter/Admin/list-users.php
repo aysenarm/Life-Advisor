@@ -5,6 +5,8 @@ $sunscribers = $db->query($query);
 
 echo '<input type = "checkbox" name="selectall" id="selectall"/>Select All<br/><br/>';
 echo '<form method="post" action="sendnow.php">';
+$new = $_POST['newsletter_id'];
+echo '<input type="hidden" name="newsletter_id" value="'.$new .'"/>';
 foreach ($sunscribers as $sunscriber){
     echo '<input type = "checkbox" name = "email[]" value = "' . $sunscriber['signup_email_address'] . '"/> ' . $sunscriber['signup_email_address']  . "<br>";
 

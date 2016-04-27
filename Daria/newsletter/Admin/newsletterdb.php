@@ -5,7 +5,7 @@ class NewsletterDB{
     public function __construct() {
 
     }
-    public function deleteNewsletter($id){
+    public static function deleteNewsletter($id){
 
         $db = Database::connect();
         $query = "DELETE FROM newsletter WHERE id = :id";
@@ -16,7 +16,7 @@ class NewsletterDB{
         $id= 25;
         return "Deleted rows: " . $count;
     }
-    public function updateNewsletter($id,$subject,$semail,$content,$time,$status){
+    public static function updateNewsletter($id,$subject,$semail,$content,$time,$status){
 
         $db = Database::connect();
         $query = "UPDATE newsletter
@@ -37,6 +37,7 @@ class NewsletterDB{
         $count = $stm->execute();
         return "Updated rows: " . $count;
     }
+
 
 }
 

@@ -4,27 +4,11 @@
 
 
 <div id="list-users">
-    <?php
-    include_once 'list-users.php';
-    if(isset($_POST['newsletter_id'])){
-        $id = $_POST['newsletter_id'];
-newsletter::
-foreach($email as $e){
-    $response = [];
-    $response = json_decode(Newsletter::register($e), true);
-
-    if($response['status']=='success'){
-        include_once 'Daria/newsletter/gmail.php';
-    }
-    echo $response['message'];
-}
-}
-
-
-
-    ?>
-
 </div>
+<?php
+include 'newsletterdb.php';
+include_once 'list-users.php';
+?>
 <script type="text/javascript" >
     $(function(){
         $('#selectall').click(function(){

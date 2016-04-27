@@ -6,21 +6,23 @@ class Newsletter
 
     private static $valid = true;
 
-    public function __construct() {
+    public function __construct()
+    {
         die('Init function is not allowed');
     }
 
-    public static function register($email) {
+    public static function register($email)
+    {
         if (!empty($_POST)) {
-            self::$email    = $_POST['signup-email'];
+            self::$email = $_POST['signup-email'];
             self::$datetime = date('Y-m-d H:i:s');
 
             if (empty(self::$email)) {
-                $status  = "error";
+                $status = "error";
                 $message = "<p style='color: white;'>The email address field must not be blank</p>";
                 self::$valid = false;
             } else if (!filter_var(self::$email, FILTER_VALIDATE_EMAIL)) {
-                $status  = "error";
+                $status = "error";
                 $message = "<p style='color: white;'>You must fill the field with a valid email address</p>";
                 self::$valid = false;
             }
@@ -40,20 +42,20 @@ class Newsletter
                         array(':email' => self::$email, ':datetime' => self::$datetime));
 
                     if ($q) {
-                        $status  = "success";
+                        $status = "success";
                         $message = "<p style='color: white;'>You have been successfully subscribed</p>";
                     } else {
-                        $status  = "error";
+                        $status = "error";
                         $message = "<p style='color: white;'>An error occurred, please try again</p>";
                     }
                 } else {
-                    $status  = "error";
+                    $status = "error";
                     $message = "<p style='color: white;'>This email is already subscribed</p>";
                 }
             }
 
             $data = array(
-                'status'  => $status,
+                'status' => $status,
                 'message' => $message
             );
 
