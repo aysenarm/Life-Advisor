@@ -19,6 +19,10 @@ require 'Daria/newsletter/Newsletter.class.php';
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type='text/javascript' src='http://localhost/Life-Advisor/script.js'></script>
+    <script type="text/javascript" src="http://localhost/Life-Advisor/Daria/newsletter/Admin/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/Life-Advisor/style.css" />
 
     <style>
         #myNavbar{

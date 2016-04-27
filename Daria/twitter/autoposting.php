@@ -1,4 +1,6 @@
 <?php
+include_once '../../adminindex.php';
+
 error_reporting(0);
 header('Content-Type: text/html; charset= utf-8');
 use Abraham\TwitterOAuth\TwitterOAuth;
@@ -35,7 +37,7 @@ if(isset($_POST['send'])){
 <?if($msg):?>
 <?echo $msg;?>
 <br/>
-<a href="http://127.0.0.1/xmllabs/twitterapp/autoposting.php">Send one more message</a>
+<a href="http://localhost/Life-Advisor/Daria/twitter/autoposting.php">Send one more message</a>
 <?else:?>
 
 <form action="" method="POST">
