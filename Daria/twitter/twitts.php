@@ -31,6 +31,6 @@ foreach($tweets as $items)
 }
 $user = $connection->get("account/verify_credentials");
 //echo $user->screen_name;
-require_once '../../content_bottom.php';
+
 ?>
 

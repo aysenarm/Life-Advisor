@@ -1,28 +1,4 @@
-div#mainSection{
-    width: 980px;
-    margin: auto;
-    padding: 10px;
-}
-div#form-elements{
-    padding: 10px;
-}
-div#form-elements label{
-    width: 110px;
-    float: left;
-    padding: 5px;
-}
-div#form-elements input[type="text"]{
-    padding: 10px;
-    border: 1px solid grey;
-    border-radius: 4px;
-}
-div#form-elements textarea{
-    height: 200px;
-    width: 500px;
-    padding: 10px;
-    border: 1px solid grey;
-    border-radius: 4px;
-}
+
 /* tabs section */
 #tabs-container {
     clear:both;
@@ -111,29 +87,27 @@ div#form-elements textarea{
 }
 
 /* Targeting both first and second level menus */
-.nav li {
+.navv li {
     float:left;
     list-style:none;
     position:relative
 }
-.nav li a {
-    background:url(../images/arrow.png) no-repeat right;
-    border:none;
-    color:#222;
-    display:block;
-    margin:0 5px 0 0;
-    padding:5px 20px 5px 8px
-}
-
+.navv li a {
+     border:none;
+     color:#222;
+     display:block;
+     margin:0 5px 0 0;
+     padding:5px 20px 5px 8px
+ }
 /* Targeting the first level menu */
-.nav {
+.navv {
     display:block;
     margin:0;
     padding:5px 0 2px;
     position:absolute;
     z-index:100
 }
-.nav > li > a:hover {
+.navv > li > a:hover {
     -moz-border-radius:3px 3px 0 0;
     -webkit-border-radius:3px 3px 0 0;
     background:#507aa5 url(../images/arrow.png) no-repeat right;
@@ -141,9 +115,8 @@ div#form-elements textarea{
     color:#fff;
     padding:5px 20px 5px 8px
 }
-
 /* Targeting the second level menu */
-.nav li ul {
+.navv li ul {
     -moz-border-radius-bottomleft:3px;
     -moz-border-radius-bottomright:3px;
     -moz-border-radius-topright:3px;
@@ -162,10 +135,10 @@ div#form-elements textarea{
     position:absolute;
     width:140px
 }
-.nav li ul li {
+.navv li ul li {
     width:100%
 }
-.nav li ul li a {
+.navv li ul li a {
     background:#507aa5;
     border:none;
     color:#fff;
@@ -173,16 +146,16 @@ div#form-elements textarea{
     margin:0;
     padding:0 0 0 8px
 }
-.nav li ul li a:hover {
+.navv li ul li a:hover {
     background:#466A90
 }
-.nav li ul li.strong-archive a {
+.navv li ul li.strong-archive a {
     border-top:1px solid #466A90;
     font-weight:600
 }
 
 /* A class of current will be added via jQuery */
-.nav li.current > a {
+.navv li.current > a {
     -moz-border-radius:3px 3px 0 0;
     -moz-box-shadow:1px 1px 1px #333;
     -webkit-border-radius:3px 3px 0 0;
@@ -192,8 +165,7 @@ div#form-elements textarea{
     box-shadow:1px 1px 1px #333;
     color:#fff
 }
-
 /* CSS fallback */
-.nav li:hover > ul.child {
+.navv li:hover > ul.child {
     display:block
 }

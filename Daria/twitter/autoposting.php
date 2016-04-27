@@ -1,7 +1,9 @@
 <?php
+include_once '../../adminindex.php';
 error_reporting(0);
 header('Content-Type: text/html; charset= utf-8');
 use Abraham\TwitterOAuth\TwitterOAuth;
+require_once '../../content_top.php';
 
 $message = '';
 $url = '';
