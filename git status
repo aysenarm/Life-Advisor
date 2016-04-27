@@ -1,0 +1,283 @@
+[33mcommit 1aa1c26366d843dff16b0fda40448a8d9be95adf[m
+Author: Daria <dhryshkova@gmail.com>
+Date:   Wed Apr 27 16:52:27 2016 -0400
+
+    daria
+
+[33mcommit b9879f5b4edd3db5c1094d254d010b95c2def8b1[m
+Author: Daria <dhryshkova@gmail.com>
+Date:   Wed Apr 27 15:38:04 2016 -0400
+
+    daria's work
+
+[33mcommit 7eadb4fe4ea905a3835620cd1d20400c0f0b4b13[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Tue Apr 26 13:20:55 2016 -0400
+
+    fixing Aysen work
+
+[33mcommit 15b073903a6581014de3bbb3139ae6c315d7f745[m
+Merge: bf465a2 938743a
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Sun Apr 24 02:39:17 2016 -0400
+
+    Merge branch 'development' of https://github.com/aysenarm/Life-Advisor into development
+
+[33mcommit bf465a2339d86fed1d9f9eb95caf138371be2c28[m
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Sun Apr 24 02:36:50 2016 -0400
+
+    New Db + Promotions Page + Menu Links + Autharization
+
+[33mcommit 938743a9085509ac54756ce05855885027e04859[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Sat Apr 23 19:06:07 2016 -0400
+
+    work
+
+[33mcommit bb543f6a63eca9af67aba4e69b9800d48b8f1352[m
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Sat Apr 23 13:44:43 2016 -0400
+
+    deletion of files
+
+[33mcommit bc6b432b7501e45fe5bd2cde6a6f9c9f330e0939[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 22 17:41:47 2016 -0400
+
+    uploading DB
+
+[33mcommit 0b27aa69fbca2128aa80a583f22cb1dc488d1907[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 22 17:37:33 2016 -0400
+
+    Blog posts + ranking + comments FULLY DONE
+
+[33mcommit 688857d6a35ec4c0058116735237109d52563930[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 22 13:00:24 2016 -0400
+
+    some DB changes for adding pictures  for posts
+
+[33mcommit e43eefcadd9534acf6b773595b74915b06c7ef1b[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 22 10:17:14 2016 -0400
+
+    some nice shanges
+
+[33mcommit b2cc14c2514853f656014eac427f45c815a55310[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 22:59:58 2016 -0400
+
+    login with session id working, please check template file
+
+[33mcommit 17c9dc69dd76b07dfd70ce68b4fe8f9553cfc8e3[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 21:03:41 2016 -0400
+
+    BLA BLA BLA
+
+[33mcommit 5fbabedc5eec28847825cee4f201e153fb63b32c[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 19:15:08 2016 -0400
+
+    i am still there
+
+[33mcommit 81f4b07110338436147459c2c794faff46950066[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 17:55:34 2016 -0400
+
+    still working
+
+[33mcommit 1692f624a63a0288b107adc4e861693c7d904525[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 17:33:00 2016 -0400
+
+    working
+
+[33mcommit 85a9fe1cb14af7afd478b9d210245dd4626f94ce[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Thu Apr 21 15:04:54 2016 -0400
+
+    working on paths
+
+[33mcommit ff18d7f71b5918a17a3c39ed7a9fd7ac1fbfbdb5[m
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Wed Apr 20 10:14:31 2016 -0400
+
+    content top
+
+[33mcommit aeeceaed56a319aa327306738c68bd237e6661ed[m
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Wed Apr 20 10:06:51 2016 -0400
+
+    aysen4
+
+[33mcommit 01cbf388997f4e646aa8a9db48ddf09e78daa47c[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Tue Apr 19 16:44:58 2016 -0400
+
+    menu links to Helen's  pages
+
+[33mcommit 3b6f87c11c728c6454a6860cea48da64b0420594[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Tue Apr 19 16:42:51 2016 -0400
+
+    login working
+
+[33mcommit 26c13fcfae7b9ecdeb2a06b6870735585bb0a3b0[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Sun Apr 17 01:25:39 2016 -0400
+
+    making menu links of blog posts workable
+
+[33mcommit 09c077f538df2a6407127cae8f638b2694c922e2[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Sun Apr 17 00:56:59 2016 -0400
+
+    still working
+
+[33mcommit 5f46313d6c12248da3376c9f000c399ad9c1c11e[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Sat Apr 16 23:29:24 2016 -0400
+
+    Helen's work
+
+[33mcommit cb8d34c8396844973ae8672f2240ee34a206c6da[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Sat Apr 16 21:44:23 2016 -0400
+
+    search bar + some fixes
+
+[33mcommit 01ebae2a283f9476f73d7735fb80ad30778d3162[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Sat Apr 16 21:18:39 2016 -0400
+
+    Posts feature and  changing DB
+
+[33mcommit d061d1787cb17e888aff21fb5cca0a547dd4a0b3[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Fri Apr 15 21:37:17 2016 -0400
+
+    DB update
+
+[33mcommit 8afd83c8de41b4c630d6c3fe6f906ae1b79189fc[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Fri Apr 15 21:34:09 2016 -0400
+
+    register is done :)
+    
+    register is done :)
+
+[33mcommit 5cc63552356064915e0400bb5720a8f869d0f70c[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 15 21:26:41 2016 -0400
+
+    working on maps feature, added directions path
+
+[33mcommit 1c9ba92e5b3bff13a819bb97f53d9f8759bff1a6[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 15 18:51:00 2016 -0400
+
+    Changing DB
+
+[33mcommit 95d46fadfcf8a32d4cef9adb0ae6595c50721734[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 15 18:31:41 2016 -0400
+
+    maps feature
+
+[33mcommit 2983734bf701ceae91a43a9b6259bd4fa2ada409[m
+Merge: 542fa49 a1e17b6
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Fri Apr 15 18:29:59 2016 -0400
+
+    Merge remote-tracking branch 'origin/development' into development
+    
+    # Conflicts:
+    #	.idea/workspace.xml
+
+[33mcommit a1e17b6709c3629817d9174cf98ab374c4a40a17[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Fri Apr 15 01:37:52 2016 -0400
+
+    Working on maps
+
+[33mcommit 25aeab97d2aa897ab485dd158c0b744baf279ad3[m
+Merge: dbea70b 4271a71
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Mon Apr 11 18:59:51 2016 -0400
+
+    confilct
+    
+    I dont know what ı am doing. Just pushing my code.
+
+[33mcommit dbea70be5a961723cbcb81281911d8b141a11a2b[m
+Author: aysenarmagan <aysen.armagan@gmail.com>
+Date:   Mon Apr 11 18:43:02 2016 -0400
+
+    aysen forum
+
+[33mcommit 542fa490450eb39fbeb72bfc0ba904284fa03a11[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Mon Apr 11 15:14:44 2016 -0400
+
+    nithia fix
+
+[33mcommit 4271a71f41cdd0a2fc926a93cbcd486d37ee68cb[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 03:43:23 2016 -0400
+
+    Comments feature 90% done, working
+
+[33mcommit 76d295671e474df848f2a587638ff65026251bbd[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 03:32:50 2016 -0400
+
+    Fixing my features. RENAMED ID_user in user table
+
+[33mcommit bc80f33aa4212d6787df0ed1c6ca28c8924f679e[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 03:12:26 2016 -0400
+
+    Adding comments feature
+
+[33mcommit ea0ed431c9815da70fe01b443f3f3be05e1729d1[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 03:04:10 2016 -0400
+
+    Helen add tables to DB
+
+[33mcommit 7b56616063f6447fd7c0c2c83737382f247549ea[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 02:41:43 2016 -0400
+
+    Revert "Touched home page, it was looking like too big paddings"
+    
+    This reverts commit a49100073164ee318daa7e222b2f05051a4c9e4c.
+
+[33mcommit a49100073164ee318daa7e222b2f05051a4c9e4c[m
+Author: HelenBoitsova <helen.boitsova@gmail.com>
+Date:   Mon Apr 11 02:40:00 2016 -0400
+
+    Touched home page, it was looking like too big paddings
+
+[33mcommit 879fc75feb847c09de7ee2c208029b4ad550b761[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Sun Apr 10 19:45:51 2016 -0400
+
+    Register/Login with PDO
+
+[33mcommit 0c6019f89bb36224d854fb92d33af32824e03897[m
+Author: AntonioFreire <amanuelfreire@gmail.com>
+Date:   Sun Apr 10 18:47:22 2016 -0400
+
+    Register/Login
+
+[33mcommit 844f3eacf91e5cd0bf8b88f9e251f9a9dd7ec5d6[m
+Author: Alexander <alex.volynchikov@mail.ru>
+Date:   Sat Apr 9 22:51:08 2016 -0400
+
+    Feature 3 and validation for Feature 2
+
+[33mcommit da84ad4c35413a81b2822
