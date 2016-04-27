@@ -2,6 +2,23 @@
 
 <title>Questionnaire</title>
 
+
+<?php
+
+if(isset($_SESSION['user_session'])) {
+
+    $rez = $user->userInfo($_SESSION['user_session']);
+    $_SESSION['role'] = $rez['Rights'];
+    if ($_SESSION['role'] == 2){
+        echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>";
+
+    }
+    else {
+
+?>
+
+
+
 <?php require_once('database.php') ?>
 
 <link rel="stylesheet" href="scripts/questionnaire.css">
@@ -86,5 +103,20 @@ $statement_a->closeCursor();
 
 
 <!---------------------------------------------------->
+
+
+<?php
+
+    }
+
+}
+else {
+    echo "<h2>We are sorry, but you have to be logged in to see this page,
+please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+}
+?>
+
+
+
 
 <?php require_once '../content_bottom.php'; ?>

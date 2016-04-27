@@ -2,6 +2,25 @@
 
     <title>Contact Us</title>
 
+
+<?php
+
+if(isset($_SESSION['user_session'])) {
+
+    $rez = $user->userInfo($_SESSION['user_session']);
+    $_SESSION['role'] = $rez['Rights'];
+    if ($_SESSION['role'] == 2){
+        echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>";
+
+    }
+    else {
+
+?>
+
+
+
+
+
 <?php require_once('database.php') ?>
 
     <link rel="stylesheet" href="scripts/contactus.css">
@@ -38,15 +57,6 @@ $statement->closeCursor();
 
     <div class="contactus_form_field">
         <div class="contactus_form_lable">
-            <label>User ID: </label>
-        </div>
-        <div class="contactus_form_input">
-            <input type="text" name="user_id" readonly value="<?php echo $row['userID'] ?>" style="background-color:#d3d3d3;"/>
-        </div>
-    </div>
-
-    <div class="contactus_form_field">
-        <div class="contactus_form_lable">
             <label>Question: </label>
         </div>
         <div class="contactus_form_input">
@@ -68,5 +78,19 @@ $statement->closeCursor();
         <input type="submit" value="Answer / Update the answer" />
     </div>
 </form>
+
+
+
+<?php
+
+    }
+
+}
+else {
+    echo "<h2>We are sorry, but you have to be logged in to see this page,
+please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+}
+?>
+
 
 <?php require_once '../content_bottom.php'; ?>

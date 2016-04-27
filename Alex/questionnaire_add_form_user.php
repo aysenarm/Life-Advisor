@@ -1,16 +1,28 @@
-<?php session_start(); ?>
-
 <?php require_once '../content_top.php'; ?>
 
 <title>Questionnaire</title>
+
+
+
+<?php
+if(isset($_SESSION['user_session'])) {
+
+    $rez = $user->userInfo($_SESSION['user_session']);
+    $_SESSION['role'] = $rez['Rights'];
+
+?>
+
+
+
+
 
 <?php require_once('database.php') ?>
 
 <link rel="stylesheet" href="scripts/questionnaire.css">
 
-<?php  $user_id = $_SESSION['userId'] ?>
+<?php  $user_id = $rez['ID_user']; ?>
 
-<?php echo $user_id; ?>
+
 
 
 
@@ -77,5 +89,18 @@ $statement->closeCursor();
 </form>
 
 <!-------------------- ------------------------------------>
+
+
+<?php
+
+}
+else {
+    echo "<h2>We are sorry, but you have to be logged in to see this page,
+    please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+}
+
+?>
+
+
 
 <?php require_once '../content_bottom.php'; ?>
