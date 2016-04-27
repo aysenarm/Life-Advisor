@@ -2,7 +2,7 @@
 class commentDB {
     //four static method
     public static function getComments() {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = 'SELECT * FROM forum_comments';
         $result = $db->query($query);
         $comments = array();
@@ -17,7 +17,7 @@ class commentDB {
         return $comments;
     }
     public static function getCommentsByTopic($comment_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT forum_comments.commentName,
                   forum_comments.commentID,
                   forum_comments.datePublished,
@@ -39,7 +39,7 @@ class commentDB {
         return $comments;
     }
     public static function getComment($comment_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT * FROM forum_comments WHERE commentID = '$comment_id'";
         $result = $db->query($query);
         //convert result into array
@@ -54,14 +54,14 @@ class commentDB {
     }
 
     public static function deleteComment($comment_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "DELETE FROM forum_comments WHERE commentID = '$comment_id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
     public static function addComment($comment) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $name = $comment->getName();
         $datePublished = $comment->getDatePublished();
         $userID = $comment->getUserID();
@@ -73,7 +73,7 @@ class commentDB {
         return $row_count;
     }
     public static function editComment($comment) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
 
         $comment_id = $comment->getID();
         $name = $comment->getName();

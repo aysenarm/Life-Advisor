@@ -4,7 +4,7 @@ class topicDB
     //four static method
     public static function getTopics()
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = 'SELECT * FROM forum_topics';
         $result = $db->query($query);
         $topics = array();
@@ -21,7 +21,7 @@ class topicDB
 
     public static function getTopicsByCategory($category_id)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT forum_topics.topicID,
                   forum_topics.topicName,
                   forum_topics.userID,
@@ -46,7 +46,7 @@ class topicDB
 
     public static function getTopic($topic_id)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT * FROM forum_topics WHERE topicID = '$topic_id'";
         $result = $db->query($query);
         //convert result into array
@@ -62,7 +62,7 @@ class topicDB
 
     public static function deleteTopic($topic_id)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "DELETE FROM forum_topics WHERE topicID = '$topic_id'";
         $row_count = $db->exec($query);
         return $row_count;
@@ -70,7 +70,7 @@ class topicDB
 
     public static function addTopic($topic)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $name = $topic->getName();
         $userID = $topic->getUserID();
         $categoryID = $topic->getCategoryID();
@@ -84,7 +84,7 @@ class topicDB
 
     public static function editTopic($topic)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
 
         $topic_id = $topic->getID();
         $name = $topic->getName();
@@ -105,7 +105,7 @@ class topicDB
 
     public static function countComments($topicID)
     {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT COUNT(*) as c FROM forum_comments WHERE topicID='" . $topicID . "'";
         $result = $db->query($query);
         $row = $result->fetch();

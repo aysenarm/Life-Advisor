@@ -2,7 +2,7 @@
 class promotionDB {
     //four static method
     public static function getPromotions() {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = 'SELECT * FROM promotions';
         $result = $db->query($query);
         $promotions = array();
@@ -23,7 +23,7 @@ class promotionDB {
 
 
     public static function getPromotion($promotion_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT * FROM promotions WHERE id = '$promotion_id'";
         $result = $db->query($query);
         //convert result into array
@@ -41,14 +41,14 @@ class promotionDB {
     }
 
     public static function deletePromotion($promotion_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "DELETE FROM promotions WHERE id = '$promotion_id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
     public static function addPromotion($promotion) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $image = $promotion->getImage();
         $datePublished = $promotion->getDatePublished();
         $dateValid = $promotion->getDateValid();
@@ -65,7 +65,7 @@ class promotionDB {
     }
 
     public static function editPromotion($promotion) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $image = $promotion->getImage();
         $datePublished = $promotion->getDatePublished();
         $dateValid = $promotion->getDateValid();

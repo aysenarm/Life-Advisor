@@ -2,7 +2,7 @@
 class imageDB {
     //four static method
     public static function getImages() {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = 'SELECT * FROM gallery_images';
         $result = $db->query($query);
         $images = array();
@@ -18,7 +18,7 @@ class imageDB {
         return $images;
     }
     public static function getImagesByGallery($galleryID) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = 'SELECT * FROM gallery_images WHERE galleryID = '.$galleryID;
         $result = $db->query($query);
         $images = array();
@@ -35,7 +35,7 @@ class imageDB {
     }
 
     public static function getImage($image_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "SELECT * FROM gallery_images WHERE imageID = '$image_id'";
         $result = $db->query($query);
         //convert result into array
@@ -51,14 +51,14 @@ class imageDB {
     }
 
     public static function deleteImage($image_id) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $query = "DELETE FROM gallery_images WHERE imageID = '$image_id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
     public static function addImage($image) {
-        $db = Database::getDB();
+        $db = Database2::getDB();
         $name = $image->getName();
         $datePublished = $image->getDatePublished();
         $userID = $image->getUserID();

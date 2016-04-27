@@ -1,9 +1,9 @@
 <?php
-class Database {
+class Database2 {
 	
-    private static $dsn = 'mysql:host=localhost;port=3307;dbname=life_advisor';
+    private static $dsn = 'mysql:host=localhost;dbname=project';
     private static $username = 'root';
-    private static $password = 'usbw';
+    private static $password = '';
    //reference to db connection
     private static $db;
 
