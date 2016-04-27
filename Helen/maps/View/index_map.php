@@ -34,7 +34,7 @@ if($_POST){
 
         ?>
 
-    <div style="border: dashed; width: 50%;">
+    <div style="border: dashed;">
         <form action="../controller/process.php" method="post">
             <div>Please name of the shops you are looking for:</div>
             <input type='text' name='shop' placeholder='Enter shop name' />

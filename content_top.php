@@ -24,7 +24,7 @@ require 'Daria/newsletter/Newsletter.class.php';
     <script type="text/javascript" src="http://localhost/Life-Advisor/Daria/newsletter/Admin/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="http://localhost/Life-Advisor/style.css" />
 
-    <link href="Helen/maps/View/style-map.css" rel="stylesheet">
+    <link href="style-map.css" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <style>
