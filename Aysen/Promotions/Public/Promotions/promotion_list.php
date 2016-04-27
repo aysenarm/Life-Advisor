@@ -1,5 +1,3 @@
-<?php include '../../../view/header.php'; ?>
-
 <div id="main">
     <div>
 <h1>Promotions</h1>

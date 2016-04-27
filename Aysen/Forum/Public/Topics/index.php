@@ -4,6 +4,7 @@ require('../../Model/topic.php');
 require('../../Model/topic_db.php');
 require('../../Model/category.php');
 require ('../../Model/category_db.php');
+require_once ('../../../view/header.php');
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -61,4 +62,5 @@ else if ($action == 'add_topic') {
 
     }
 }
+require_once '../../../view/footer.php';
 ?>

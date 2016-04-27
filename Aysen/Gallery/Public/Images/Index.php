@@ -4,6 +4,7 @@ require('../../Model/image.php');
 require('../../Model/image_db.php');
 require ('../../Model/gallery.php');
 require ('../../Model/gallery_db.php');
+require_once ('../../../view/header.php');
 
 if (isset($_GET['gallery_id'])) {
     $galleryID = $_GET['gallery_id'];
@@ -27,3 +28,4 @@ if ($action == 'list_images') {
         // Display the gallery list
     include('image_list.php');
 }
+require_once ('../../../view/footer.php');

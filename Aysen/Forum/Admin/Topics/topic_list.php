@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 
 <div id="main">
 
@@ -56,4 +55,3 @@
     <p><a href="../Categories?action=list_categories" class="btn btn-info" role="button">View Category List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

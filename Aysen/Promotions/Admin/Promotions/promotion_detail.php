@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <div id="sidebar">
     </div>
@@ -17,4 +16,3 @@
 <p><a href="?action=list_promotions" class="btn btn-info" role="button">View Promotion List</a></p>
     </div>
 </div>
-<?php include '../../../view/footer.php'; ?>

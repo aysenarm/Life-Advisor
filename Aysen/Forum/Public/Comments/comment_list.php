@@ -1,4 +1,4 @@
-<?php include '../../../view/header.php'; ?>
+
 <div id="main">
 
     <h1>Comment List of <?php echo $topic->getName(); ?></h1>
@@ -24,7 +24,7 @@
     <div class="form-group">
         <?php
         if(isset($_SESSION['user_session'])) {
-        echo "<form method='post' action='?action=add_comment&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topic->getID();?>'>
+        echo "<form method='post' action='?action=add_comment&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID?>'>
         <label for='comment'>Comment:</label>
         <textarea name='name' class='form-control' rows='5' id='name' required></textarea>
        <br/>
@@ -43,4 +43,3 @@ please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-fo
     <p><a href="../Topics?action=list_topics&category_id=<?php echo $categoryID;?>" class="btn btn-info" role="button">View Topic List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

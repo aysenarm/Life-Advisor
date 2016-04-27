@@ -1,8 +1,3 @@
-<?php include '../../../view/header.php'; ?>
-
-
-
-
 <div id="main">
 
     <h1>Category List</h1>
@@ -32,5 +27,3 @@
         }
     </script>
 </div>
-
-<?php include '../../../view/footer.php'; ?>

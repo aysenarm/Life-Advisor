@@ -4,16 +4,14 @@ require('../../Model/image.php');
 require('../../Model/image_db.php');
 require ('../../Model/gallery.php');
 require ('../../Model/gallery_db.php');
-
+require_once ('../../../view/header.php');
 if(isset($_SESSION['user_session'])) {
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];
     echo $_SESSION['role'];
     if ($_SESSION['role'] == 2){
-        include '../../../view/header.php';
         echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
-        include '../../../view/footer.php';
     }
     else {
 
@@ -177,10 +175,8 @@ if(isset($_SESSION['user_session'])) {
     }
 }
 else {
-    include '../../../view/header.php';
     echo "<h2>We are sorry, but you have to be logged in to see this page,
 please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
-    include '../../../view/footer.php';
 }
-
+require_once ('../../../view/footer.php');
 ?>

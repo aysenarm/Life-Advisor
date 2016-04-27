@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
 
     <h1>Image List</h1>
@@ -40,4 +39,3 @@
     </div>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

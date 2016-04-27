@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <div id="sidebar">
     </div>
@@ -13,4 +12,3 @@
 <p><a href="index.php?action=list_images&gallery_id=<?php echo $gallery->getID();?>" class="btn btn-info" role="button">View Image List</a></p>
     </div>
 </div>
-<?php include '../../../view/footer.php'; ?>

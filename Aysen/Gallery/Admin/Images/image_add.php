@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Add a New Image</h1>
     <div class="form-group">
@@ -19,4 +18,3 @@
     <p><a href="?gallery_id=<?php echo $gallery->getID();?>" class="btn btn-info" role="button">View Image List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

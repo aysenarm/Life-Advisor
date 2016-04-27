@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Add a New Gallery</h1>
     <div class="form-group">
@@ -20,4 +19,3 @@
     <p><a href="index.php?action=list_galleries" class="btn btn-info" role="button">View Gallery List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

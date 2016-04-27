@@ -2,6 +2,7 @@
 require('../../../database.php');
 require('../../Model/gallery.php');
 require('../../Model/gallery_db.php');
+require_once ('../../../view/header.php');
 
 
 if (isset($_POST['action'])) {
@@ -18,3 +19,4 @@ if ($action == 'list_galleries') {
     // Display the gallery list
     include('gallery_list.php');
 }
+require_once ('../../../view/footer.php');

@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
 
     <h1>Comment List of <?php echo $topic->getName(); ?></h1>
@@ -47,4 +46,3 @@
     <p><a href="../Topics?action=list_topics&category_id=<?php echo $categoryID;?>" class="btn btn-info" role="button">View Topic List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

@@ -2,6 +2,7 @@
 require('../../../database.php');
 require('../../Model/promotion.php');
 require('../../Model/promotion_db.php');
+require ('../../../view/header.php');
 
 if(isset($_SESSION['user_session'])) {
 
@@ -21,8 +22,7 @@ if(isset($_SESSION['user_session'])) {
     }
 }
 else {
-    include '../../../view/header.php';
     echo "<h2>We are sorry, but you have to be logged in to see this page,
 please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
-    include '../../../view/footer.php';
 }
+require_once ('../../../view/footer.php');

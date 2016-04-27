@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Edit Comment</h1>
     <div class="form-group">
@@ -20,4 +19,3 @@
     <p><a href="?action=list_comments&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID;?>" class="btn btn-info" role="button">View Comment List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

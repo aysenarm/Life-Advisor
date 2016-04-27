@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Add a New Promotion</h1>
     <div class="form-group">
@@ -26,4 +25,3 @@
     <p><a href="index.php?action=list_promotions" class="btn btn-info" role="button">View Promotion List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>

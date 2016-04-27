@@ -1,4 +1,3 @@
-<?php include '../../../view/header.php'; ?>
 <div id="main">
     <h1>Add a New Topic</h1>
     <div class="form-group">
@@ -16,4 +15,3 @@
     <p><a href="?action=list_topics&category_id=<?php echo $categoryID;?>" class="btn btn-info" role="button">View Topic List</a></p>
 
 </div>
-<?php include '../../../view/footer.php'; ?>
