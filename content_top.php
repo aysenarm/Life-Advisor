@@ -362,7 +362,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                         </form>
                         <div id="response">
                             <?php
-                            if (!empty($_POST)) {
+                            if (!empty($_POST['signup-email'])) {
                                 $email = $_POST['signup-email'];
                                 $response = [];
                                 $response = json_decode(Newsletter::register($email), true);
