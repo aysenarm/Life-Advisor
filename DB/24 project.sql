@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 28 2016 г., 09:24
+-- Время создания: Апр 28 2016 г., 09:12
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -346,11 +346,11 @@ INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, 
 (1, 'Students', 2, 'posted', '<h3>hjk</h3>\r\n', 0, 'student', 'People', '3kRbHzu.jpg'),
 (2, 'Test', 1, 'posted', '<h1>jkhfg</h1>\r\n', 5, 'test', 'Finances', '054c878f0aed51d9c46aac0fe4e1431c.jpg'),
 (3, 'Test page', 2, 'posted', '<h1>NGKDGVk</h1>\r\n', 13, 'test', 'Finances', '00000203.jpg'),
-(9, 'Student', 15, 'not posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'friday', 'Recipes', '03657_HD.jpg'),
+(9, 'Student', 15, 'not posted', '<p><em>sedrftyo</em></p>\r\n', 0, 'friday', 'Recipes', '0'),
 (4, 'Newsletter template Helen', 15, 'not posted', '<h1>FRIDAYYYYY!</h1>\r\n', 1, 'test', 'Recipes', '04172_HD.jpg'),
-(7, 'Manitoba list', 15, 'not posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'friday', 'House', '00721_BG.jpg'),
+(7, 'Manitoba list', 15, 'not posted', '<p><s>vbnhjkl;</s></p>\r\n', 0, 'friday', 'House', '0'),
 (6, 'Helen''s try 1', 15, 'not posted', '<p><em>cvhjkl;</em></p>\r\n', 0, 'friday', 'Finances', '00721_BG.jpg'),
-(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'friday', 'Recipes', 'c-nA5-VR0pY.jpg');
+(8, 'Student', 15, 'not posted', '<p><em>sedrtguj</em></p>\r\n', 0, 'friday', 'Recipes', '0');
 
 -- --------------------------------------------------------
 
@@ -509,7 +509,7 @@ INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Usernam
 (1, 'User 1', 'Surname 1', '1', '11111', 'Nick', 'nick@gmail.com', 'signed', '6479347479', '1'),
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', '2'),
 (15, 'Helena', 'Boitsova', '1', '$2y$10$4F2OJ6pKczhQlT1sOGoA2.EbkEtbCpV9GSpZ3xESt4.G4Xk7Vwcq.', 'helen', 'helen.boitsova@gmail.com', '', '6479367479', 'helen.jpg'),
-(16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', 'user.png'),
+(16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', 'home-user-icon.png'),
 (18, '', '', '2', '$2y$10$e1hUHcT2e2/WA4gBob4wBeJ1Un/rTkIwBkRACdMcIQLD7OE1ijS96', 'alex', 'alex@gmail.com', '', '', 'user.png');
 
 --
