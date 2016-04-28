@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.0.4.2
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Апр 28 2016 г., 05:49
--- Версия сервера: 10.1.9-MariaDB
--- Версия PHP: 5.6.15
+-- Host: localhost
+-- Generation Time: Apr 28, 2016 at 04:00 AM
+-- Server version: 5.6.13
+-- PHP Version: 5.4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,28 +14,33 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `project`
+-- Database: `project`
 --
+CREATE DATABASE IF NOT EXISTS `project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `project`;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `comments`
+-- Table structure for table `comments`
 --
 
-CREATE TABLE `comments` (
-  `ID_comment` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `comments` (
+  `ID_comment` int(11) NOT NULL AUTO_INCREMENT,
   `ID_page` int(11) NOT NULL,
   `ID_user` int(11) NOT NULL,
   `Text` varchar(5000) NOT NULL,
-  `state` set('published','not published') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `state` set('published','not published') NOT NULL,
+  PRIMARY KEY (`ID_comment`),
+  KEY `ID_page` (`ID_page`),
+  KEY `ID_page_2` (`ID_page`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
--- Дамп данных таблицы `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VALUES
@@ -50,21 +55,22 @@ INSERT INTO `comments` (`ID_comment`, `ID_page`, `ID_user`, `Text`, `state`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `contactus`
+-- Table structure for table `contactus`
 --
 
-CREATE TABLE `contactus` (
-  `questionID` int(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `contactus` (
+  `questionID` int(50) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `question` text NOT NULL,
   `category` varchar(20) NOT NULL,
   `questionDate` date NOT NULL,
   `answer` text,
-  `answerDate` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `answerDate` date DEFAULT NULL,
+  PRIMARY KEY (`questionID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Дамп данных таблицы `contactus`
+-- Dumping data for table `contactus`
 --
 
 INSERT INTO `contactus` (`questionID`, `userID`, `question`, `category`, `questionDate`, `answer`, `answerDate`) VALUES
@@ -80,11 +86,11 @@ INSERT INTO `contactus` (`questionID`, `userID`, `question`, `category`, `questi
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `donations`
+-- Table structure for table `donations`
 --
 
-CREATE TABLE `donations` (
-  `donationID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `donations` (
+  `donationID` int(11) NOT NULL AUTO_INCREMENT,
   `amount` varchar(50) NOT NULL,
   `cardholderName` varchar(500) NOT NULL,
   `cardNumber` varchar(500) NOT NULL,
@@ -94,11 +100,12 @@ CREATE TABLE `donations` (
   `phoneNumber` varchar(50) NOT NULL,
   `regularity` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `firstTransaction` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `firstTransaction` date NOT NULL,
+  PRIMARY KEY (`donationID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Дамп данных таблицы `donations`
+-- Dumping data for table `donations`
 --
 
 INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`, `expiryDate`, `cvs`, `email`, `phoneNumber`, `regularity`, `status`, `firstTransaction`) VALUES
@@ -116,212 +123,187 @@ INSERT INTO `donations` (`donationID`, `amount`, `cardholderName`, `cardNumber`,
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `forum_categories`
+-- Table structure for table `forum_categories`
 --
 
-CREATE TABLE `forum_categories` (
-  `categoryID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `forum_categories` (
+  `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(50) DEFAULT NULL,
   `userID` int(11) NOT NULL,
-  `datePublished` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `datePublished` date NOT NULL,
+  PRIMARY KEY (`categoryID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
--- Дамп данных таблицы `forum_categories`
+-- Dumping data for table `forum_categories`
 --
 
 INSERT INTO `forum_categories` (`categoryID`, `categoryName`, `userID`, `datePublished`) VALUES
-(2, '22222', 0, '0000-00-00'),
-(8, '8888888', 1, '2016-04-12'),
-(15, 'fghjh', 1, '2016-04-12'),
-(18, '33333', 1, '2016-04-12'),
-(20, 'jkjkbkj', 1, '2016-04-05');
+(21, 'Cleaning', 1, '2016-04-28'),
+(22, 'Appliances', 1, '2016-04-28'),
+(23, 'Finance', 1, '2016-04-28'),
+(24, 'People', 1, '2016-04-28'),
+(25, 'Time Management', 1, '2016-04-28'),
+(26, 'Recipes', 1, '2016-04-28'),
+(27, 'House', 1, '2016-04-28');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `forum_comments`
+-- Table structure for table `forum_comments`
 --
 
-CREATE TABLE `forum_comments` (
-  `commentID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `forum_comments` (
+  `commentID` int(11) NOT NULL AUTO_INCREMENT,
   `commentName` varchar(50) DEFAULT NULL,
   `userID` int(11) NOT NULL,
   `datePublished` date NOT NULL,
-  `topicID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `topicID` int(11) NOT NULL,
+  PRIMARY KEY (`commentID`),
+  KEY `topicID` (`topicID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `forum_comments`
+-- Dumping data for table `forum_comments`
 --
 
 INSERT INTO `forum_comments` (`commentID`, `commentName`, `userID`, `datePublished`, `topicID`) VALUES
-(2, '22222222222', 0, '0000-00-00', 1),
-(3, 'dsgfgs', 0, '0000-00-00', 3),
-(5, '55555', 1, '2016-04-05', 1),
-(7, 'kjbk', 1, '2016-04-05', 1),
-(8, 'bjkkj', 1, '2016-04-05', 1),
-(9, 'kjbhk', 1, '2016-04-05', 1),
-(10, '99999', 1, '2016-04-05', 1),
-(11, 'nlbnl', 1, '2016-04-05', 1),
-(12, 'lljkjl', 1, '2016-04-05', 1),
-(13, 'fvdg', 1, '2016-04-05', 1),
-(15, 'bir daha 62', 1, '2016-04-12', 62),
-(17, '20 56', 1, '2016-04-12', 56),
-(18, 'dsfgthyjkl', 1, '2016-04-12', 56),
-(19, 'efwrgthyjuky', 1, '2016-04-12', 56),
-(20, 'fbgnhjyku', 1, '2016-04-12', 56),
-(21, '18 60', 1, '2016-04-12', 60),
-(22, 'fsggs', 1, '2016-04-12', 65),
-(23, 'sgsg', 1, '2016-04-12', 65),
-(24, 'jnllnl', 1, '2016-04-12', 62),
-(25, 'fdsgsfg', 1, '2016-04-12', 74),
-(26, 'dsgdsgs', 1, '2016-04-12', 74),
-(27, 'sdgsg', 1, '2016-04-12', 74),
-(28, 'tyuÃ„Â±opÃ„Å¸ÃƒÂ¼', 1, '2016-04-12', 69),
-(29, 'fdghjkÃ„Â±lopÃ„Å¸', 1, '2016-04-12', 69),
-(30, 'dsgery', 1, '2016-04-12', 57),
-(31, 'afewfe', 1, '2016-04-12', 53),
-(32, 'dfrwfs', 1, '2016-04-12', 53),
-(33, '33 uncuu', 1, '2016-04-18', 53),
-(34, '34uncuuu', 1, '2016-04-18', 53),
-(35, '35', 1, '2016-04-18', 53),
-(36, '36', 1, '2016-04-18', 53),
-(37, '37 blablabalabalbalab', 1, '2016-04-18', 53),
-(38, 'dfhdghdr', 1, '2016-04-20', 62),
-(39, 'mhbkbkjb', 1, '2016-04-20', 62),
-(40, 'khgvhgvj\r\nkljhjlhn\r\nnbvmvk\r\n', 1, '2016-04-20', 62);
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing', 1, '2016-04-28', 80);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `forum_topics`
+-- Table structure for table `forum_topics`
 --
 
-CREATE TABLE `forum_topics` (
-  `topicID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `forum_topics` (
+  `topicID` int(11) NOT NULL AUTO_INCREMENT,
   `topicName` varchar(50) DEFAULT NULL,
   `categoryID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
-  `datePublished` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `datePublished` date NOT NULL,
+  PRIMARY KEY (`topicID`),
+  KEY `categoryID` (`categoryID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=84 ;
 
 --
--- Дамп данных таблицы `forum_topics`
+-- Dumping data for table `forum_topics`
 --
 
 INSERT INTO `forum_topics` (`topicID`, `topicName`, `categoryID`, `userID`, `datePublished`) VALUES
-(1, '111111', 8, 0, '0000-00-00'),
-(3, 'gftxffxffgmm', 2, 1, '2016-04-05'),
-(45, 'khkuh', 2, 1, '2016-04-11'),
-(47, 'dsfsd', 8, 4, '2016-04-27'),
-(48, 'mcfds', 2, 1, '2016-04-05'),
-(49, '50', 2, 1, '2016-04-11'),
-(50, 'dsfaege', 2, 1, '2016-04-11'),
-(52, '2 ye ekle kafayÃ„Â± yicem', 2, 1, '2016-04-12'),
-(53, '2 ye ekle tekrar', 2, 1, '2016-04-12'),
-(56, '20 ye ekliyorum', 20, 1, '2016-04-12'),
-(57, '18 e edit gari', 18, 1, '2016-04-12'),
-(58, '18 e mnb kjbn', 18, 1, '2016-04-12'),
-(60, 'kkj', 18, 1, '2016-04-12'),
-(61, 'hbkbnmb', 18, 1, '2016-04-12'),
-(62, '15 ekle', 15, 1, '2016-04-12'),
-(63, 'ekliyom', 15, 1, '2016-04-12'),
-(64, 'hjbkhbkh', 18, 1, '2016-04-12'),
-(65, 'kbjbkjkj', 15, 1, '2016-04-12'),
-(66, 'kjbkjn', 15, 1, '2016-04-12'),
-(67, 'kjbnl', 2, 1, '2016-04-12'),
-(68, 'bhjkhb', 18, 1, '2016-04-11'),
-(69, 'kbjkbk', 18, 1, '2016-04-11'),
-(70, 'fghfg', 18, 1, '2016-04-11'),
-(71, 'jfd', 18, 1, '2016-04-11'),
-(72, 'dsjnds', 18, 1, '2016-04-11'),
-(73, 'n bk', 18, 1, '2016-04-11'),
-(74, 'sfsfewfew', 8, 1, '2016-04-12'),
-(75, 'fgrgwrg', 8, 1, '2016-04-12'),
-(76, 'rgytrut', 18, 1, '2016-04-12'),
-(77, 'fghs', 2, 1, '2016-04-12'),
-(78, 'fgseh6r', 2, 1, '2016-04-12'),
-(79, 'ghdghtydj', 2, 1, '2016-04-12');
+(80, 'Car Cleaning', 21, 1, '2016-04-28'),
+(81, 'Outdoor Cleaning', 21, 1, '2016-04-28'),
+(82, 'Laundry', 21, 1, '2016-04-28'),
+(83, 'Green Cleaning', 21, 1, '2016-04-28');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gallery_galleries`
+-- Table structure for table `gallery_galleries`
 --
 
-CREATE TABLE `gallery_galleries` (
-  `galleryID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `gallery_galleries` (
+  `galleryID` int(11) NOT NULL AUTO_INCREMENT,
   `galleryName` varchar(50) NOT NULL,
   `datePublished` date NOT NULL,
   `userID` int(11) NOT NULL,
-  `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `image` varchar(100) NOT NULL,
+  PRIMARY KEY (`galleryID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Дамп данных таблицы `gallery_galleries`
+-- Dumping data for table `gallery_galleries`
 --
 
 INSERT INTO `gallery_galleries` (`galleryID`, `galleryName`, `datePublished`, `userID`, `image`) VALUES
-(17, 'fdgdg', '2016-04-28', 1, '503527899.jpg'),
-(18, 'fdgdg', '2016-04-28', 1, '503527899.1461801230.jpg'),
-(19, 'sdgfdg', '2016-04-28', 1, 'photo.jpg'),
-(20, 'sdgfdg', '2016-04-28', 1, 'photo.1461801643.jpg'),
-(21, 'sdgfdg', '2016-04-28', 1, 'photo.1461801658.jpg'),
-(22, 'sdgfdg', '2016-04-28', 1, 'photo.1461802043.jpg'),
-(23, 'fdfgsg', '2016-04-28', 1, '512043205.jpg');
+(17, 'Kitchen Designs', '2016-04-28', 1, 'can-stock-photo_csp13118945.jpg'),
+(18, 'Cleaning', '2016-04-28', 1, 'cover.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gallery_images`
+-- Table structure for table `gallery_images`
 --
 
-CREATE TABLE `gallery_images` (
-  `imageID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `gallery_images` (
+  `imageID` int(11) NOT NULL AUTO_INCREMENT,
   `galleryID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `datePublished` date NOT NULL,
   `alt` varchar(50) NOT NULL,
-  `fileName` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fileName` varchar(100) NOT NULL,
+  PRIMARY KEY (`imageID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=97 ;
 
 --
--- Дамп данных таблицы `gallery_images`
+-- Dumping data for table `gallery_images`
 --
 
 INSERT INTO `gallery_images` (`imageID`, `galleryID`, `userID`, `datePublished`, `alt`, `fileName`) VALUES
-(24, 3, 1, '2016-04-19', 'apple', 'apple.jpg'),
-(25, 3, 1, '2016-04-19', 'banana', 'banana.jpg'),
-(29, 3, 1, '2016-04-19', 'apple', 'apple.jpg'),
-(30, 3, 1, '2016-04-19', 'hbhbkh', 'apple.jpg'),
-(31, 3, 1, '2016-04-19', 'mb hh', 'apple.1461039583.jpg'),
-(35, 3, 1, '2016-04-19', 'rwsdfgwds', 'apple.1461039770.jpg'),
-(37, 3, 1, '2016-04-19', 'dsff', 'apple.1461041090.jpg'),
-(38, 3, 1, '2016-04-19', 'wgsg', 'apple.1461041274.jpg'),
-(39, 3, 1, '2016-04-19', 'mdmd', '1.jpg'),
-(40, 3, 1, '2016-04-19', 'mdmd', '2.jpg'),
-(41, 3, 1, '2016-04-19', 'mdmdm', '1.1461041384.jpg'),
-(42, 3, 1, '2016-04-19', 'mdmdm', '2.1461041384.jpg'),
-(43, 1, 1, '2016-04-19', 'kkskds', '1.jpg'),
-(44, 1, 1, '2016-04-19', 'kkskds', '2.jpg'),
-(45, 14, 1, '2016-04-19', 'kdkdk', '1.jpg'),
-(46, 14, 1, '2016-04-19', 'kdkdk', '2.jpg');
+(47, 17, 1, '2016-04-28', 'Kitchen', '1-01-modern-kitchen-burnt-bamboo.jpg'),
+(48, 17, 1, '2016-04-28', 'Kitchen', '15-kitchen1.jpg'),
+(49, 17, 1, '2016-04-28', 'Kitchen', '60e7df1e04abf673acc0ba138619f23e.jpg'),
+(50, 17, 1, '2016-04-28', 'Kitchen', 'b7448dde9b5f5bfc72ee57a8d4992436.jpg'),
+(51, 17, 1, '2016-04-28', 'Kitchen', 'base.jpg'),
+(52, 17, 1, '2016-04-28', 'Kitchen', 'breathtaking-modern-kitches-white-windows-frames-marble-countertop.jpg'),
+(53, 17, 1, '2016-04-28', 'Kitchen', 'contemporary-kitchen.jpg'),
+(54, 17, 1, '2016-04-28', 'Kitchen', 'csm_213-269-793-M01-285-222-188-j15_01_86c60950db.jpg'),
+(55, 17, 1, '2016-04-28', 'Kitchen', 'csm_orlando-k-pur-fg-k_9551e85dbc.jpg'),
+(56, 17, 1, '2016-04-28', 'Kitchen', 'csm_synthia-c-ceres-c_38dddf9ac6.jpg'),
+(57, 17, 1, '2016-04-28', 'Kitchen', 'Felton-glossblack.jpg'),
+(58, 17, 1, '2016-04-28', 'Kitchen', 'fs19.jpg'),
+(59, 17, 1, '2016-04-28', 'Kitchen', 'kitchen_improvement_ideas.jpg'),
+(60, 17, 1, '2016-04-28', 'Kitchen', 'Leicht-Kueche-weiss_01.jpg'),
+(63, 17, 1, '2016-04-28', 'Kitchen', 'march2014-pg97-alexlukey-Modernkitchen.jpg'),
+(64, 17, 1, '2016-04-28', 'Kitchen', 'modern-kitchen (1).jpg'),
+(65, 17, 1, '2016-04-28', 'Kitchen', 'modern-kitchen (2).jpg'),
+(66, 17, 1, '2016-04-28', 'Kitchen', 'modern-kitchen (3).jpg'),
+(67, 17, 1, '2016-04-28', 'sdf', 'modern-kitchen (3).1461810144.jpg'),
+(68, 17, 1, '2016-04-28', 'sdf', 'modern-kitchen (4).jpg'),
+(69, 17, 1, '2016-04-28', 'sdf', 'modern-kitchen.jpg'),
+(70, 17, 1, '2016-04-28', 'sdf', 'modern-kitchen-design1.jpg'),
+(71, 17, 1, '2016-04-28', 'sdf', 'Modern-Kitchen-Wall-Murals-Designs.jpg'),
+(72, 17, 1, '2016-04-28', 'sdf', 'modern-kitchen-with-extended-bar.jpg'),
+(73, 17, 1, '2016-04-28', 'sdf', 'RYrlT.jpg'),
+(74, 17, 1, '2016-04-28', 'sdf', 'yeni-ev-ve-dekorasyon.jpg'),
+(75, 18, 1, '2016-04-28', 'Cleaning', '1b1c0be11a6f853a52ba79a0f7402f02.jpg'),
+(76, 18, 1, '2016-04-28', 'Cleaning', '5-Minute-Cleaning-Tips.png'),
+(77, 18, 1, '2016-04-28', 'Cleaning', '10-use-what-you-have-tips.jpg'),
+(78, 18, 1, '2016-04-28', 'Cleaning', '24391a9b146a65090870fef1c207dcc0.jpg'),
+(79, 18, 1, '2016-04-28', 'Cleaning', '1425421500-simple_tricks-3.png'),
+(80, 18, 1, '2016-04-28', 'Cleaning', 'Best-Ever-Cleaning-Tips-from-Jamie-Novak.jpg'),
+(81, 18, 1, '2016-04-28', 'Cleaning', 'cd25381f74ba7b39b3e820338d296f8d.jpg'),
+(82, 18, 1, '2016-04-28', 'Cleaning', 'cleaning-essentials-big (1).jpg'),
+(83, 18, 1, '2016-04-28', 'Cleaning', 'cleaning-essentials-big.jpg'),
+(84, 18, 1, '2016-04-28', 'Cleaning', 'Country-Wide-Cleaining-Infographic.png'),
+(85, 18, 1, '2016-04-28', 'Cleaning', 'cover.jpg'),
+(86, 18, 1, '2016-04-28', 'Cleaning', 'green-home-cleaning.jpg'),
+(87, 18, 1, '2016-04-28', 'Cleaning', 'GreenHouseEcoCleaning-DailyCleaningTips.jpg'),
+(88, 18, 1, '2016-04-28', 'Cleaning', 'Infographic-tips2.jpg'),
+(89, 18, 1, '2016-04-28', 'Cleaning', 'Lazy-Cleaning-Tips-and-Tricks-Lazy-Cleanings-All-Natural-Fridge-Deodorizer1-740x832.png'),
+(90, 18, 1, '2016-04-28', 'Cleaning', 'Mop-Cleaning-Tips.jpg'),
+(91, 18, 1, '2016-04-28', 'Cleaning', 'natural-cleaning-tips-for-the-bathroom.jpg'),
+(92, 18, 1, '2016-04-28', 'Cleaning', 'SmellyRoomTip.jpg'),
+(93, 18, 1, '2016-04-28', 'Cleaning', 'spring-cleaning-041.jpg'),
+(94, 18, 1, '2016-04-28', 'Cleaning', 'SpringCleaningChecklist.png'),
+(95, 18, 1, '2016-04-28', 'Cleaning', 'spring-cleaning-tip.jpg'),
+(96, 18, 1, '2016-04-28', 'Cleaning', 'tip-feb-2015.png');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `images`
+-- Table structure for table `images`
 --
 
-CREATE TABLE `images` (
-  `ID_image` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `images` (
+  `ID_image` int(11) NOT NULL AUTO_INCREMENT,
   `alt_text` varchar(100) NOT NULL,
-  `link` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `link` varchar(500) NOT NULL,
+  PRIMARY KEY (`ID_image`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `images`
+-- Dumping data for table `images`
 --
 
 INSERT INTO `images` (`ID_image`, `alt_text`, `link`) VALUES
@@ -331,22 +313,23 @@ INSERT INTO `images` (`ID_image`, `alt_text`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `newsletter`
+-- Table structure for table `newsletter`
 --
 
-CREATE TABLE `newsletter` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `temp_name` varchar(50) NOT NULL,
   `sender_email` varchar(50) NOT NULL,
   `creator_name` varchar(50) NOT NULL,
   `description` text NOT NULL,
   `time` date NOT NULL,
   `status` varchar(10) NOT NULL,
-  `subject` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `subject` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `newsletter`
+-- Dumping data for table `newsletter`
 --
 
 INSERT INTO `newsletter` (`id`, `temp_name`, `sender_email`, `creator_name`, `description`, `time`, `status`, `subject`) VALUES
@@ -356,11 +339,11 @@ INSERT INTO `newsletter` (`id`, `temp_name`, `sender_email`, `creator_name`, `de
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `page`
+-- Table structure for table `page`
 --
 
-CREATE TABLE `page` (
-  `ID_page` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `page` (
+  `ID_page` int(11) NOT NULL AUTO_INCREMENT,
   `Title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `ID_user` int(11) NOT NULL,
   `Status` set('posted','not posted') COLLATE utf8_unicode_ci NOT NULL,
@@ -368,11 +351,12 @@ CREATE TABLE `page` (
   `Rank` int(11) DEFAULT NULL,
   `Tags` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Menu` set('Recipes','Finances','Time management','Health','House','People') COLLATE utf8_unicode_ci NOT NULL,
-  `ID_image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `ID_image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`ID_page`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
--- Дамп данных таблицы `page`
+-- Dumping data for table `page`
 --
 
 INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, `Tags`, `Menu`, `ID_image`) VALUES
@@ -388,36 +372,37 @@ INSERT INTO `page` (`ID_page`, `Title`, `ID_user`, `Status`, `Content`, `Rank`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `promotions`
+-- Table structure for table `promotions`
 --
 
-CREATE TABLE `promotions` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `promotions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `pKey` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL,
   `dateValid` date NOT NULL,
   `datePublished` date NOT NULL,
-  `userID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `userID` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Дамп данных таблицы `promotions`
+-- Dumping data for table `promotions`
 --
 
 INSERT INTO `promotions` (`id`, `title`, `pKey`, `image`, `dateValid`, `datePublished`, `userID`) VALUES
-(1, 'ljkjlkjl', 'jbkj', 'Untitled.1461472485.png', '2016-04-22', '2016-04-24', 1),
-(2, 'gjggh', 'kkkkk', 'bbbb.1461472584.png', '2016-04-21', '2016-04-24', 1),
-(3, 'ppppppppp', 'lllll', 'Untitled.1461473817.png', '2016-04-21', '2016-04-24', 1);
+(4, 'April is Post-Secondary Student Month!', 'None', 'Students-Save-25-Promos-Page.jpg', '2016-04-30', '2016-04-28', 1),
+(6, 'Buy a Ticket for Toronto Blue Jays vs. Texas Rangers to win #TBT T-Shirt Giveaway Night presented by', 'ILoveLifeAdvisor', 'tbt_tshirt_200x200.jpg', '2016-04-13', '2016-04-28', 1),
+(7, 'Amazon.ca Deals of the Day: Up to 71% Off Barney Miller and Welcome Back, Kotter + Select Romance Ti', 'kindlier', 'Amazon-logo-700x433.jpg', '2016-04-15', '2016-04-28', 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `questionnaire_answers`
+-- Table structure for table `questionnaire_answers`
 --
 
-CREATE TABLE `questionnaire_answers` (
-  `userID` int(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `questionnaire_answers` (
+  `userID` int(50) NOT NULL AUTO_INCREMENT,
   `answer1` text,
   `answer2` text,
   `answer3` text,
@@ -428,11 +413,12 @@ CREATE TABLE `questionnaire_answers` (
   `answer8` text,
   `answer9` text,
   `answer10` text,
-  `aDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `aDate` date NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Дамп данных таблицы `questionnaire_answers`
+-- Dumping data for table `questionnaire_answers`
 --
 
 INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `answer7`, `answer8`, `answer9`, `answer10`, `aDate`) VALUES
@@ -443,16 +429,17 @@ INSERT INTO `questionnaire_answers` (`userID`, `answer1`, `answer2`, `answer3`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `questionnaire_questions`
+-- Table structure for table `questionnaire_questions`
 --
 
-CREATE TABLE `questionnaire_questions` (
-  `questionID` int(50) NOT NULL,
-  `question` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `questionnaire_questions` (
+  `questionID` int(50) NOT NULL AUTO_INCREMENT,
+  `question` text NOT NULL,
+  PRIMARY KEY (`questionID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Дамп данных таблицы `questionnaire_questions`
+-- Dumping data for table `questionnaire_questions`
 --
 
 INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
@@ -470,16 +457,17 @@ INSERT INTO `questionnaire_questions` (`questionID`, `question`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `rights`
+-- Table structure for table `rights`
 --
 
-CREATE TABLE `rights` (
-  `ID rigths` int(11) NOT NULL,
-  `Name` set('admin','ordinary') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `rights` (
+  `ID rigths` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` set('admin','ordinary') NOT NULL,
+  PRIMARY KEY (`ID rigths`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `rights`
+-- Dumping data for table `rights`
 --
 
 INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
@@ -489,17 +477,18 @@ INSERT INTO `rights` (`ID rigths`, `Name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `signups`
+-- Table structure for table `signups`
 --
 
-CREATE TABLE `signups` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `signups` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `signup_email_address` varchar(250) DEFAULT NULL,
-  `signup_date` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `signup_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
--- Дамп данных таблицы `signups`
+-- Dumping data for table `signups`
 --
 
 INSERT INTO `signups` (`id`, `signup_email_address`, `signup_date`) VALUES
@@ -518,11 +507,11 @@ INSERT INTO `signups` (`id`, `signup_email_address`, `signup_date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `ID_user` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `ID_user` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Rights` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -531,11 +520,12 @@ CREATE TABLE `user` (
   `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `Newsletter` set('signed','not signed') COLLATE utf8_unicode_ci NOT NULL,
   `Phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `ID_image` varchar(100) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `ID_image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID_user`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 --
--- Дамп данных таблицы `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Username`, `Email`, `Newsletter`, `Phone`, `ID_image`) VALUES
@@ -545,216 +535,17 @@ INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Usernam
 (16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', '0');
 
 --
--- Индексы сохранённых таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Индексы таблицы `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`ID_comment`),
-  ADD KEY `ID_page` (`ID_page`),
-  ADD KEY `ID_page_2` (`ID_page`);
-
---
--- Индексы таблицы `contactus`
---
-ALTER TABLE `contactus`
-  ADD PRIMARY KEY (`questionID`);
-
---
--- Индексы таблицы `donations`
---
-ALTER TABLE `donations`
-  ADD PRIMARY KEY (`donationID`);
-
---
--- Индексы таблицы `forum_categories`
---
-ALTER TABLE `forum_categories`
-  ADD PRIMARY KEY (`categoryID`);
-
---
--- Индексы таблицы `forum_comments`
---
-ALTER TABLE `forum_comments`
-  ADD PRIMARY KEY (`commentID`),
-  ADD KEY `topicID` (`topicID`);
-
---
--- Индексы таблицы `forum_topics`
---
-ALTER TABLE `forum_topics`
-  ADD PRIMARY KEY (`topicID`),
-  ADD KEY `categoryID` (`categoryID`);
-
---
--- Индексы таблицы `gallery_galleries`
---
-ALTER TABLE `gallery_galleries`
-  ADD PRIMARY KEY (`galleryID`);
-
---
--- Индексы таблицы `gallery_images`
---
-ALTER TABLE `gallery_images`
-  ADD PRIMARY KEY (`imageID`);
-
---
--- Индексы таблицы `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`ID_image`);
-
---
--- Индексы таблицы `newsletter`
---
-ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `page`
---
-ALTER TABLE `page`
-  ADD PRIMARY KEY (`ID_page`);
-
---
--- Индексы таблицы `promotions`
---
-ALTER TABLE `promotions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  ADD PRIMARY KEY (`userID`);
-
---
--- Индексы таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  ADD PRIMARY KEY (`questionID`);
-
---
--- Индексы таблицы `rights`
---
-ALTER TABLE `rights`
-  ADD PRIMARY KEY (`ID rigths`);
-
---
--- Индексы таблицы `signups`
---
-ALTER TABLE `signups`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID_user`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `comments`
---
-ALTER TABLE `comments`
-  MODIFY `ID_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
---
--- AUTO_INCREMENT для таблицы `contactus`
---
-ALTER TABLE `contactus`
-  MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT для таблицы `donations`
---
-ALTER TABLE `donations`
-  MODIFY `donationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT для таблицы `forum_categories`
---
-ALTER TABLE `forum_categories`
-  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT для таблицы `forum_comments`
---
-ALTER TABLE `forum_comments`
-  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
---
--- AUTO_INCREMENT для таблицы `forum_topics`
---
-ALTER TABLE `forum_topics`
-  MODIFY `topicID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
---
--- AUTO_INCREMENT для таблицы `gallery_galleries`
---
-ALTER TABLE `gallery_galleries`
-  MODIFY `galleryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT для таблицы `gallery_images`
---
-ALTER TABLE `gallery_images`
-  MODIFY `imageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
---
--- AUTO_INCREMENT для таблицы `images`
---
-ALTER TABLE `images`
-  MODIFY `ID_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `newsletter`
---
-ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT для таблицы `page`
---
-ALTER TABLE `page`
-  MODIFY `ID_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT для таблицы `promotions`
---
-ALTER TABLE `promotions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `questionnaire_answers`
---
-ALTER TABLE `questionnaire_answers`
-  MODIFY `userID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT для таблицы `questionnaire_questions`
---
-ALTER TABLE `questionnaire_questions`
-  MODIFY `questionID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT для таблицы `rights`
---
-ALTER TABLE `rights`
-  MODIFY `ID rigths` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `signups`
---
-ALTER TABLE `signups`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
---
--- AUTO_INCREMENT для таблицы `user`
---
-ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
---
--- Ограничения внешнего ключа сохраненных таблиц
---
-
---
--- Ограничения внешнего ключа таблицы `forum_comments`
+-- Constraints for table `forum_comments`
 --
 ALTER TABLE `forum_comments`
   ADD CONSTRAINT `Comment_Topic` FOREIGN KEY (`topicID`) REFERENCES `forum_topics` (`topicID`);
 
 --
--- Ограничения внешнего ключа таблицы `forum_topics`
+-- Constraints for table `forum_topics`
 --
 ALTER TABLE `forum_topics`
   ADD CONSTRAINT `Topic_Category` FOREIGN KEY (`categoryID`) REFERENCES `forum_categories` (`categoryID`);
