@@ -23,13 +23,14 @@
 
     <div class="form-group">
         <?php
+
         if(isset($_SESSION['user_session'])) {
-        echo "<form method='post' action='?action=add_comment&category_id=<?php echo $categoryID;?>&topic_id=<?php echo $topicID?>'>
-        <label for='comment'>Comment:</label>
-        <textarea name='name' class='form-control' rows='5' id='name' required></textarea>
-       <br/>
-        <input type='submit' class='btn btn-default'  value='Add comment' />
-    </form>";
+         echo  "<form action='?action=add_comment&category_id=".$categoryID."&topic_id=".$topicID."' method='post'";
+       echo "<label for='comment'>Comment:</label>";
+       echo "<textarea name='name' class='form-control' rows='5' id='name' required></textarea>";
+       echo "<br/>";
+       echo "<input type='submit' class='btn btn-default'  value='Add comment' />";
+        echo "</form>";
 
         }
         else {

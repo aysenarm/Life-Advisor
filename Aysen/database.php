@@ -1,7 +1,7 @@
 <?php
 class Database2 {
 	
-    private static $dsn = 'mysql:host=localhost;;dbname=project';
+    private static $dsn = 'mysql:host=localhost;dbname=project';
     private static $username = 'root';
     private static $password = '';
    //reference to db connection
