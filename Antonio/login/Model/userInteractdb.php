@@ -15,7 +15,7 @@ class UserDB{
             $new_password = password_hash($upass, PASSWORD_DEFAULT);
             $db = Dbclass::getDB();
             $stmt = $db->prepare("INSERT INTO user(Username,Email,Password,Rights, ID_image)
-                                                       VALUES(:uname, :umail, :upass,:rights, 'home-user-icon.png' )");
+                                                       VALUES(:uname, :umail, :upass,:rights, 'user.png' )");
 
             $stmt->bindparam(":uname", $uname);
             $stmt->bindparam(":umail", $umail);

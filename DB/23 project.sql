@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 28 2016 г., 09:12
+-- Время создания: Апр 28 2016 г., 08:53
 -- Версия сервера: 10.1.9-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -510,7 +510,7 @@ INSERT INTO `user` (`ID_user`, `Name`, `Surname`, `Rights`, `Password`, `Usernam
 (2, 'Helen', 'Boitsova', '2', '12345', 'Lenchezzz', 'l@gmail.com', 'signed', '6755438765', '2'),
 (15, 'Helena', 'Boitsova', '1', '$2y$10$4F2OJ6pKczhQlT1sOGoA2.EbkEtbCpV9GSpZ3xESt4.G4Xk7Vwcq.', 'helen', 'helen.boitsova@gmail.com', '', '6479367479', 'helen.jpg'),
 (16, '', '', '2', '$2y$10$9O2SRik7Fsz4qTtQuKeN5eBL8ZL2U3ym/CHXVFKCMcQy/VgRX7nm2', 'antonio', 'antonio@gmail.com', '', '', 'home-user-icon.png'),
-(18, '', '', '2', '$2y$10$e1hUHcT2e2/WA4gBob4wBeJ1Un/rTkIwBkRACdMcIQLD7OE1ijS96', 'alex', 'alex@gmail.com', '', '', 'user.png');
+(18, '', '', '2', '$2y$10$e1hUHcT2e2/WA4gBob4wBeJ1Un/rTkIwBkRACdMcIQLD7OE1ijS96', 'alex', 'alex@gmail.com', '', '', 'home-user-icon.png');
 
 --
 -- Индексы сохранённых таблиц
