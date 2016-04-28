@@ -4,17 +4,17 @@
         <div class="photos">
 
 
-        <ul>
             <?php foreach ($promotions as $promotion) : ?>
-                <li>
-                    <img src="../../Admin/Images/photo_gallery/<?php echo $promotion->getImage();?>" alt="Cover of <?php echo $promotion->getTitle();?>" width="304" height="236" >
-                    <span class="title"><?php echo $promotion->getTitle();?></span>
-                    <span class="date">Available : <?php echo $promotion->getDateValid();?></span>
-                    <span class="key">Promotion Code : <?php echo $promotion->getKey();?></span>
-
-                </li>
+            <div class="col-md-6">
+                <div class="well">
+                    <img class="img-responsive" src="../../Admin/Images/photo_gallery/<?php echo $promotion->getImage();?>" alt="Cover of <?php echo $promotion->getTitle();?>" width="304" height="236" >
+                    <h3><?php echo $promotion->getTitle();?></h3>
+                    <h5>Available : <?php echo $promotion->getDateValid();?></h5>
+                    <h4>Promotion Code :<?php echo  $promotion->getKey();?></h4>
+                </div>
+            </div>
             <?php endforeach; ?>
-        </ul>
+
         </div>
     </div>
 
