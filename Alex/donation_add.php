@@ -53,25 +53,10 @@ if (
 else {
     require_once('database.php');
 
-    $query = "INSERT INTO donations
-                (amount, cardholderName, cardNumber, expiryDate, cvs, email, phoneNumber, regularity, status, firstTransaction)
-              VALUES
-                (:amount, :cardholder_name, :card_number, :expiry_date, :cvs, :email, :phone, :regularity, :status, :first_transaction)";
 
-    $statement = $db->prepare($query);
-    $statement->bindValue(':amount', $amount);
-    $statement->bindValue(':cardholder_name', $cardholder_name);
-    $statement->bindValue(':card_number', $card_number);
-    $statement->bindValue(':expiry_date', $expiry_date);
-    $statement->bindValue(':cvs', $cvs);
-    $statement->bindValue(':email', $email);
-    $statement->bindValue(':phone', $phone);
-    $statement->bindValue(':status', $status);
-    $statement->bindValue(':first_transaction', $first_transaction);
-    $statement->bindValue(':regularity', $regularity);
-
-    $statement->execute();
-    $statement->closeCursor();
+    require_once "Model/cl_donation.php";
+    $donation_feature = new Donation_feature();
+    $donation_feature->da($db, $amount, $cardholder_name, $card_number, $expiry_date, $cvs, $email, $phone, $status, $first_transaction, $regularity);
 
     header('location: donation_thanks.php');
 }

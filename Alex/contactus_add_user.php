@@ -16,20 +16,10 @@ if (
 else {
     require_once('database.php');
 
-    $query = "INSERT INTO contactus
-                (userID, question, category, questionDate)
-              VALUES
-                (:user_id, :question, :category, :question_date)";
+    require_once "Model/cl_contactus.php";
+    $contactus_feature = new Contactus_feature();
+    $contactus_feature->cau($user_id, $question, $category, $question_date, $db);
 
-    $statement = $db->prepare($query);
-    $statement->bindValue(':user_id', $user_id);
-    $statement->bindValue(':question', $question);
-    $statement->bindValue(':category', $category);
-    $statement->bindValue(':question_date', $question_date);
-
-
-    $statement->execute();
-    $statement->closeCursor();
 
     header('location: contactus_add_form_user.php');
 }

@@ -34,12 +34,9 @@ $expiry_date = $_POST['expiry_date'];
 $cvs = $_POST['cvs'];
 
 
-$query = 'SELECT * FROM donations WHERE donationID = :id';
-$statement = $db->prepare($query);
-$statement->bindValue(':id', $id);
-$statement->execute();
-$row = $statement->fetch();
-$statement->closeCursor();
+require_once "Model/cl_donation.php";
+$donation_feature = new Donation_feature();
+$row = $donation_feature->dufa($db, $id);
 
 ?>
 

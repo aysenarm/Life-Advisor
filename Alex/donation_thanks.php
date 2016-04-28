@@ -4,6 +4,6 @@
     </head>
     <body>
         <p>Thank you for Donation!!!</p>
-        <a href="index_temp.php">Home Page</a>
+        <a href="/Life-Advisor/index.php">Home Page</a>
     </body>
 </html>

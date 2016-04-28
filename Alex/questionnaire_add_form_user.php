@@ -30,11 +30,10 @@ if(isset($_SESSION['user_session'])) {
 
 <?php
 
-$query = 'SELECT * FROM questionnaire_questions';
-$statement = $db->prepare($query);
-$statement->execute();
-$row = $statement->fetchAll();
-$statement->closeCursor();
+
+require_once "Model/cl_questionnaire.php";
+$questionnaire_feature = new Questionnaire_feature();
+$row = $questionnaire_feature->qafu($db);
 
 ?>
 

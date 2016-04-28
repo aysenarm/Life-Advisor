@@ -4,13 +4,9 @@ $question_id = $_POST['question_id'];
 
 require_once('database.php');
 
-$query = "DELETE FROM contactus WHERE questionID = :question_id";
-$db->exec($query);
-
-$statement = $db->prepare($query);
-$statement->bindValue(':question_id', $question_id);
-$statement->execute();
-$statement->closeCursor();
+require_once "Model/cl_contactus.php";
+$contactus_feature = new Contactus_feature();
+$contactus_feature->cda($question_id, $db);
 
 header('location: contactus_admin.php');
 ?>

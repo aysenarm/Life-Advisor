@@ -13,19 +13,11 @@ if (
 
 else {
     require_once('database.php');
-    $query = "UPDATE contactus SET
-                answer = :answer,
-                answerDate = :answer_date
-            WHERE questionID = :question_id ";
 
-    $statement = $db->prepare($query);
-    $statement->bindValue(':question_id', $question_id);
-    $statement->bindValue(':answer', $answer);
-    $statement->bindValue(':answer_date', $answer_date);
+    require_once "Model/cl_contactus.php";
+    $contactus_feature = new Contactus_feature();
+    $contactus_feature->cua($question_id, $answer, $answer_date, $db);
 
-
-    $statement->execute();
-    $statement->closeCursor();
 
     header('location: contactus_admin.php');
 }

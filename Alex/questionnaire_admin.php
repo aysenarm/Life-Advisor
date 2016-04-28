@@ -26,17 +26,15 @@ if(isset($_SESSION['user_session'])) {
 
 <?php
 
-$query_q = 'SELECT * FROM questionnaire_questions';
-$statement_q = $db->prepare($query_q);
-$statement_q->execute();
-$row_q = $statement_q->fetchAll();
-$statement_q->closeCursor();
 
-$query_a = 'SELECT * FROM questionnaire_answers ORDER BY aDate DESC';
-$statement_a = $db->prepare($query_a);
-$statement_a->execute();
-$row_a = $statement_a->fetchAll();
-$statement_a->closeCursor();
+
+        require_once "Model/cl_questionnaire.php";
+        $questionnaire_feature = new Questionnaire_feature();
+        $row_q = $questionnaire_feature->qa1($db);
+
+
+        $questionnaire_feature = new Questionnaire_feature();
+        $row_a = $questionnaire_feature->qa2($db);
 
 ?>
 
