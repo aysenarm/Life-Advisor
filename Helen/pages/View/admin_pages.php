@@ -93,6 +93,7 @@ $pages = $pdb->listPages();
                 <?php endforeach; ?>
             </table>
             <p><a href="add_page_form.php" class="btn btn-success">Add Page</a></p>
+
         </div>
     </div>
 
@@ -104,8 +105,16 @@ $pages = $pdb->listPages();
 }
 }
 else {
-    echo "<h2>We are sorry, but you have to be logged in to see this page,
-please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+    echo "<div class='row'>";
+        echo "<div class='col-xs-2'>";
+        echo "</div>";
+        echo "<div class='col-xs-8'>";
+        echo "<h2>We are sorry, but you have to be logged in to see this page,
+    please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+        echo "</div>";
+        echo "<div class='col-xs-2'>";
+        echo "</div>";
+    echo "</div>";
 }
 require_once '../../../content_bottom.php'; ?>
 </body>

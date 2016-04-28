@@ -1,0 +1,19 @@
+
+input[type=text]{
+    padding:0.5em;
+    width:20em;
+}
+
+input[type=submit]{
+    padding:0.4em;
+}
+
+#gmap_canvas{
+    width:80%;
+    height:400px;
+}
+
+#map-label,
+#address-examples{
+    margin:1em 0;
+}
