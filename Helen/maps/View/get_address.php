@@ -14,12 +14,13 @@ require "../Controller/map.php";
     $longitude = $data_arr[1];
     $formatted_address = $data_arr[2];
 
+        include_once "search_form.html";
 ?>
 
 
         <p> We got your address it's: <?php echo $data_arr[2]?></p>
         <div>
-            <a href="#" onclick="openbox('box'); return false"><button>This is not my address</button></a>
+            <a href="#" onclick="openbox('box'); return false"><button style="color: black;">This is not my address</button></a>
         </div>
 
         <div id="box" style="display: none;">
@@ -50,7 +51,7 @@ require "../Controller/map.php";
 
 
 <!-- MAP IS SHOWING HERE-->
-<div id="mapp" style="height: 500px; width: 500px; display: block;">here</div>
+<div id="mapp" style="height: 500px; width: 600px; display: block;">here</div>
 
 
                <script>
