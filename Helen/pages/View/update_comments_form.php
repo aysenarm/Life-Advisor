@@ -37,7 +37,7 @@ $comment = $a->listOneComment($com_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class=" control-label" >ID USER:</label>
+                <label class=" control-label" style="color: black;">ID USER:</label>
                 <div class="col-sm-10">
                     <input type="text" name="id_user" value="<?php echo $comment['ID_user']; ?>" readonly/>
                 </div>
@@ -45,7 +45,7 @@ $comment = $a->listOneComment($com_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class=" control-label">TEXT:</label>
+                <label class=" control-label" style="color: black;">TEXT:</label>
                 <div class="col-sm-10">
                     <input type="text" name="text" value="<?php echo$comment['Text']; ?>" readonly/>
                 </div>
@@ -53,7 +53,7 @@ $comment = $a->listOneComment($com_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="control-label">State:</label>
+                <label class="control-label" style="color: black;">State:</label>
                 <div class="col-sm-10">
                     <select class="form-control" name="state">
                         <?php $selStat = $comment['state'];?>
