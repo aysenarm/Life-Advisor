@@ -300,25 +300,25 @@ require 'Daria/newsletter/Newsletter.class.php';
                 <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo.png';?>">
                 <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>index.php">home</a></p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Recipes"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>recipes</a></button>
                 </form>
                 </p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="House"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>house</a></button>
                 </form>
                 </p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Health"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>health</a></button>
                 </form>
                 </p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Finances"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>finances</a></button>
                 </form>
@@ -330,7 +330,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                 </form>
                 </p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Time managment"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>time management</a></button>
                 </form>
@@ -355,9 +355,9 @@ require 'Daria/newsletter/Newsletter.class.php';
                     <button type="submit" style="background: none; border: none;outline: none;"><a>mortgage calculator</a></button>
                 </form>
                 </p>
-                <p><a href="/Life-Advisor/Alex/questionnaire_add_form_user.php">Questionnaire</a></p>
-                <p><a href="/Life-Advisor/Alex/contactus_add_form_user.php">contact us</a></p>
-                <p><a href="/Life-Advisor/Alex/donation_add_form.php">donate</a></p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/questionnaire_add_form_user.php';?>">Questionnaire</a></p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/contactus_add_form_user.php';?>">contact us</a></p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/donation_add_form.php';?>">donate</a></p>
                 <img class="logo2" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo2.png';?>">
 
                 <div class="form-group">
