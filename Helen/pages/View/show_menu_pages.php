@@ -37,22 +37,37 @@ $page = $a->listMenuPages($menu);
     </head>
 
     <!-- the body section -->
-    <body style="margin-left: 10px; margin-right: 10px;">
-
+    <body>
+    
     <?php
     foreach ($page as $p) {
         ?>
-        <div>
-            <p>Title : <?php echo $p['Title'] ?></p>
-            <p>Content : <?php echo substr($p['Content'], 0, 200) ?> ...</p><br/>
-            <p>Rank : <?php echo $p['Rank'] ?></p>
-            <p>Tags : <?php echo $p['Tags'] ?></p>
-            <form action="see_page.php" method="post">
-                <input type="hidden" name="page_id" value="<?php echo $p['ID_page']; ?>">
-                <button type='submit' class='btn btn-info'>Read more</button>
-            </form>
+        <div class="col-md-6">
+            <div class="well">
+                <?php echo '<img class="img-responsive" src="http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Helen/pages/img/' . $p['ID_image'] . '">' ?>
+                <h3><?php echo $p['Title'] ?></h3><hr>
+                <div>
+                    <div class="col-xs-2">
+                    <button type="button" class="btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <?php echo $p['Rank'] ?>
+                    </button>
+                    </div>
+                    <div class="col-xs-10">
+                        <h6>Tags: <span class="text-danger"><?php echo $p['Tags'] ?></span></h6>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div>
+                    <p><?php echo substr($p['Content'], 0, 200) ?> ...</p><br/>
+                </div>
+
+
+                <form class="text-right" action="see_page.php" method="post">
+                    <input type="hidden" name="page_id" value="<?php echo $p['ID_page']; ?>">
+                    <button type='submit' class='btn btn-danger'>Read more</button>
+                </form>
+            </div>
         </div>
-        <hr>
 
         <?php
     }

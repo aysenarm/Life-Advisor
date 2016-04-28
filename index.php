@@ -57,7 +57,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div>
+</div>
 
             <div class="col-sm-4">
                 <div class="well">

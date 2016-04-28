@@ -25,11 +25,10 @@ $pages = $pdb->listPages();
 <!-- the head section -->
 <head>
     <title>Pages of my website</title>
-    <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
 </head>
 
 <!-- the body section -->
-<body style="margin-left: 10px; margin-right: 10px;">
+<body>
 <div id="page">
 
     <div id="header">
