@@ -270,7 +270,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                     echo "<li><a style='color:white; cursor:default';>Hello, " . "<span style='color:#d9534f'; >" . $name['Username'] . "</span>" . "</a></li>";
 
 ?>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
+                    <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Antonio/userCabinet/View/userCabinet.php"><span class="glyphicon glyphicon-user"></span> My account</a></li>
                     <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
 <?php
 
