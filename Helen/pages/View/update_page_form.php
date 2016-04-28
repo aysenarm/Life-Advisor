@@ -31,7 +31,7 @@ $page = $a->listOnePage($page_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">Title:</label>
+                <label class="col-sm-2 control-label" style="color: black">Title:</label>
                 <div class="col-sm-10">
                     <input type="input" class="col-sm-2 form-control" name="title" value="<?php echo $page['Title']; ?>"/>
                 </div>
@@ -39,7 +39,7 @@ $page = $a->listOnePage($page_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">ID creator:</label>
+                <label class="col-sm-2 control-label" style="color: black">ID creator:</label>
                 <div class="col-sm-10">
                     <input type="input" class="col-sm-2 form-control" name="user" value="<?php echo $page['ID_user']; ?>" readonly/>
                 </div>
@@ -47,7 +47,7 @@ $page = $a->listOnePage($page_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="col-sm-2 control-label">Status:</label>
+                <label class="col-sm-2 control-label" style="color: black">Status:</label>
                 <div class="col-sm-10">
                     <select class="form-control" name="status">
                         <?php $selStat = $page['Status']?>
@@ -63,7 +63,7 @@ $page = $a->listOnePage($page_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="control-label">Content:</label>
+                <label class="control-label" style="color: black">Content:</label>
                 <textarea class="ckeditor" name="content" rows="50" cols="20" ><?php echo $page['Content']; ?></textarea>
                 <br />
             </div>
@@ -74,11 +74,11 @@ $page = $a->listOnePage($page_id);
             <input type="file" name="image"><br>
             </div>
 
-            <label>Tags:</label>
+            <label class="control-label" style="color: black">Tags:</label>
             <input type="input" class="form-control" name="tags" value="<?php echo $page['Tags']; ?>"/>
             <br />
 
-            <label>Menu:</label>
+            <label  class="control-label" style="color: black">Menu:</label>
             <select class="form-control" name="menu">
                 <?php $menStat = $page['Menu'];
                 $menus = ['Recipes', 'House','Health','Finances','People','Time management'];

@@ -18,7 +18,7 @@ $user = $cabinet->userInfo($id);
     </div>
 
     <div class="form-group" style="margin-left: 10px;">
-        <label class="col-sm-2 control-label">Name:</label>
+        <label class="col-sm-2 control-label" style="color: black">Name:</label>
         <div class="col-sm-10">
             <input type="input" class="col-sm-2 form-control" name="name" value="<?php echo $user['Name']; ?>"/>
         </div>
@@ -26,7 +26,7 @@ $user = $cabinet->userInfo($id);
     </div>
 
     <div class="form-group" style="margin-left: 10px;">
-        <label class="col-sm-2 control-label">Surname:</label>
+        <label class="col-sm-2 control-label" style="color: black">Surname:</label>
         <div class="col-sm-10">
             <input type="input" class="col-sm-2 form-control" name="surname" value="<?php echo $user['Surname']; ?>"/>
         </div>
@@ -34,7 +34,7 @@ $user = $cabinet->userInfo($id);
     </div>
 
     <div class="form-group" style="margin-left: 10px;">
-        <label class="col-sm-2 control-label">Username:</label>
+        <label class="col-sm-2 control-label" style="color: black">Username:</label>
         <div class="col-sm-10">
             <input type="input" class="col-sm-2 form-control" name="username" value="<?php echo $user['Username']; ?>"/>
         </div>
@@ -42,7 +42,7 @@ $user = $cabinet->userInfo($id);
     </div>
 
     <div class="form-group" style="margin-left: 10px;">
-        <label class="col-sm-2 control-label">Email:</label>
+        <label class="col-sm-2 control-label" style="color: black">Email:</label>
         <div class="col-sm-10">
             <input type="input" class="col-sm-2 form-control" name="email" value="<?php echo $user['Email']; ?>" />
         </div>
@@ -51,7 +51,7 @@ $user = $cabinet->userInfo($id);
 
 
     <div class="form-group" style="margin-left: 10px;">
-        <label class="col-sm-2 control-label">Phone:</label>
+        <label class="col-sm-2 control-label" style="color: black">Phone:</label>
         <div class="col-sm-10">
             <input type="input" class="col-sm-2 form-control" name="phone" value="<?php echo $user['Phone']; ?>" />
         </div>
