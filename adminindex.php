@@ -32,8 +32,8 @@
 
                 <li><a href="#">Twitter</a>
                     <ul class="sub">
-                        <li><a href="/Life-Advisor/Daria/twitter/autoposting.php">Post Twitt</a></li>
-                        <li><a href="/Life-Advisor/Daria/twitter/twitts.php">All Twitts</a></li>
+                        <li><a href="/Life-Advisor/Daria/twitter/autoposting.php">Post Tweet</a></li>
+                        <li><a href="/Life-Advisor/Daria/twitter/twitts.php">All Tweets</a></li>
                     </ul>
                 </li>
 
