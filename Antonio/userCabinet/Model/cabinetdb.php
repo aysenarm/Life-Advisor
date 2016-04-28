@@ -133,4 +133,17 @@ class Cabinet{
     }
 
 
+
+    //function to select all users
+
+    public function listUsers(){
+        $db = Dbclass::getDB();
+        $query = "SELECT * FROM user
+              ORDER BY ID_user";
+        return $db->query($query);
+    }
+
+
+
+
 }

@@ -25,8 +25,14 @@ $cabinet = new Cabinet();
             // If valid, update the page in the database
             $cabinet->updateUserSm($id,$name,$surname, $username, $email,$phone, $image);
 
-            // Display the Product List page
-            header('location: ../View/userCabinet.php');
+            if ($id == $_SESSION['user_session']){
+                // Display the Product List page
+                header('location: ../View/userCabinet.php');
+            }
+            else {
+                header('location: ../Admin/View/admin_users.php');
+            }
+
 
         }
     }
@@ -37,6 +43,11 @@ $cabinet = new Cabinet();
         // If valid, update the page in the database
         $cabinet->updateUserSmNoImage($id,$name,$surname, $username, $email,$phone);
 
-        // Display the Product List page
-        header('location: ../View/userCabinet.php');
+        if ($id == $_SESSION['user_session']){
+            // Display the Product List page
+            header('location: ../View/userCabinet.php');
+        }
+        else {
+            header('location: ../Admin/View/admin_users.php');
+        }
     }
