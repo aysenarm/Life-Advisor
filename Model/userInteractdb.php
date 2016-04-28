@@ -138,4 +138,31 @@ class UserDB{
         }
     }
 
+
+
+    //function to LIST all pages
+
+    public function listPages(){
+        $db = mainDbclass::getDB();
+        $query = "SELECT * FROM page
+              ORDER BY ID_page";
+        return $db->query($query);
+    }
+
+
+
+//function to LIST ONE page
+    public function listOnePage($id){
+        $db = mainDbclass::getDB();
+        $query = "SELECT * FROM page
+               WHERE ID_page = :id";
+        $stm = $db->prepare($query);
+        $stm->bindValue(':id', $id, PDO::PARAM_INT);
+        $stm->execute();
+        //var_dump($stm->fetch());
+        return $stm->fetch();
+    }
+
+
+
 }
