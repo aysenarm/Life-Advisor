@@ -267,7 +267,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                 if($user->is_loggedin()!="")
                 {
                     $name = $user->userInfo($_SESSION['user_session']);
-                    echo "<li><span style='color:white;'>Hello, <a style='color:white;'>".$name['Username']."</a></span></li>";
+                    echo "<li><a style='color:white; cursor:default';>Hello, " . "<span style='color:#d9534f'; >" . $name['Username'] . "</span>" . "</a></li>";
                     ?>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
                     <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
@@ -292,7 +292,7 @@ require 'Daria/newsletter/Newsletter.class.php';
         <div class="row content ">
             <div class="col-sm-4 sidenav text-center">
                 <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo.png';?>">
-                <p><a href="index.php">home</a></p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>index.php">home</a></p>
                 <p>
                 <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Recipes"/>
