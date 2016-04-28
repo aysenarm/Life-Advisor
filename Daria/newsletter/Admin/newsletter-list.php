@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-include_once '../../../adminindex.php';
+require_once '../../../content_top.php';
 
 $query = "SELECT * FROM newsletter ORDER BY id";
 $newsletters = $db->query($query);

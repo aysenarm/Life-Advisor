@@ -3,7 +3,6 @@ require_once 'Model/userInteractdb.php';
 define('ROOTPATH', dirname(__FILE__));
 $logo = ROOTPATH."/images/logo.png";
 $logo2 = ROOTPATH.'/images/logo2.png';
-
 require 'Daria/newsletter/Database.class.php';
 require 'Daria/newsletter/Newsletter.class.php';
 ?>
@@ -263,26 +262,32 @@ require 'Daria/newsletter/Newsletter.class.php';
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <?php $user = new UserDB();
+<?php
+                $user = new UserDB();
                 if($user->is_loggedin()!="")
                 {
                     $name = $user->userInfo($_SESSION['user_session']);
-                    echo "<li><span style='color:white;'>Hello, <a style='color:white;'>".$name['Username']."</a></span></li>";
-                    ?>
+                    echo "<li><a style='color:white; cursor:default';>Hello, " . "<span style='color:#d9534f'; >" . $name['Username'] . "</span>" . "</a></li>";
+?>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> My account</a></li>
                     <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
-                    <?php
+<?php
+
+
+
+
+
+
                 } else {
-                    ?>
+?>
                     <li><a href="http://localhost/Life-Advisor/Antonio/login/View/login-form.php"><span class="glyphicon glyphicon-log-in"></span>
                             Sign In</a></li>
                     <li><a href="Antonio/login/View/register-form.php"><span class="glyphicon glyphicon-plus"></span>
                             Register</a></li>
-
-                    <?php
+<?php
 
                 }
-                ?>
+?>
             </ul>
         </div>
 
@@ -292,7 +297,7 @@ require 'Daria/newsletter/Newsletter.class.php';
         <div class="row content ">
             <div class="col-sm-4 sidenav text-center">
                 <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo.png';?>">
-                <p><a href="index.php">home</a></p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>index.php">home</a></p>
                 <p>
                 <form action="Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Recipes"/>
@@ -318,7 +323,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                 </form>
                 </p>
                 <p>
-                <form action="Helen/pages/View/show_menu_pages.php" method="post">
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Helen/pages/View/show_menu_pages.php';?>" method="post">
                     <input type="hidden" name="menu" value="People"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>people</a></button>
                 </form>
@@ -349,8 +354,9 @@ require 'Daria/newsletter/Newsletter.class.php';
                     <button type="submit" style="background: none; border: none;outline: none;"><a>mortgage calculator</a></button>
                 </form>
                 </p>
-                <p><a href="#">contact us</a></p>
-                <p><a href="#">donate</a></p>
+                <p><a href="/Life-Advisor/Alex/questionnaire_add_form_user.php">Questionnaire</a></p>
+                <p><a href="/Life-Advisor/Alex/contactus_add_form_user.php">contact us</a></p>
+                <p><a href="/Life-Advisor/Alex/donation_add_form.php">donate</a></p>
                 <img class="logo2" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo2.png';?>">
 
                 <div class="form-group">
@@ -361,7 +367,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                             <input type="submit" value="Subscribe Now!" class="btn btn-large" id="sub-btn" name="signup-button"/>
                         </form>
                         <div id="response">
-                            <?php
+<?php
                             if (!empty($_POST['signup-email'])) {
                                 $email = $_POST['signup-email'];
                                 $response = [];
@@ -371,7 +377,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                                     include_once 'Daria/newsletter/gmail.php';
                                 }
                                 echo $response['message'];}
-                            ?>
+?>
                         </div>
                     </div>
                 </div>
@@ -392,3 +398,15 @@ require 'Daria/newsletter/Newsletter.class.php';
             </div>
 
             <div class="col-sm-8 text-left">
+
+                <?php
+if($user->is_loggedin()!="") {
+    $rez = $user->userInfo($_SESSION['user_session']);
+    $_SESSION['role'] = $rez['Rights'];
+    //echo $_SESSION['role'];
+    if ($_SESSION['role'] != 2) {
+        include 'adminindex.php';
+    }
+
+}
+?>

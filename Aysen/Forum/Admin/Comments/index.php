@@ -5,6 +5,7 @@ require('../../Model/comment_db.php');
 require ('../../Model/topic.php');
 require ('../../Model/topic_db.php');
 require ('../../../view/header.php');
+
 if(isset($_SESSION['user_session'])) {
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];

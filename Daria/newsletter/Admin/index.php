@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-include_once '../../../adminindex.php';
+require_once '../../../content_top.php';
 
 $query = "SELECT * FROM signups ORDER BY id";
 $sunscribers = $db->query($query);

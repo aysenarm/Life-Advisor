@@ -3,10 +3,11 @@ require('../../../database.php');
 require('../../Model/gallery.php');
 require('../../Model/gallery_db.php');
 require_once ('../../../view/header.php');
+
 if(isset($_SESSION['user_session'])) {
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];
-    echo $_SESSION['role'];
+    //echo $_SESSION['role'];
     if ($_SESSION['role'] == 2){
         echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
@@ -136,8 +137,8 @@ if(isset($_SESSION['user_session'])) {
                         $gallery->setImage($file_name);
                         galleryDB::addGallery($gallery);
 
-                        // Display the gallery List page for the current gallery
-                        header("Location: .?");
+                        echo '<script> location.replace(".?");</script>';
+                        //header("Location: .?");
                     }
                 }
             }

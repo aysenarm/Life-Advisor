@@ -26,6 +26,7 @@ if(isset($_SESSION['user_session'])) {
     }
     else {
         //ADD CODE FOR ADMINS HERE
+        include 'adminindex.php';
     }
 
 // --------------- TO HERE --------------------

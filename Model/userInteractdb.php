@@ -1,7 +1,7 @@
+<?php session_start(); ?>
 <?php
-
 require_once 'maindbclass.php';
-session_start();
+
 class UserDB{
     public function __construct() {
 

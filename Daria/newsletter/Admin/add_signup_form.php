@@ -1,5 +1,5 @@
 <?php
-include_once '../../../adminindex.php';
+require_once '../../../content_top.php';
 ?>
 
 <div id="page">

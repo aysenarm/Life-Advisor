@@ -1,11 +1,12 @@
+
 <?php
-
 require_once '../../content_top.php';
-
+?>
+<a class="twitter-timeline" href="https://twitter.com/lifeadvisorteam" data-widget-id="725484592023638016">Tweets by @lifeadvisorteam</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<?php
 require "twitteroauth/autoload.php";
-
 use Abraham\TwitterOAuth\TwitterOAuth;
-
 $twitteruser = "lifeadvisorteam"; //user name you want to reference
 $notweets = 5; //how many tweets you want to retrieve
 $consumerkey = "urACAjRte1bhrHjEgxi47ZFSB";
@@ -33,4 +34,5 @@ $user = $connection->get("account/verify_credentials");
 //echo $user->screen_name;
 
 ?>
+
 

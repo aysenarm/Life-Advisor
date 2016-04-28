@@ -5,6 +5,7 @@ require('../../Model/topic_db.php');
 require('../../Model/category.php');
 require ('../../Model/category_db.php');
 require_once ('../../../view/header.php');
+
 if(isset($_SESSION['user_session'])) {
 
     $rez = $user->userInfo($_SESSION['user_session']);
