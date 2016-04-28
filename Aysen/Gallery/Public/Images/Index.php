@@ -5,7 +5,7 @@ require('../../Model/image_db.php');
 require ('../../Model/gallery.php');
 require ('../../Model/gallery_db.php');
 require_once ('../../../view/header.php');
-
+date_default_timezone_set('Etc/UTC');
 if (isset($_GET['gallery_id'])) {
     $galleryID = $_GET['gallery_id'];
 }

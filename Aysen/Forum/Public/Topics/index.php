@@ -5,6 +5,7 @@ require('../../Model/topic_db.php');
 require('../../Model/category.php');
 require ('../../Model/category_db.php');
 require_once ('../../../view/header.php');
+date_default_timezone_set('Etc/UTC');
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -55,7 +56,8 @@ else if ($action == 'add_topic') {
             $topic->setCategoryID($categoryID);
             topicDB::addTopic($topic);
             // Display the topic List page for the current topic
-            header("Location: .?category_id=".$categoryID);
+            echo '<script> location.replace(".?category_id='.$categoryID.'");</script>';
+            //header("Location: .?category_id=".$categoryID);
 
         }
 

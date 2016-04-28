@@ -3,7 +3,7 @@ require('../../../database.php');
 require('../../Model/promotion.php');
 require('../../Model/promotion_db.php');
 require_once ('../../../view/header.php');
-
+date_default_timezone_set('Etc/UTC');
 if(isset($_SESSION['user_session'])) {
 
     $rez = $user->userInfo($_SESSION['user_session']);
@@ -36,7 +36,9 @@ if(isset($_SESSION['user_session'])) {
             promotionDB::deletePromotion($promotion_id);
 
             // Display the promotion List page for the current promotion
-            header("Location: .?action=list_promotions");
+            //header("Location: .?action=list_promotions");
+            echo '<script> location.replace(".?action=list_promotions");</script>';
+
         }
         else if ($action == 'show_add_form') {
             // echo $action;
@@ -137,7 +139,9 @@ if(isset($_SESSION['user_session'])) {
                         promotionDB::addPromotion($promotion);
 
                         // Display the gallery List page for the current gallery
-                        header("Location: .?");
+                       // header("Location: .?");
+                        echo '<script> location.replace(".?action=list_promotions");</script>';
+
                     }
                 }
             }
@@ -159,8 +163,8 @@ if(isset($_SESSION['user_session'])) {
             $errors=array();
             $extension=array("jpeg","jpg","png","gif");
             $message = 'Error uploading file';
-            var_dump($_POST);
-            var_dump($_FILES);
+            //var_dump($_POST);
+            //var_dump($_FILES);
             //echo $message;
             switch( $_FILES['cover']['error'] ) {
 
@@ -251,7 +255,9 @@ if(isset($_SESSION['user_session'])) {
                         promotionDB::editPromotion($promotion);
 
                         // Display the gallery List page for the current gallery
-                        header("Location: .?");
+                        //header("Location: .?");
+                        echo '<script> location.replace(".?action=list_promotions");</script>';
+
                     }
                 }
             }

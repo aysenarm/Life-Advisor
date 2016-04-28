@@ -3,7 +3,7 @@ require('../../../database.php');
 require('../../Model/promotion.php');
 require('../../Model/promotion_db.php');
 require ('../../../view/header.php');
-
+date_default_timezone_set('Etc/UTC');
 if(isset($_SESSION['user_session'])) {
 
     if (isset($_POST['action'])) {

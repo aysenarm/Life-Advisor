@@ -5,6 +5,7 @@ require('../../Model/image_db.php');
 require ('../../Model/gallery.php');
 require ('../../Model/gallery_db.php');
 require_once ('../../../view/header.php');
+date_default_timezone_set('Etc/UTC');
 if(isset($_SESSION['user_session'])) {
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];
@@ -14,7 +15,7 @@ if(isset($_SESSION['user_session'])) {
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
     }
     else {
-
+date_default_timezone_set('Etc/UTC');
         if (isset($_POST['action'])) {
             $action = $_POST['action'];
         } else if (isset($_GET['action'])) {
@@ -42,7 +43,8 @@ if(isset($_SESSION['user_session'])) {
             imageDB::deleteImage($image_id);
 
             // Display the image List page for the current image
-            header("Location: .?gallery_id=".$galleryID);
+            echo '<script> location.replace(".?gallery_id='.$galleryID.'");</script>';
+            //header("Location: .?gallery_id=".$galleryID);
         }
         else if ($action == 'show_add_form') {
             //echo $action;
@@ -149,7 +151,9 @@ if(isset($_SESSION['user_session'])) {
                         imageDB::addImage($image);
 
                         // Display the image List page for the current image
-                        header("Location: .?gallery_id=".$galleryID);
+                        //header("Location: .?gallery_id=".$galleryID);
+                        echo '<script> location.replace(".?gallery_id='.$galleryID.'");</script>';
+
                     }
                 }
                 else{
@@ -172,7 +176,7 @@ if(isset($_SESSION['user_session'])) {
             include('image_detail.php');
 
         }
-    }
+   }
 }
 else {
     echo "<h2>We are sorry, but you have to be logged in to see this page,

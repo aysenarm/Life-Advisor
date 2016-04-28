@@ -16,6 +16,7 @@ if(isset($_SESSION['user_session'])) {
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
     }
     else {
+date_default_timezone_set('Etc/UTC');
 
         if (isset($_POST['action'])) {
             $action = $_POST['action'];
@@ -47,7 +48,9 @@ if(isset($_SESSION['user_session'])) {
             topicDB::deleteTopic($topic_id);
 
             // Display the topic List page for the current topic
-            header("Location: .?category_id=".$categoryID);
+            //header("Location: .?category_id=".$categoryID);
+            echo '<script> location.replace(".?category_id='.$categoryID.'");</script>';
+
         }
         else if ($action == 'show_add_form') {
             $topics = topicDB::getTopics();
@@ -76,7 +79,8 @@ if(isset($_SESSION['user_session'])) {
                     $topic->setCategoryID($categoryID);
                     topicDB::addTopic($topic);
                     // Display the topic List page for the current topic
-                    header("Location: .?category_id=".$categoryID);
+                    //header("Location: .?category_id=".$categoryID);
+                    echo '<script> location.replace(".?category_id='.$categoryID.'");</script>';
 
                 }
 
@@ -107,7 +111,9 @@ if(isset($_SESSION['user_session'])) {
                     $topic->setCategoryID($categoryID);
                     topicDB::editTopic($topic);
                     // Display the topic List page for the current topic
-                    header("Location: .?category_id=" . $categoryID);
+                    //header("Location: .?category_id=" . $categoryID);
+                    echo '<script> location.replace(".?category_id='.$categoryID.'");</script>';
+
                 }
             }
         }
@@ -121,7 +127,7 @@ if(isset($_SESSION['user_session'])) {
             include('topic_detail.php');
         }
 
-    }
+  }
 }
 else {
     echo "<h2>We are sorry, but you have to be logged in to see this page,

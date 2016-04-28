@@ -38,7 +38,7 @@
                     $url  = "http://";
                     $url .= $_SERVER['SERVER_NAME'];
                     $url .= htmlspecialchars($_SERVER['REQUEST_URI']);
-                    $themeurl = dirname($url) . "/Images";
+                    $themeurl = dirname($url) . "/Images/";
                     echo $themeurl;?>" + "?action=list_images&gallery_id="+rowId);
         }
     </script>

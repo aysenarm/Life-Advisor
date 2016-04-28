@@ -5,6 +5,7 @@ require('../../Model/comment_db.php');
 require ('../../Model/topic.php');
 require ('../../Model/topic_db.php');
 require_once ('../../../view/header.php');
+date_default_timezone_set('Etc/UTC');
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -51,7 +52,8 @@ else if ($action == 'add_comment') {
             commentDB::addComment($comment);
 
             // Display the comment List page for the current comment
-            header("Location:?action=list_comments&category_id=".$categoryID."&topic_id=".$topicID);
+            echo '<script> location.replace(".?category_id='.$categoryID.'&topic_id='.$topicID.'");</script>';
+            //header("Location:?action=list_comments&category_id=".$categoryID."&topic_id=".$topicID);
         }
     }
 }

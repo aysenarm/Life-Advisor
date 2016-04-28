@@ -48,7 +48,7 @@
                     $url  = "http://";
                     $url .= $_SERVER['SERVER_NAME'];
                     $url .= htmlspecialchars($_SERVER['REQUEST_URI']);
-                    $themeurl = dirname(dirname($url)) . "/Comments";
+                    $themeurl = dirname(dirname($url)) . "/Comments/";
                     echo $themeurl;?>" + "?action=list_comments&category_id="+categoryId+"&topic_id="+rowId);
         }
     </script>

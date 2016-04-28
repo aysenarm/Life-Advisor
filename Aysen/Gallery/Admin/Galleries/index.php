@@ -3,7 +3,7 @@ require('../../../database.php');
 require('../../Model/gallery.php');
 require('../../Model/gallery_db.php');
 require_once ('../../../view/header.php');
-
+date_default_timezone_set('Etc/UTC');
 if(isset($_SESSION['user_session'])) {
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];
@@ -35,7 +35,8 @@ if(isset($_SESSION['user_session'])) {
             galleryDB::deleteGallery($gallery_id);
 
             // Display the gallery List page for the current gallery
-            header("Location: .?");
+            //header("Location: .?");
+            echo '<script> location.replace(".?");</script>';
         }
         else if ($action == 'show_add_form') {
             //echo $action;
@@ -146,11 +147,11 @@ if(isset($_SESSION['user_session'])) {
                 $error = $message;
                 include('../../../errors/error.php');
             }
-        }
-    }
+       }
+  }
 }
 else {
-    echo "<h2>We are sorry, but you have to be logged in to see this page,
+  echo "<h2>We are sorry, but you have to be logged in to see this page,
 please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
 }
 require_once ('../../../view/footer.php');

@@ -13,6 +13,8 @@ if(isset($_SESSION['user_session'])) {
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
     }
     else {
+date_default_timezone_set('Etc/UTC');
+
         if (isset($_POST['action'])) {
             $action = $_POST['action'];
         } else if (isset($_GET['action'])) {
@@ -34,7 +36,9 @@ if(isset($_SESSION['user_session'])) {
             categoryDB::deleteCategory($category_id);
 
             // Display the category List page for the current category
-            header("Location: .?action=list_categories");
+            //header("Location: .?action=list_categories");
+            echo '<script> location.replace(".?action=list_categories");</script>';
+
         }
         else if ($action == 'show_add_form') {
             // echo $action;
@@ -55,7 +59,9 @@ if(isset($_SESSION['user_session'])) {
                 categoryDB::addCategory($category);
 
                 // Display the category List page for the current category
-                header("Location: .?action=list_categories");
+                //header("Location: .?action=list_categories");
+                echo '<script> location.replace(".?action=list_categories");</script>';
+
             }
         }
         else if ($action == 'show_edit_form') {
@@ -79,7 +85,8 @@ if(isset($_SESSION['user_session'])) {
                 $category->setDatePublished($today);
                 categoryDB::editCategory($category);
                 // Display the category List page for the current category
-                header("Location: .?action=list_categories");
+                echo '<script> location.replace(".?action=list_categories");</script>';
+                //header("Location: .?action=list_categories");
             }
         }
         else if ($action == 'show_detail_form') {

@@ -60,7 +60,6 @@ class promotionDB {
             "INSERT INTO promotions(datePublished,userID,title,pKey,image,dateValid)
               VALUES ('$datePublished','$userID','$title','$key','$image','$dateValid')";
         $row_count = $db->exec($query);
-        echo "row ".$row_count;
         return $row_count;
     }
 

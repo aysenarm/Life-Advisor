@@ -4,7 +4,7 @@ require('../../Model/gallery.php');
 require('../../Model/gallery_db.php');
 require_once ('../../../view/header.php');
 
-
+date_default_timezone_set('Etc/UTC');
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {

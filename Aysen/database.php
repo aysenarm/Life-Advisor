@@ -1,7 +1,7 @@
 <?php
 class Database2 {
 	
-    private static $dsn = 'mysql:host=localhost;dbname=project';
+    private static $dsn = 'mysql:host=localhost;;dbname=project';
     private static $username = 'root';
     private static $password = '';
    //reference to db connection
@@ -20,7 +20,7 @@ class Database2 {
                                      self::$password);
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
-                include('./errors/database_error.php');
+                include('/errors/database_error.php');
                 exit();
             }
         }

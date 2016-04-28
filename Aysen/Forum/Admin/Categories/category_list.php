@@ -46,7 +46,7 @@
                 $url  = "http://";
                 $url .= $_SERVER['SERVER_NAME'];
                 $url .= htmlspecialchars($_SERVER['REQUEST_URI']);
-                $themeurl = dirname(dirname($url)) . "/Topics";
+                $themeurl = dirname(dirname($url)) . "/Topics/";
                 echo $themeurl;?>" + "?action=list_topics&category_id="+rowId);
         }
     </script>

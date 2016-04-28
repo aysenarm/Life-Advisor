@@ -15,6 +15,7 @@ if(isset($_SESSION['user_session'])) {
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
     }
     else {
+date_default_timezone_set('Etc/UTC');
 
         if (isset($_POST['action'])) {
             $action = $_POST['action'];
@@ -50,7 +51,8 @@ if(isset($_SESSION['user_session'])) {
             commentDB::deleteComment($comment_id);
 
             // Display the comment List page for the current comment
-            header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
+            echo '<script> location.replace(".?category_id='.$categoryID.'&topic_id='.$topicID.'");</script>';
+            //header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
         }
         else if ($action == 'show_add_form') {
             //echo $action;
@@ -75,7 +77,8 @@ if(isset($_SESSION['user_session'])) {
                     commentDB::addComment($comment);
 
                     // Display the comment List page for the current comment
-                    header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
+                    echo '<script> location.replace(".?category_id='.$categoryID.'&topic_id='.$topicID.'");</script>';
+                    //header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
                 }
             }
         }
@@ -104,7 +107,9 @@ if(isset($_SESSION['user_session'])) {
                     $comment->setDatePublished($today);
                     commentDB::editComment($comment);
                     // Display the comment List page for the current comment
-                    header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
+
+                    echo '<script> location.replace(".?category_id='.$categoryID.'&topic_id='.$topicID.'");</script>';
+                    //header("Location: .?category_id=".$categoryID."&topic_id=".$topicID);
                 }
             }
         }
@@ -118,10 +123,10 @@ if(isset($_SESSION['user_session'])) {
             include('comment_detail.php');
         }
 
-    }
+ }
 }
 else {
-    echo "<h2>We are sorry, but you have to be logged in to see this page,
+ echo "<h2>We are sorry, but you have to be logged in to see this page,
 please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
 }
 require_once ('../../../view/footer.php');
