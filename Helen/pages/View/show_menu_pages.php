@@ -33,7 +33,6 @@ $page = $a->listMenuPages($menu);
     <!-- the head section -->
     <head>
         <title>Pages of my website</title>
-        <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css' type='text/css' media='all'>
     </head>
 
     <!-- the body section -->
