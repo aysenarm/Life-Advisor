@@ -23,13 +23,11 @@
         <?php
 
 //---------- Query (shows only user questions) ---------->
+        require_once "Model/cl_contactus.php";
+        $contactus_feature = new Contactus_feature();
+        $row = $contactus_feature->cafu($user_id, $db);
 
-        $query = 'SELECT * FROM contactus WHERE userID = :user_id ORDER BY questionID DESC';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':user_id', $user_id);
-        $statement->execute();
-        $row = $statement->fetchAll();
-        $statement->closeCursor();
+
         ?>
 
         <h3>Do you have a question? Ask it <?php echo $rez['Username']; ?>!</h3>

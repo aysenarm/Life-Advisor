@@ -29,12 +29,9 @@ if(isset($_SESSION['user_session'])) {
 
 $question_id = $_POST['question_id'];
 
-$query = 'SELECT * FROM contactus WHERE questionID = :question_id';
-$statement = $db->prepare($query);
-$statement->bindValue(':question_id', $question_id);
-$statement->execute();
-$row = $statement->fetch();
-$statement->closeCursor();
+require_once "Model/cl_contactus.php";
+$contactus_feature = new Contactus_feature();
+$row = $contactus_feature->cufa($question_id, $db);
 
 ?>
 
