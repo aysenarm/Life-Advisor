@@ -355,6 +355,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                     <button type="submit" style="background: none; border: none;outline: none;"><a>mortgage calculator</a></button>
                 </form>
                 </p>
+                <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Helen/maps/View/map.php';?>">Find Nearest</a></p>
                 <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/questionnaire_add_form_user.php';?>">Questionnaire</a></p>
                 <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/contactus_add_form_user.php';?>">contact us</a></p>
                 <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Alex/donation_add_form.php';?>">donate</a></p>
