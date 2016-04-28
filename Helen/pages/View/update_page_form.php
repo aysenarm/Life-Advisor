@@ -2,7 +2,7 @@
 
 require_once('../Model/interactiondb.php');
 $page_id = $_POST['page_id'];
-$db = Dbclass::getDB();
+
 
 $a = new PageDB();
 $page = $a->listOnePage($page_id);
