@@ -1,13 +1,8 @@
 <?php
-
 require_once('../Model/interactiondb.php');
 $page_id = $_POST['page_id'];
-
-
 $a = new PageDB();
 $page = $a->listOnePage($page_id);
-
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -24,7 +19,7 @@ $page = $a->listOnePage($page_id);
     <!-- the body section -->
     <body style="margin-left: 10px;">
     <?php require_once '../../../content_top.php'; ?>
-    <h1>Update Product</h1>
+    <h3>Update Product</h3>
         <form action="../Controller/update_page.php" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="form-group" style="margin-left: 10px;">
                 <input type="hidden" name="id" value="<?php echo $page_id; ?>"/>
@@ -63,41 +58,58 @@ $page = $a->listOnePage($page_id);
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <label class="control-label" style="color: black">Content:</label>
-                <textarea class="ckeditor" name="content" rows="50" cols="20" ><?php echo $page['Content']; ?></textarea>
+                <label  class="col-sm-2 control-label">Content:</label>
+                <div class="col-sm-10">
+                    <textarea class="ckeditor" name="content" rows="50" cols="20" ><?php echo $page['Content']; ?></textarea>
+                </div>
                 <br />
             </div>
 
             <div class="form-group" style="margin-left: 10px;">
-                <p>Picture attached now: <?php echo $page['ID_image']; ?></p>
-            <label>Upload a new main picture:</label>
-            <input type="file" name="image"><br>
+                <label  class="col-sm-2 control-label">Picture attached now:</label>
+                <div class="col-sm-10">
+                    <p><?php echo $page['ID_image']; ?></p>
+                </div>
             </div>
 
-            <label class="control-label" style="color: black">Tags:</label>
-            <input type="input" class="form-control" name="tags" value="<?php echo $page['Tags']; ?>"/>
+            <div class="form-group" style="margin-left: 10px;">
+                <label  class="col-sm-2 control-label">Picture:</label>
+                <div class="col-sm-10">
+                    <input type="file" name="image"><br>
+                </div>
+                <br />
+            </div>
+
+            <div class="form-group" style="margin-left: 10px;">
+                <label class="col-sm-2 control-label" style="color: black">Tags:</label>
+                <div class="col-sm-10">
+                    <input type="input" class="col-sm-2 form-control" name="tags" value="<?php echo $page['Tags']; ?>" readonly/>
+                </div>
+                <br />
+            </div>
+
+            <div class="form-group" style="margin-left: 10px;">
+                <label  class="col-sm-2 control-label" style="color: black">Menu:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="menu">
+                        <?php $menStat = $page['Menu'];
+                        $menus = ['Recipes', 'House','Health','Finances','People','Time management'];
+                        foreach($menus as $menu) { ?>
+                            <option value="<?= $menu ?>" <?php @$menStat==$menu ? print "selected" : false; ?> > <?= $menu ?></option>
+                            <?php
+                        } ?>
+                    </select>
+                </div>
+            </div>
             <br />
-
-            <label  class="control-label" style="color: black">Menu:</label>
-            <select class="form-control" name="menu">
-                <?php $menStat = $page['Menu'];
-                $menus = ['Recipes', 'House','Health','Finances','People','Time management'];
-                foreach($menus as $menu) { ?>
-                    <option value="<?= $menu ?>" <?php @$menStat==$menu ? print "selected" : false; ?> > <?= $menu ?></option>
-                    <?php
-                } ?>
-            </select>
-            <br />
-
-
 
             <label class="control-label">&nbsp;</label>
-            <input type="submit" class="btn btn-success" value="Update" />
+            <input type="submit" class="btn btn-default" value="Update" />
             <br />
 
         </form>
-<br />
-        <p><a href="admin_pages.php" class="btn btn-primary">View Posts List</a></p>
+        <hr>
+        <p style="margin-left: 10px;"><a href="admin_pages.php" class="btn btn-default">Back</a></p>
 
 <?php require_once '../../../content_bottom.php'; ?>
     </body>

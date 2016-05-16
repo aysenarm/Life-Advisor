@@ -1,8 +1,10 @@
 <div id="main">
 
-    <h1>Promotion List</h1>
+    <h3>Promotion List</h3>
     <div class="table-responsive">
-        <table class="table table-hover">
+        <p><a href="?action=show_add_form" class="btn btn-default" role="button">Add Promotion</a></p>
+        <br/>
+        <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Image</th>
@@ -14,7 +16,6 @@
                 <th>Detail</th>
                 <th>Edit</th>
                 <th>Delete</th>
-
             </tr>
             <?php foreach ($promotions as $promotion) : ?>
             <tr>
@@ -46,6 +47,6 @@
             <?php endforeach; ?>
         </table>
         </div>
-        <p><a href="?action=show_add_form" class="btn btn-info" role="button">Add Promotion</a></p>
+
     </div>
 </div>

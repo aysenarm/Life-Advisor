@@ -22,7 +22,6 @@ require 'Daria/newsletter/Newsletter.class.php';
     <script type='text/javascript' src='http://localhost/Life-Advisor/script.js'></script>
     <script type="text/javascript" src="http://localhost/Life-Advisor/Daria/newsletter/Admin/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="http://localhost/Life-Advisor/style.css" />
-
     <link href="style-map.css" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -30,14 +29,13 @@ require 'Daria/newsletter/Newsletter.class.php';
         #myNavbar{
             border:0;
             background-color: #2c2d2c;
+            width: 100%;
         }
         .navbar{
-            border-radius: 0;
             margin-bottom: 5px;
         }
         .sidenav{
             background-color: #2c2d2c;
-
         }
         .sidenav a{
             text-transform: uppercase;
@@ -72,15 +70,20 @@ require 'Daria/newsletter/Newsletter.class.php';
         }
         img{
             max-width:100% !important;
+
         }
         .well{
             border: 1px solid #2c2d2c;
             border-radius: 0;
             padding: 0;
             margin-top: 5px;
+            margin-bottom: 0px;
         }
         .well img{
             margin:0;
+            width: 100%;
+            margin-bottom: -1px;
+
         }
         .block{
             background-color: #2c2d2c;
@@ -153,8 +156,7 @@ require 'Daria/newsletter/Newsletter.class.php';
             text-decoration: none;
             padding-right: 15px;
         }
-        .control-label{
-
+        .control-label1{
             color: white;
             font-family: 'Cabin', sans-serif;
             font-size: 1.2em;
@@ -236,6 +238,29 @@ require 'Daria/newsletter/Newsletter.class.php';
                 display:none !important;
             }
         }
+        .signup{
+            float: none;
+            margin: 0 auto;
+        }
+        .container {
+            padding-right: ;
+        }
+        .container-fluid {
+            padding-right: 0;
+
+        }
+        .col-sm-8{
+            padding-right: 0px;
+        }
+        .col-sm-4, .col-sm-8{
+            padding-left: 5px;
+        }
+        .col-sm-4{
+            padding-right:0px;
+        }
+        .row{
+            margin-right: 0px;
+        }
     </style>
 </head>
 <body>
@@ -262,44 +287,40 @@ require 'Daria/newsletter/Newsletter.class.php';
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-<?php
-                $user = new UserDB();
-                if($user->is_loggedin()!="")
+        <?php
+            $user = new UserDB();
+            if($user->is_loggedin()!="")
                 {
                     $name = $user->userInfo($_SESSION['user_session']);
                     echo "<li><a style='color:white; cursor:default';>Hello, " . "<span style='color:#d9534f'; >" . $name['Username'] . "</span>" . "</a></li>";
-
-?>
-                    <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Antonio/userCabinet/View/userCabinet.php"><span class="glyphicon glyphicon-user"></span> My account</a></li>
-                    <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
-<?php
-
-
-
-
-
-
-                } else {
-?>
-                    <li><a href="http://localhost/Life-Advisor/Antonio/login/View/login-form.php"><span class="glyphicon glyphicon-log-in"></span>
-                            Sign In</a></li>
-                    <li><a href="Antonio/login/View/register-form.php"><span class="glyphicon glyphicon-plus"></span>
-                            Register</a></li>
-<?php
-
-                }
-?>
+        ?>
+            <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Antonio/userCabinet/View/userCabinet.php"><span class="glyphicon glyphicon-user"></span> My account</a></li>
+            <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+        <?php
+            } else {
+        ?>
+            <li><a href="http://localhost/Life-Advisor/Antonio/login/View/login-form.php"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+            <li><a href="Antonio/login/View/register-form.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+        <?php
+             }
+        ?>
             </ul>
         </div>
-
     </nav>
 
-    <div class="container">
+<div class="container-fluid">
         <div class="row content ">
             <div class="col-sm-4 sidenav text-center">
                 <img class="logo"  style="color:blue;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo.png';?>">
                 <p><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>index.php">home</a></p>
+
                 <p>
+                <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/blog.php" method="post">
+                    <button type="submit" style="background: none; border: none;outline: none;"><a>Blog</a></button>
+                </form>
+                </p>
+
+                <!--<p>
                 <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Helen/pages/View/show_menu_pages.php" method="post">
                     <input type="hidden" name="menu" value="Recipes"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>recipes</a></button>
@@ -334,7 +355,7 @@ require 'Daria/newsletter/Newsletter.class.php';
                     <input type="hidden" name="menu" value="Time managment"/>
                     <button type="submit" style="background: none; border: none;outline: none;"><a>time management</a></button>
                 </form>
-                </p>
+                </p>-->
                 <p>
                 <form action="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Aysen/Forum/Public/Categories/';?>" method="post">
                     <button type="submit" style="background: none; border: none;outline: none;"><a>forum</a></button>
@@ -362,30 +383,29 @@ require 'Daria/newsletter/Newsletter.class.php';
                 <img class="logo2" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/images/logo2.png';?>">
 
                 <div class="form-group">
-                    <p class="control-label" for="email">subscribe our <span class="colortext">newsletter</span></p>
-                    <div class="input-group col-xs-12">
+                    <p class="control-label1" for="email">subscribe our <span class="colortext">newsletter</span></p>
+                    <div class="col-xs-8 signup">
                         <form action="index.php" method="post" id="newsletter" name="newsletter" role="form">
                             <input id="signup-email" name="signup-email" class="form-control" placeholder="Your email..." type="text" value="">
                             <input type="submit" value="Subscribe Now!" class="btn btn-large" id="sub-btn" name="signup-button"/>
                         </form>
                         <div id="response">
-<?php
+                        <?php
                             if (!empty($_POST['signup-email'])) {
                                 $email = $_POST['signup-email'];
                                 $response = [];
                                 $response = json_decode(Newsletter::register($email), true);
-
                                 if($response['status']=='success'){
                                     include_once 'Daria/newsletter/gmail.php';
                                 }
                                 echo $response['message'];}
-?>
+                        ?>
                         </div>
                     </div>
                 </div>
 
                 <div class="media">
-                    <p class="control-label">connect with <span class="colortext">us</span></p><br/>
+                    <p class="control-label1">connect with <span class="colortext">us</span></p><br/>
                     <ul class="social-network social-circle">
                         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -401,14 +421,13 @@ require 'Daria/newsletter/Newsletter.class.php';
 
             <div class="col-sm-8 text-left">
 
-                <?php
-if($user->is_loggedin()!="") {
-    $rez = $user->userInfo($_SESSION['user_session']);
-    $_SESSION['role'] = $rez['Rights'];
-    //echo $_SESSION['role'];
-    if ($_SESSION['role'] != 2) {
-        include 'adminindex.php';
-    }
-
-}
-?>
+            <?php
+                if($user->is_loggedin()!="") {
+                    $rez = $user->userInfo($_SESSION['user_session']);
+                    $_SESSION['role'] = $rez['Rights'];
+                    //echo $_SESSION['role'];
+                    if ($_SESSION['role'] != 2) {
+                        include 'adminindex.php';
+                    }
+                }
+            ?>

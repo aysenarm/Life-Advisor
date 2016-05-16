@@ -1,8 +1,6 @@
 <?php
 require_once('../Model/interactiondb.php');
 
-
-
 if ($_POST){
     $page_id = $_POST['page_id'];
 
@@ -19,15 +17,11 @@ else {
 
 $a = new PageDB();
 $page = $a->listOnePage($page_id);
-
-
-
-
 // показать страницу как html код
 require_once '../../../content_top.php';
 ?>
     <form>
-        <input type="submit" class="btn btn-info" value="Back" formaction="<?php
+        <input type="submit" class="btn btn-default" value="Back" formaction="<?php
         if (isset($_GET['l'])){
             echo "http://localhost/Life-Advisor/Helen/pages/View/admin_pages.php";
         }
@@ -55,7 +49,8 @@ require_once '../../../content_top.php';
     ?>
     <form id="rank" action="../Controller/like.php" method="post">
         <input type="hidden" name="id" value="<?php echo $page_id; ?>">
-        <input name="like" type="submit" value="Like" class="btn btn-info">
+        <br />
+        <input name="like" type="submit" value="Like" class="btn btn-danger">
     </form>
 
 <?php

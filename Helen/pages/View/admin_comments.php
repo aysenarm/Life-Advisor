@@ -53,16 +53,20 @@ else {
     <div id="main">
 
         <div id="content">
-            <h2>Comments on Life Advisor</h2>
+            <h3>Comments on Life Advisor</h3>
 
-            <form>
-                <select name="users" onchange="showComments(this.value)">
-                    <option value="1" selected>All</option>
-                    <option value="2">Published</option>
-                    <option value="3">Not published</option>
-                </select>
+            <form style="margin-left: -15px;">
+                <div class="col-sm-3">
+                    <select name="users" onchange="showComments(this.value)" class="form-control">
+                        <option value="1" selected>All</option>
+                        <option value="2">Published</option>
+                        <option value="3">Not published</option>
+                    </select>
+                </div>
             </form>
-            <br>
+            </br>
+            </br>
+            </br>
             <div id="txtHint">
                <?php $comments = $pdb->listComments();
                 include_once "../View/table.php"; ?>
@@ -70,9 +74,6 @@ else {
 
         </div>
     </div>
-
-
-
 </div><!-- end page -->
 
 <?php

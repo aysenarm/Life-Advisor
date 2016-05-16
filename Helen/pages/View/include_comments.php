@@ -26,13 +26,9 @@ offer to log in or register -->
         <!-- ID_page get from the shown page  -->
         <input type="hidden" name="page_id" value="<?php echo $page_id;?>"/>
         <!-- it should be hidden so we don't need to specify it by hands on the page-->
-      <input type="submit" value="Add comment"/>
+      <input type="submit" class="btn btn-danger" value="Add comment"/>
     </p>
 </form>
-
-
-
-
 
 <!-- LIST COMMENTS PART -->
 

@@ -1,8 +1,9 @@
 <div id="main">
 
-    <h1>Category List</h1>
+    <h3>Category List</h3>
+    <p  style="padding-bottom: 10px"><a href="?action=show_add_form" class="btn btn-default" role="button">Add Category</a></p>
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -21,24 +22,24 @@
                 <td><form action=".?action=list_categories" method="post" id="delete_category_form">
                     <input type="hidden" name="action" value="delete_category" />
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Delete" class="btn btn-default" />
+                    <input type="submit" value="Delete" class="btn btn-default btn-md" />
                 </form></td>
                 <td><form action=".?action=list_categories" method="post" id="edit_category_form">
                     <input type="hidden" name="action" value="show_edit_form" />
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Edit" class="btn btn-default" />
+                    <input type="submit" value="Edit" class="btn btn-default btn-md" />
                 </form></td>
                 <td><form action=".?action=list_categories" method="post" id="detail_category_form">
                     <input type="hidden" name="action" value="show_detail_form">
                     <input type="hidden" name="category_id" value="<?php echo $category->getID(); ?>" />
-                    <input type="submit" value="Details"class="btn btn-default" />
+                    <input type="submit" value="Details"class="btn btn-default btn-md" />
                 </form></td>
             </tr>
             <?php endforeach; ?>
         </table>
         </div>
         
-        <p><a href="?action=show_add_form" class="btn btn-info" role="button">Add Category</a></p>
+
     </div>
     <script>
         function showTopics(rowId) {

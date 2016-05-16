@@ -32,13 +32,15 @@ $pages = $pdb->listPages();
 <div id="page">
 
     <div id="header">
-        <h2>Posts Manager</h2>
+        <h3>Posts Manager</h3>
     </div>
 
     <div id="main">
 
         <div id="content">
-            <table class="table table-striped table-bordered table-hover">
+            <p><a href="add_page_form.php" class="btn btn-default">Add Page</a></p>
+            </br>
+            <table>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
@@ -47,9 +49,9 @@ $pages = $pdb->listPages();
                     <th>Rank</th>
                     <th>Tags</th>
                     <th>Menu</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                    <th>See page</th>
 
                 </tr>
                 <?php foreach ($pages as $page) : ?>
@@ -65,7 +67,7 @@ $pages = $pdb->listPages();
                             <form action="../Controller/delete_page.php" method="post" id="delete_page_form">
 
                                 <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
-                                <input type="submit" class="btn btn-danger btn-xs" value="Delete"/>
+                                <input type="submit" class="btn btn-default" value="Delete"/>
 
                             </form>
                         </td>
@@ -74,7 +76,7 @@ $pages = $pdb->listPages();
                             <form action="update_page_form.php" method="post" id="update_page_form">
 
                                 <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
-                                <input type="submit" class="btn btn-info btn-xs" value="Update"/>
+                                <input type="submit" class="btn btn-default" value="Update"/>
 
                             </form>
                         </td>
@@ -83,7 +85,7 @@ $pages = $pdb->listPages();
                             <form action="see_page.php" method="post" id="see_page">
 
                                 <input type="hidden" name="page_id" value="<?php echo $page['ID_page']; ?>"/>
-                                <input type="submit" class="btn btn-xs" value="See page"/>
+                                <input type="submit" class="btn btn-default btn-md" value="See page"/>
 
                             </form>
                         </td>
@@ -91,7 +93,7 @@ $pages = $pdb->listPages();
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <p><a href="add_page_form.php" class="btn btn-success">Add Page</a></p>
+
 
         </div>
     </div>

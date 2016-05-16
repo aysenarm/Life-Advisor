@@ -2,7 +2,7 @@
 require '../Database.class.php';
 require '../Newsletter.class.php';
 
-include 'database.php';
+include 'database1.php';
     include_once '../gmail1.php';
     if(isset($_POST['newsletter_id'])){
         $id = $_POST['newsletter_id'];

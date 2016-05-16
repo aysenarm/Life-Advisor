@@ -18,7 +18,7 @@ else {
 }
 
 require_once '../../../content_top.php';
-
+include 'blog.php';
 //$menu = $_POST['menu'];
 
 $a = new PageDB();

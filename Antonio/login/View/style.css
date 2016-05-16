@@ -11,8 +11,8 @@ body {
 }
 h2
 {
-    font-family:Tahoma, Geneva, sans-serif;
-    color:#00a2d1;
+    font-family: 'Cabin', sans-serif;
+    color:#ef494a;
 }
 .form-container
 {
@@ -25,17 +25,25 @@ h2
 }
 button
 {
-    font-family:Verdana, Geneva, sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-size:25px;
+}
+.btn{
+    background-color:#ef494a;
+    color:white;
 }
 label
 {
-    font-family:Tahoma, Geneva, sans-serif;
+    font-family: 'Cabin', sans-serif;
     color:.00a9d1;
 }
 a
 {
     text-decoration:underline;
+    color:#ef494a;
+}
+a:hover {
+    color: #800000;
 }
 
 /* home page style */

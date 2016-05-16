@@ -1,8 +1,10 @@
 <div id="main">
 
-    <h1>Gallery List</h1>
+    <h3>Gallery List</h3>
     <div class="table-responsive">
-        <table class="table table-hover">
+        <p><a href="?action=show_add_form" class="btn btn-default" role="button">Add Gallery</a></p>
+        </br>
+        <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Cover Photo</th>
@@ -10,8 +12,8 @@
                 <th>Publishing Date</th>
                 <th>UserID</th>
                 <th>Delete</th>
-
             </tr>
+
             <?php foreach ($galleries as $gallery) : ?>
             <tr  onclick='showImages(<?php echo $gallery->getID(); ?>)'>
                 <td><?php echo $gallery->getID(); ?></td>
@@ -30,7 +32,6 @@
             <?php endforeach; ?>
         </table>
         </div>
-        <p><a href="?action=show_add_form" class="btn btn-info" role="button">Add Gallery</a></p>
     </div>
     <script>
         function showImages(rowId) {

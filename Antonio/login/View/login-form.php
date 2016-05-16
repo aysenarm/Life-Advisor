@@ -40,7 +40,7 @@ $user->redirect('http://localhost/Life-Advisor/');
                     </div>
                     <div class="clearfix"></div><hr />
                     <div class="form-group">
-                        <button type="submit" name="btn-login" class="btn btn-block btn-primary">
+                        <button type="submit" name="btn-login" class="btn btn-block">
                             <i class="glyphicon glyphicon-log-in"></i>&nbsp;SIGN IN
                         </button>
                     </div>

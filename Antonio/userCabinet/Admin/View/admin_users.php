@@ -10,17 +10,14 @@ if ($_SESSION['role'] == 2){
             <a href='" . $_SERVER['HTTP_REFERER'] . "'>Go back</a>";
 }
 else {
-
     require_once('../../Model/cabinetdb.php');
-
     $cabinet = new Cabinet();
     $users = $cabinet->listUsers();
-
-
     ?>
 
+        <h3>Users</h3>
             <div id="content">
-                <table class="table table-striped table-bordered table-hover">
+                <table>
                     <tr>
                         <th>Username</th>
                         <th>Name</th>
@@ -28,10 +25,8 @@ else {
                         <th>Rights</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-
+                        <th>Delete</th>
+                        <th>Update</th>
                     </tr>
                     <?php foreach ($users as $user) : ?>
                         <tr>
@@ -49,7 +44,7 @@ else {
                                 <form action="../Controller/delete_user.php" method="post" id="delete_page_form">
 
                                     <input type="hidden" name="user_id" value="<?php echo $user['ID_user']; ?>"/>
-                                    <input type="submit" class="btn btn-danger btn-xs" value="Delete"/>
+                                    <input type="submit" class="btn btn-default btn-md" value="Delete"/>
 
                                 </form>
                             </td>
@@ -58,7 +53,7 @@ else {
                                 <form action="update_user_form.php" method="post" id="update_page_form">
 
                                     <input type="hidden" name="user_id" value="<?php echo $user['ID_user']; ?>"/>
-                                    <input type="submit" class="btn btn-info btn-xs" value="Update"/>
+                                    <input type="submit" class="btn btn-default btn-md" value="Update"/>
 
                                 </form>
                             </td>

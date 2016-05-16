@@ -1,11 +1,11 @@
-<table class="table table-striped table-bordered table-hover">
+<table>
                 <tr>
                     <th>ID page</th>
                     <th>User</th>
                     <th>State</th>
                     <th>Text</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>Delete</th>
+                    <th>Update</th>
 
                 </tr>
                 <?php foreach ($comments as $comment) : ?>
@@ -17,14 +17,14 @@
         <td><form action="../Controller/delete_comment.php" method="post" id="delete_com_form">
 
                 <input type="hidden" name="com_id" value="<?php echo $comment['ID_comment']; ?>" />
-                <input type="submit" class="btn btn-danger btn-xs" value="Delete" />
+                <input type="submit" class="btn btn-default" value="Delete" />
 
             </form></td>
 
         <td><form action="update_comments_form.php" method="post" id="update_page_form">
 
                 <input type="hidden" name="com_id" value="<?php echo $comment['ID_comment']; ?>" />
-                <input type="submit" class="btn btn-info btn-xs" value="Update" />
+                <input type="submit" class="btn btn-default btn-md" value="Update" />
 
             </form></td>
 

@@ -16,10 +16,6 @@ if(isset($_SESSION['user_session'])) {
     else {
 
 ?>
-
-
-
-
         <?php require_once('database.php') ?>
 
         <link rel="stylesheet" href="scripts/contactus.css">

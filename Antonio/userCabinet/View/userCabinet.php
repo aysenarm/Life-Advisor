@@ -20,26 +20,15 @@ $id = $_SESSION['user_session'];
     }
     ?>
     <img src="http://localhost/Life-Advisor/Antonio/userCabinet/img/<?php echo $user['ID_image'];?>" style="width: 200px; height: 200px;">
- <h2><?php echo $user['Username'];?></h2>
+    <h2><?php echo $user['Username'];?></h2>
     <p>Name: <?php echo $user['Name'];?></p>
     <p>Surname: <?php echo $user['Surname'];?></p>
     <p>Email: <?php echo $user['Email'];?></p>
     <p>Phone: <?php echo $user['Phone'];?></p>
 
-
-
     <form action="update_user_form.php" method="post" id="update_page_form">
         <input type="submit" class="btn btn-info" value="Update"/>
     </form>
-
-
-
-
-
-
-
-
-
 
 
 <?php

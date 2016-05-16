@@ -1,21 +1,31 @@
 <div id="main">
-    <h1>Add a New Gallery</h1>
-    <div class="form-group">
-    <form action="index.php?action=list_galleries" method="post" id="add_gallery_form" enctype="multipart/form-data">
+    <h3>Add New Gallery</h3>
+
+    <form class="form-horizontal" action="index.php?action=list_galleries" method="post" id="add_gallery_form" enctype="multipart/form-data">
         <input type="hidden" name="action" value="add_gallery" />
 
-        <label>Name:</label>
-        <input type="input" name="name" class="form-control" />
+        <div class="form-group" style="margin-left: 10px;">
+            <label class="col-sm-2 control-label" style="color: black">Name:</label>
+            <div class="col-sm-10">
+                <input type="input" class="col-sm-2 form-control" name="name"/>
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group" style="margin-left: 10px;">
+            <label class="col-sm-2 control-label" style="color: black">Cover Photo:</label>
+            <div class="col-sm-10">
+                <input type="file" name="cover"/>
+            </div>
+            <br />
+        </div>
+
         <br />
-        <label>Upload Cover Photo</label>
-        <label>&nbsp;</label>
-        <input type="file" name="cover" class="btn btn-default"/>
-        <br/>
+        <br />
 
         <input type="submit" value="Add Gallery" class="btn btn-default"/>
         <br />
     </form>
-        </div>
-    <p><a href="index.php?action=list_galleries" class="btn btn-info" role="button">View Gallery List</a></p>
-
+    <hr>
+    <p><a href="index.php?action=list_galleries" class="btn btn-default" role="button">Back</a></p>
 </div>

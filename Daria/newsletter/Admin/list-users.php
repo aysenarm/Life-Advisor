@@ -1,5 +1,7 @@
 <?php
-require_once('database.php');
+include_once "../../../content_top.php";
+require_once('database1.php');
+
 $query = "SELECT * FROM signups ORDER BY id";
 $sunscribers = $db->query($query);
 

@@ -1,15 +1,17 @@
 <?php
-require_once('database.php');
+require_once('database1.php');
 require_once '../../../content_top.php';
 
 $query = "SELECT * FROM newsletter ORDER BY id";
 $newsletters = $db->query($query);
 ?>
 
+<h3>Newsletter List</h3>
 <div id="page">
+    <p><a href="newsletter.php" class="btn btn-default">Add newsletter</a></p>
+    <br />
     <div id="main">
         <div id="content">
-            <h2>Newsletter List</h2>
             <table>
                 <tr>
                     <th>Sender Email</th>
@@ -18,8 +20,9 @@ $newsletters = $db->query($query);
                     <th>Time</th>
                     <th>Status</th>
                     <th>Subject</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                    <th>Send</th>
                 </tr>
                 <?php foreach ($newsletters as $newsletter) : ?>
                     <tr>
@@ -33,17 +36,17 @@ $newsletters = $db->query($query);
 
                         <td><form action="delete_newsletter.php" method="post" id="delete_newsletter">
                                 <input type="hidden" name="newsletter_id" value="<?php echo $newsletter['id']; ?>" />
-                                <input type="submit" value="Delete" />
+                                <input type="submit" value="Delete" class="btn btn-default btn-md"/>
                             </form>
                         </td>
                         <td><form action="update_newsletter_form.php" method="post" id="update_newsletter">
                                 <input type="hidden" name="newsletter_id" value="<?php echo $newsletter['id']; ?>" />
-                                <input type="submit" value="Update" />
+                                <input type="submit" value="Update" class="btn btn-default btn-md"/>
                             </form>
                         </td>
                         <td><form action="send.php" method="post" id="send_newsletter">
                                 <input type="hidden" name="newsletter_id" value="<?php echo $newsletter['id']; ?>" />
-                                <input type="submit" value="Send" />
+                                <input type="submit" value="Send" class="btn btn-default btn-md"/>
                             </form>
                         </td>
                     </tr>

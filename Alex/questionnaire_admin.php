@@ -17,8 +17,6 @@ if(isset($_SESSION['user_session'])) {
 
 ?>
 
-
-
 <?php require_once('database.php') ?>
 
 <link rel="stylesheet" href="scripts/questionnaire.css">

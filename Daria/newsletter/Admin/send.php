@@ -6,6 +6,7 @@
 <div id="list-users">
 </div>
 <?php
+
 include 'newsletterdb.php';
 include_once 'list-users.php';
 ?>

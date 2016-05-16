@@ -36,17 +36,28 @@ if(isset($_POST['send'])){
 <?if($msg):?>
 <?echo $msg;?>
 <br/>
-<a href="http://127.0.0.1/xmllabs/twitterapp/autoposting.php">Send one more message</a>
+<a href="autoposting.php">Send one more message</a>
 <?else:?>
 
-<form action="" method="POST">
-  Your message:<br/>
-  <input type="text" name="message" value="<?=$message?>"/>
-  <br/>
-  Link:
-  <br/>
-  <input type="text" name="url" value="<?=$url?>"/>
-  <br/>
-  <input type="submit" name="send" value="Say">
+<form action="" method="POST" class="form-horizontal">
+	<br/>
+
+	<div class="form-group" style="margin-left: 10px;">
+		<label class="col-sm-2 control-label" style="color: black">Your message:</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="message" value="<?=$message?>"/>
+		</div>
+		<br />
+	</div>
+
+	<div class="form-group" style="margin-left: 10px;">
+		<label class="col-sm-2 control-label" style="color: black">Link:</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="url" value="<?=$url?>"/>
+		</div>
+		<br />
+	</div>
+
+  <input type="submit" name="send" value="Say" class="btn btn-default">
 </form>
 <?endif;?>

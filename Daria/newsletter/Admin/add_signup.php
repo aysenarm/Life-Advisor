@@ -7,7 +7,7 @@ if (empty($signupemail) || empty($signupdate)) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
 } else {
-    require_once('database.php');
+    require_once('database1.php');
     $query = "INSERT INTO signups
                  (signup_email_address, signup_date)
               VALUES

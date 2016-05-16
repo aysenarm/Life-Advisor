@@ -8,7 +8,7 @@ if(isset($_SESSION['user_session'])) {
 
     $rez = $user->userInfo($_SESSION['user_session']);
     $_SESSION['role'] = $rez['Rights'];
-    echo $_SESSION['role'];
+
     if ($_SESSION['role'] == 2){
         echo "<h2>We are sorry, but you have to be ADMIN to see this page</h2><br/>
             <a href='".$_SERVER['HTTP_REFERER']."'>Go back</a>";
