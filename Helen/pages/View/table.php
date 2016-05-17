@@ -10,7 +10,7 @@
                 </tr>
                 <?php foreach ($comments as $comment) : ?>
     <tr>
-        <td><?php echo $comment['ID_page']; ?></td>
+        <td><?= $comment['ID_page']; ?></td>
         <td><?php echo $comment['ID_user'];?></td>
         <td><?php echo $comment['state']; ?></td>
         <td><?php echo $comment['Text']; ?></td>

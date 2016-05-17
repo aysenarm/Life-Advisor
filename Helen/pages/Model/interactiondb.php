@@ -1,9 +1,14 @@
 <?php
 require_once '../../DB/dbclass.php';
 
+$mypage=new PageDB(Dbclass::getDB());
+
+
 class PageDB{
-    public function __construct() {
-        
+
+    private $db;
+    public function __construct($db) {
+        $this->db = $db;
     }
 
 //function to LIST all pages
@@ -17,12 +22,12 @@ class PageDB{
 
 // function to ADD a page
     public function addPages($title, $idUser, $status, $content, $rank, $tags, $menu, $idImage){
-        $db = Dbclass::getDB();
+       // $db = Dbclass::getDB();
         $query = "INSERT INTO page
                  (Title, ID_user, Status, Content, Rank, Tags, Menu, ID_image)
               VALUES
                  (:tit, :usr, :stat, :cont, :rank, :tags, :menu, :im)";
-        $stm = $db->prepare($query);
+        $stm = $this->db->prepare($query);
         $stm->bindValue(':tit', $title, PDO::PARAM_STR);
         $stm->bindValue(':usr', $idUser, PDO::PARAM_INT);
         $stm->bindValue(':stat', $status, PDO::PARAM_STR);
