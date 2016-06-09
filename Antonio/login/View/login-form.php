@@ -3,7 +3,7 @@ require_once '../Model/userInteractdb.php';
 $user = new UserDB();
 if($user->is_loggedin()!="")
 {
-$user->redirect('http://localhost/Life-Advisor/');
+$user->redirect('http://life-adviser.hryshkova.com/Life-Advisor');
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

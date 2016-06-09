@@ -35,7 +35,7 @@
         }
         else {
             echo "<h2>We are sorry, but you have to be logged in to add comments this page,
-please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+please log in <a href='http://life-adviser.hryshkova.com/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
         }
         ?>
 

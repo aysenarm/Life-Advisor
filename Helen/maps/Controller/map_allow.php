@@ -108,13 +108,13 @@
         {
             setCookie('reload', 1);
             // обновляем страницу
-            window.location.replace('http://localhost/Life-Advisor/Helen/maps/View/index_map.php?lat=' + sessionStorage.getItem('latitude'));
+            window.location.replace('http://life-adviser.hryshkova.com/Life-Advisor/Helen/maps/View/index_map.php?lat=' + sessionStorage.getItem('latitude'));
         }
         if (reload == 1)
         {
             setCookie('reload', 2);
             // обновляем страницу
-            window.location.replace('http://localhost/Life-Advisor/Helen/maps/View/index_map.php?lat=' + sessionStorage.getItem('latitude'));
+            window.location.replace('http://life-adviser.hryshkova.com/Life-Advisor/Helen/maps/View/index_map.php?lat=' + sessionStorage.getItem('latitude'));
         }
 
 

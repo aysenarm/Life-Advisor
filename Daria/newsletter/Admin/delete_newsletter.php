@@ -7,5 +7,5 @@ $query = "DELETE FROM newsletter
           WHERE id = '$newsletter_id'";
 $db->exec($query);
 
-header('location:');
+header('location: newsletter-list.php');
 ?>

@@ -4,7 +4,7 @@ $user = new UserDB();
 
 if($user->is_loggedin()!="")
 {
-    $user->redirect("http://localhost/Life-Advisor/");
+    $user->redirect("http://life-adviser.hryshkova.com/Life-Advisor");
 }
     $uname = $_POST['txt_uname_email'];
     $umail = $_POST['txt_uname_email'];

@@ -97,7 +97,7 @@ async defer></script>
     for ($i = 0; $i< $a; $i++) {
         echo "<li>" . $resp['results'][$i]['vicinity'] . "</li>";
         echo "
-            <form action='../controller/directions.php' method='post'>
+            <form action='../Controller/directions.php' method='post'>
                 <input type='hidden' name='rezLat' value='".$rez_lat."'/>
                 <input type='hidden' name='rezLong' value='".$rez_long."'/>
                 <input type='hidden' name='latitude' value='".$resp['results'][$i]['geometry']['location']['lat']."' />

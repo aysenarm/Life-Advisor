@@ -5,11 +5,11 @@ if ($_POST){
     $page_id = $_POST['page_id'];
 
     if ($_COOKIE['page_id'] != NULL){
-        setcookie("page_id", "" , time()- 3600,"/","localhost",false,true);
+        setcookie("page_id", "" , time()- 3600,"/","life-adviser.hryshkova.com",false,true);
     }
     //setcookie(name, value, expire, path, domain, secure, httponly);
     $expire =  new DateTime('+1 month');
-    setcookie("page_id",$page_id,$expire->getTimestamp(),"/","localhost",false,true);
+    setcookie("page_id",$page_id,$expire->getTimestamp(),"/","life-adviser.hryshkova.com",false,true);
 }
 else {
     $page_id = $_COOKIE['page_id'];
@@ -23,7 +23,7 @@ require_once '../../../content_top.php';
     <form>
         <input type="submit" class="btn btn-default" value="Back" formaction="<?php
         if (isset($_GET['l'])){
-            echo "http://localhost/Life-Advisor/Helen/pages/View/admin_pages.php";
+            echo "http://life-adviser.hryshkova.com/Life-Advisor/Helen/pages/View/admin_pages.php";
         }
         else
         echo $_SERVER['HTTP_REFERER'];
@@ -35,7 +35,7 @@ require_once '../../../content_top.php';
     $image = $page['ID_image'];
     if (!empty($image)){
     ?>
-    <img src="http://localhost/Life-Advisor/Helen/pages/img/<?php echo $image;?>">
+    <img src="http://life-adviser.hryshkova.com/Life-Advisor/Helen/pages/img/<?php echo $image;?>">
     <?php
     }
     ?>

@@ -3,8 +3,8 @@ require_once 'Model/userInteractdb.php';
 define('ROOTPATH', dirname(__FILE__));
 $logo = ROOTPATH."/images/logo.png";
 $logo2 = ROOTPATH.'/images/logo2.png';
-require 'Daria/newsletter/Database.class.php';
-require 'Daria/newsletter/Newsletter.class.php';
+include_once 'Daria/newsletter/Database.class.php';
+include_once 'Daria/newsletter/Newsletter.class.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +19,12 @@ require 'Daria/newsletter/Newsletter.class.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script type='text/javascript' src='http://localhost/Life-Advisor/script.js'></script>
-    <script type="text/javascript" src="http://localhost/Life-Advisor/Daria/newsletter/Admin/ckeditor/ckeditor.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/Life-Advisor/style.css" />
+    <script type='text/javascript' src='http://life-adviser.hryshkova.com/Life-Advisor/script.js'></script>
+    <script type="text/javascript" src="http://life-adviser.hryshkova.com/Life-Advisor/Daria/newsletter/Admin/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://life-adviser.hryshkova.com/Life-Advisor/style.css" />
     <link href="style-map.css" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <style>
         #myNavbar{
@@ -295,12 +296,12 @@ require 'Daria/newsletter/Newsletter.class.php';
                     echo "<li><a style='color:white; cursor:default';>Hello, " . "<span style='color:#d9534f'; >" . $name['Username'] . "</span>" . "</a></li>";
         ?>
             <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/' ?>Antonio/userCabinet/View/userCabinet.php"><span class="glyphicon glyphicon-user"></span> My account</a></li>
-            <li><a href="http://localhost/Life-Advisor/Antonio/login/Controller/logout.php"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Antonio/login/Controller/logout.php'?>"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         <?php
             } else {
         ?>
-            <li><a href="http://localhost/Life-Advisor/Antonio/login/View/login-form.php"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
-            <li><a href="Antonio/login/View/register-form.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+            <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Antonio/login/View/login-form.php'?>"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+            <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Life-Advisor/Antonio/login/View/register-form.php' ?>"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
         <?php
              }
         ?>

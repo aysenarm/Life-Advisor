@@ -19,7 +19,7 @@ $id = $_SESSION['user_session'];
         <?php
     }
     ?>
-    <img src="http://localhost/Life-Advisor/Antonio/userCabinet/img/<?php echo $user['ID_image'];?>" style="width: 200px; height: 200px;">
+    <img src="http://life-adviser.hryshkova.com/Life-Advisor/Antonio/userCabinet/img/<?php echo $user['ID_image'];?>" style="width: 200px; height: 200px;">
     <h2><?php echo $user['Username'];?></h2>
     <p>Name: <?php echo $user['Name'];?></p>
     <p>Surname: <?php echo $user['Surname'];?></p>
@@ -35,6 +35,6 @@ $id = $_SESSION['user_session'];
 }
 else {
     echo "<h2>We are sorry, but you have to be logged in to see this page,
-please log in <a href='http://localhost/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
+please log in <a href='http://life-adviser.hryshkova.com/Life-Advisor/Antonio/login/View/login-form.php'>here</a></h2>";
 }
 include_once "../../../content_top.php";
